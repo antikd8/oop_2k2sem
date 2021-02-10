@@ -41,14 +41,14 @@
             // 
             // textBoxOriginal
             // 
-            this.textBoxOriginal.BackColor = System.Drawing.SystemColors.Info;
+            this.textBoxOriginal.BackColor = System.Drawing.Color.OldLace;
             this.textBoxOriginal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F);
             this.textBoxOriginal.Location = new System.Drawing.Point(50, 144);
             this.textBoxOriginal.Name = "textBoxOriginal";
             this.textBoxOriginal.Size = new System.Drawing.Size(175, 26);
             this.textBoxOriginal.TabIndex = 1;
-            this.textBoxOriginal.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBoxOriginal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxOriginal_KeyDown);
+            this.textBoxOriginal.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxOriginal_Validating);
             // 
             // comboBoxOriginal
             // 
@@ -63,40 +63,40 @@
             this.comboBoxOriginal.Name = "comboBoxOriginal";
             this.comboBoxOriginal.Size = new System.Drawing.Size(175, 30);
             this.comboBoxOriginal.TabIndex = 3;
-            this.comboBoxOriginal.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // labelCalculator
             // 
             this.labelCalculator.AutoSize = true;
             this.labelCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
-            this.labelCalculator.Location = new System.Drawing.Point(180, 31);
+            this.labelCalculator.Location = new System.Drawing.Point(199, 27);
             this.labelCalculator.Name = "labelCalculator";
             this.labelCalculator.Size = new System.Drawing.Size(355, 36);
             this.labelCalculator.TabIndex = 4;
             this.labelCalculator.Text = "Калькулятор размеров";
-            this.labelCalculator.Click += new System.EventHandler(this.labelCalculator_Click);
             // 
             // textBoxConverted
             // 
-            this.textBoxConverted.BackColor = System.Drawing.SystemColors.Info;
+            this.textBoxConverted.BackColor = System.Drawing.Color.OldLace;
             this.textBoxConverted.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F);
             this.textBoxConverted.Location = new System.Drawing.Point(494, 141);
             this.textBoxConverted.Name = "textBoxConverted";
             this.textBoxConverted.Size = new System.Drawing.Size(205, 26);
             this.textBoxConverted.TabIndex = 5;
-            this.textBoxConverted.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // buttonConvert
             // 
             this.buttonConvert.BackColor = System.Drawing.Color.White;
+            this.buttonConvert.Enabled = false;
             this.buttonConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
-            this.buttonConvert.Location = new System.Drawing.Point(277, 152);
+            this.buttonConvert.Location = new System.Drawing.Point(262, 157);
             this.buttonConvert.Name = "buttonConvert";
-            this.buttonConvert.Size = new System.Drawing.Size(143, 41);
+            this.buttonConvert.Size = new System.Drawing.Size(203, 41);
             this.buttonConvert.TabIndex = 7;
-            this.buttonConvert.Text = "перевести";
+            this.buttonConvert.Text = "ПЕРЕВЕСТИ";
             this.buttonConvert.UseVisualStyleBackColor = false;
             this.buttonConvert.Click += new System.EventHandler(this.button1_Click);
+            this.buttonConvert.MouseLeave += new System.EventHandler(this.buttonConvert_MouseLeave);
+            this.buttonConvert.MouseHover += new System.EventHandler(this.buttonConvert_MouseHover);
             // 
             // comboBoxConverted
             // 
@@ -118,7 +118,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.label1.Location = new System.Drawing.Point(65, 102);
+            this.label1.Location = new System.Drawing.Point(73, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 24);
             this.label1.TabIndex = 9;
@@ -128,7 +128,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.label2.Location = new System.Drawing.Point(512, 102);
+            this.label2.Location = new System.Drawing.Point(527, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 24);
             this.label2.TabIndex = 10;
@@ -136,7 +136,8 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.buttonExit.BackColor = System.Drawing.Color.Tomato;
+            this.buttonExit.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.buttonExit.Location = new System.Drawing.Point(555, 339);
             this.buttonExit.Name = "buttonExit";
@@ -150,8 +151,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(721, 411);
+            this.BackColor = System.Drawing.Color.Wheat;
+            this.ClientSize = new System.Drawing.Size(752, 413);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -161,8 +162,9 @@
             this.Controls.Add(this.labelCalculator);
             this.Controls.Add(this.comboBoxOriginal);
             this.Controls.Add(this.textBoxOriginal);
+            this.MaximumSize = new System.Drawing.Size(770, 460);
+            this.MinimumSize = new System.Drawing.Size(770, 460);
             this.Name = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

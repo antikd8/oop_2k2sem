@@ -29,31 +29,44 @@ namespace lab1
 
     public class Calculator : IOperations
     {
-        public delegate void MessageHandler();
-
-        public event MessageHandler Notify;
         public double ConvertToEUR(double originalValue)
         {
-            return (originalValue + 2 * (600 / 90)) / (600 / 90) - 4;
+            double convertedValue = (originalValue + 2 * (600 / 90)) / (600 / 90) - 4;
+            if (convertedValue < 0)
+                MessageBox.Show("Длина стопы слишком маленькая!");
+            else
+                return convertedValue;
+            return 0;
         }
 
         public double ConvertToRUS(double originalValue)
         {
-            return (originalValue + 2 * (600 / 90)) / (600 / 90) - 5;
+            double convertedValue = (originalValue + 2 * (600 / 90)) / (600 / 90) - 5;
+            if (convertedValue < 0)
+                MessageBox.Show("Длина стопы слишком маленькая!");
+            else
+                return convertedValue;
+            return 0;
         }
 
         public double ConvertToUK(double originalValue)
         {
-            return ((originalValue + 2 * (762 / 90)) / (762 / 90)) - 25.5;
+            double convertedValue = ((originalValue + 2 * (762 / 90)) / (762 / 90)) - 25.5;
+            if (convertedValue < 0)
+                MessageBox.Show("Длина стопы слишком маленькая!");
+            else
+                return convertedValue;
+            return 0;
         }
 
         public double ConvertToUS(double originalValue)
         {
-            return ((originalValue + 2 * (762 / 90)) / (762 / 90)) - 25;
-        }
-        public void DisplayMessageBox()
-        {
-            MessageBox.Show($"Происходит выход из приложения.");
+            double convertedValue = ((originalValue + 2 * (762 / 90)) / (762 / 90)) - 25;
+            if (convertedValue < 0)
+                MessageBox.Show("Длина стопы слишком маленькая!");
+            else
+                return convertedValue;
+            return 0;
         }
 
     }

@@ -19,125 +19,116 @@ namespace lab1
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-                try
+            try
+            {
+                if (String.IsNullOrEmpty(textBoxOriginal.Text))
                 {
-                if (Convert.ToDouble(textBoxOriginal.Text) < 0)
-                {
-                    throw new Exception("Длина стопы должна быть больше 0!");
+                    throw new Exception("Поле \"Длина стопы\" должно быть заполнено!");
                 }
                 if (textBoxConverted.Text != String.Empty && !(shoeSize))
                 {
                     throw new Exception("Поле \"Размер обуви\" должно быть пустым!");
-                } 
-                if (textBoxOriginal.Text == String.Empty)
-                {
-                    throw new Exception("Заполните поле \"Длина стопы\"!");
-                } 
+                }
                 if (String.IsNullOrEmpty(comboBoxOriginal.Text))
                 {
                     throw new Exception("Выберите единицы измерения под полем \"Длина стопы\"!");
-                } 
+                }
                 if (String.IsNullOrEmpty(comboBoxConverted.Text))
                 {
                     throw new Exception("Выберите какой размер обуви вы хотите получить!");
-                } 
+                }
                 shoeSize = true;
-                    double originalValue = Convert.ToDouble(textBoxOriginal.Text);
-                    double convertedValue = 0;
-                    switch (comboBoxOriginal.Text)
-                    {
-                        case "Миллиметр (мм)":
-                            switch (comboBoxConverted.Text)
-                            {
-                                case "США (US)":
-                                    textBoxConverted.Text = calculator.ConvertToUS(originalValue).ToString();
-                                    break;
-                                case "Европа (EUR)":
-                                    textBoxConverted.Text = calculator.ConvertToEUR(originalValue).ToString();
-                                    break;
-                                case "Великобритания (UK)":
-                                    textBoxConverted.Text = calculator.ConvertToUK(originalValue).ToString();
-                                    break;
-                                case "Россия (RUS)":
-                                    textBoxConverted.Text = calculator.ConvertToRUS(originalValue).ToString();
-                                    break;
-                            }
-                            break;
-                        case "Сантиметр (см)":
-                            originalValue *= 10;
-                            switch (comboBoxConverted.Text)
-                            {
-                                case "США (US)":
-                                    textBoxConverted.Text = calculator.ConvertToUS(originalValue).ToString();
-                                    break;
-                                case "Европа (EUR)":
-                                    textBoxConverted.Text = calculator.ConvertToEUR(originalValue).ToString();
-                                    break;
-                                case "Россия (RUS)":
-                                    textBoxConverted.Text = calculator.ConvertToRUS(originalValue).ToString();
-                                    break;
-                                case "Великобритания (UK)":
-                                    textBoxConverted.Text = calculator.ConvertToUK(originalValue).ToString();
-                                    break;
-                            }
-                            break;
-                    }
-                }
-                catch(Exception ex)
+                double originalValue = Convert.ToDouble(textBoxOriginal.Text);
+                double convertedValue = 0;
+                switch (comboBoxOriginal.Text)
                 {
-                MessageBox.Show($"{ex.Message}");
+                    case "Миллиметр (мм)":
+                        switch (comboBoxConverted.Text)
+                        {
+                            case "США (US)":
+                                textBoxConverted.Text = calculator.ConvertToUS(originalValue).ToString();
+                                break;
+                            case "Европа (EUR)":
+                                textBoxConverted.Text = calculator.ConvertToEUR(originalValue).ToString();
+                                break;
+                            case "Великобритания (UK)":
+                                textBoxConverted.Text = calculator.ConvertToUK(originalValue).ToString();
+                                break;
+                            case "Россия (RUS)":
+                                textBoxConverted.Text = calculator.ConvertToRUS(originalValue).ToString();
+                                break;
+                        }
+                        break;
+                    case "Сантиметр (см)":
+                        originalValue *= 10;
+                        switch (comboBoxConverted.Text)
+                        {
+                            case "США (US)":
+                                textBoxConverted.Text = calculator.ConvertToUS(originalValue).ToString();
+                                break;
+                            case "Европа (EUR)":
+                                textBoxConverted.Text = calculator.ConvertToEUR(originalValue).ToString();
+                                break;
+                            case "Россия (RUS)":
+                                textBoxConverted.Text = calculator.ConvertToRUS(originalValue).ToString();
+                                break;
+                            case "Великобритания (UK)":
+                                textBoxConverted.Text = calculator.ConvertToUK(originalValue).ToString();
+                                break;
+                        }
+                        break;
                 }
-        }
-
-        private void labelCalculator_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}");
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
+        private void textBoxOriginal_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            string text = tb.Text;
+            double number;
+            bool flag;
+            if (Double.TryParse(text, out number))
+                flag = true;
+            else
+                flag = false;
+            if (tb.Text == String.Empty || !flag)
+            {
+                tb.BackColor = Color.Tomato;
+                buttonConvert.Enabled = false;
+            }
+            else
+            {
+                tb.BackColor = Color.OldLace;
+                buttonConvert.Enabled = true;
+            }
+        }
 
         private void textBoxOriginal_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 button1_Click(sender, e);
             }
         }
 
+        private void buttonConvert_MouseHover(object sender, EventArgs e)
+        {
+            buttonConvert.BackColor = Color.LightGreen;
+        }
+
+        private void buttonConvert_MouseLeave(object sender, EventArgs e)
+        {
+            buttonConvert.BackColor = Color.White;
+        }
     }
 }
