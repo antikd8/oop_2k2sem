@@ -98,7 +98,7 @@
             this.buttonAddRoom = new System.Windows.Forms.Button();
             this.textBoxRoomInfo = new System.Windows.Forms.TextBox();
             this.numericUpDownRooms = new System.Windows.Forms.NumericUpDown();
-            this.buttonOutputInfo = new System.Windows.Forms.Button();
+            this.buttonOutputFlatInfo = new System.Windows.Forms.Button();
             this.textBoxFlatInfo = new System.Windows.Forms.TextBox();
             this.buttonClearInfo = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -106,6 +106,7 @@
             this.textBoxCost = new System.Windows.Forms.TextBox();
             this.buttonGetCost = new System.Windows.Forms.Button();
             this.labelBucks = new System.Windows.Forms.Label();
+            this.buttonOutputRoomInfo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarFootage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFloor)).BeginInit();
             this.groupBoxAddress.SuspendLayout();
@@ -306,7 +307,7 @@
             this.groupBoxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.groupBoxAddress.Location = new System.Drawing.Point(413, 36);
             this.groupBoxAddress.Name = "groupBoxAddress";
-            this.groupBoxAddress.Size = new System.Drawing.Size(478, 296);
+            this.groupBoxAddress.Size = new System.Drawing.Size(507, 296);
             this.groupBoxAddress.TabIndex = 17;
             this.groupBoxAddress.TabStop = false;
             this.groupBoxAddress.Text = "Адрес квартиры";
@@ -454,10 +455,11 @@
             this.buttonAddRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonAddRoom.Location = new System.Drawing.Point(413, 344);
             this.buttonAddRoom.Name = "buttonAddRoom";
-            this.buttonAddRoom.Size = new System.Drawing.Size(209, 85);
+            this.buttonAddRoom.Size = new System.Drawing.Size(241, 85);
             this.buttonAddRoom.TabIndex = 18;
             this.buttonAddRoom.Text = "Добавить информацию о комнате";
             this.buttonAddRoom.UseVisualStyleBackColor = false;
+            this.buttonAddRoom.Click += new System.EventHandler(this.buttonAddRoom_Click);
             this.buttonAddRoom.MouseEnter += new System.EventHandler(this.buttonGetCost_MouseEnter);
             this.buttonAddRoom.MouseLeave += new System.EventHandler(this.buttonGetCost_MouseLeave);
             // 
@@ -465,11 +467,11 @@
             // 
             this.textBoxRoomInfo.BackColor = System.Drawing.Color.LightYellow;
             this.textBoxRoomInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxRoomInfo.Location = new System.Drawing.Point(413, 443);
+            this.textBoxRoomInfo.Location = new System.Drawing.Point(413, 545);
             this.textBoxRoomInfo.Multiline = true;
             this.textBoxRoomInfo.Name = "textBoxRoomInfo";
             this.textBoxRoomInfo.ReadOnly = true;
-            this.textBoxRoomInfo.Size = new System.Drawing.Size(209, 273);
+            this.textBoxRoomInfo.Size = new System.Drawing.Size(241, 171);
             this.textBoxRoomInfo.TabIndex = 19;
             // 
             // numericUpDownRooms
@@ -496,29 +498,29 @@
             0,
             0});
             // 
-            // buttonOutputInfo
+            // buttonOutputFlatInfo
             // 
-            this.buttonOutputInfo.BackColor = System.Drawing.Color.LightGreen;
-            this.buttonOutputInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonOutputInfo.Location = new System.Drawing.Point(637, 346);
-            this.buttonOutputInfo.Name = "buttonOutputInfo";
-            this.buttonOutputInfo.Size = new System.Drawing.Size(254, 85);
-            this.buttonOutputInfo.TabIndex = 22;
-            this.buttonOutputInfo.Text = "Вывести информацию о квартире";
-            this.buttonOutputInfo.UseVisualStyleBackColor = false;
-            this.buttonOutputInfo.Click += new System.EventHandler(this.buttonOutputInfo_Click);
-            this.buttonOutputInfo.MouseEnter += new System.EventHandler(this.buttonGetCost_MouseEnter);
-            this.buttonOutputInfo.MouseLeave += new System.EventHandler(this.buttonGetCost_MouseLeave);
+            this.buttonOutputFlatInfo.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonOutputFlatInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonOutputFlatInfo.Location = new System.Drawing.Point(677, 344);
+            this.buttonOutputFlatInfo.Name = "buttonOutputFlatInfo";
+            this.buttonOutputFlatInfo.Size = new System.Drawing.Size(243, 85);
+            this.buttonOutputFlatInfo.TabIndex = 22;
+            this.buttonOutputFlatInfo.Text = "Вывести информацию о квартире";
+            this.buttonOutputFlatInfo.UseVisualStyleBackColor = false;
+            this.buttonOutputFlatInfo.Click += new System.EventHandler(this.buttonOutputInfo_Click);
+            this.buttonOutputFlatInfo.MouseEnter += new System.EventHandler(this.buttonGetCost_MouseEnter);
+            this.buttonOutputFlatInfo.MouseLeave += new System.EventHandler(this.buttonGetCost_MouseLeave);
             // 
             // textBoxFlatInfo
             // 
             this.textBoxFlatInfo.BackColor = System.Drawing.Color.LightYellow;
             this.textBoxFlatInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxFlatInfo.Location = new System.Drawing.Point(637, 442);
+            this.textBoxFlatInfo.Location = new System.Drawing.Point(677, 443);
             this.textBoxFlatInfo.Multiline = true;
             this.textBoxFlatInfo.Name = "textBoxFlatInfo";
             this.textBoxFlatInfo.ReadOnly = true;
-            this.textBoxFlatInfo.Size = new System.Drawing.Size(254, 274);
+            this.textBoxFlatInfo.Size = new System.Drawing.Size(243, 274);
             this.textBoxFlatInfo.TabIndex = 23;
             // 
             // buttonClearInfo
@@ -594,12 +596,25 @@
             this.labelBucks.TabIndex = 30;
             this.labelBucks.Text = "$";
             // 
+            // buttonOutputRoomInfo
+            // 
+            this.buttonOutputRoomInfo.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonOutputRoomInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonOutputRoomInfo.Location = new System.Drawing.Point(413, 443);
+            this.buttonOutputRoomInfo.Name = "buttonOutputRoomInfo";
+            this.buttonOutputRoomInfo.Size = new System.Drawing.Size(241, 85);
+            this.buttonOutputRoomInfo.TabIndex = 31;
+            this.buttonOutputRoomInfo.Text = "Вывести информацию о комнате";
+            this.buttonOutputRoomInfo.UseVisualStyleBackColor = false;
+            this.buttonOutputRoomInfo.Click += new System.EventHandler(this.buttonOutputRoomInfo_Click);
+            // 
             // FlatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1012, 903);
+            this.ClientSize = new System.Drawing.Size(1030, 950);
+            this.Controls.Add(this.buttonOutputRoomInfo);
             this.Controls.Add(this.labelBucks);
             this.Controls.Add(this.buttonGetCost);
             this.Controls.Add(this.textBoxCost);
@@ -607,7 +622,7 @@
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonClearInfo);
             this.Controls.Add(this.textBoxFlatInfo);
-            this.Controls.Add(this.buttonOutputInfo);
+            this.Controls.Add(this.buttonOutputFlatInfo);
             this.Controls.Add(this.numericUpDownRooms);
             this.Controls.Add(this.textBoxRoomInfo);
             this.Controls.Add(this.buttonAddRoom);
@@ -670,7 +685,7 @@
         private System.Windows.Forms.Button buttonAddRoom;
         private System.Windows.Forms.TextBox textBoxRoomInfo;
         private System.Windows.Forms.NumericUpDown numericUpDownRooms;
-        private System.Windows.Forms.Button buttonOutputInfo;
+        private System.Windows.Forms.Button buttonOutputFlatInfo;
         private System.Windows.Forms.TextBox textBoxFlatInfo;
         private System.Windows.Forms.Button buttonClearInfo;
         private System.Windows.Forms.Button buttonSave;
@@ -681,6 +696,7 @@
         private System.Windows.Forms.TextBox textBoxNumberHouse;
         private System.Windows.Forms.TextBox textBoxStreet;
         private System.Windows.Forms.Label labelBucks;
+        private System.Windows.Forms.Button buttonOutputRoomInfo;
     }
 }
 

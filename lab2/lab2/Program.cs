@@ -124,6 +124,18 @@ namespace lab2
         [XmlElement(ElementName = "Number_of_flat")]
         public string FlatNumber { get; set; } = "none";
     }
+    [Serializable]
+    public class Room
+    {
+        [XmlElement(ElementName ="Name_of_room")]
+        public string Name { get; set; }
+        [XmlElement(ElementName ="Footage_of_room")]
+        public double Footage { get; set; }
+        [XmlElement(ElementName ="Amount_of_windows")]
+        public int AmountWindows { get; set; }
+        [XmlElement(ElementName ="Side_of_windows")]
+        public string SideWindows { get; set; }
+    }
 
     public static class XmlSerializeWrapper
     {
@@ -135,5 +147,17 @@ namespace lab2
                 formatter.Serialize(fs, obj);
             }
         }
+        public static T Deserialize<T>(string filename)
+        {
+            T obj;
+            using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate))
+            {
+                XmlSerializer formatter = new XmlSerializer(typeof(T));
+                obj = (T)formatter.Deserialize(fs);
+            }
+            return obj;
+        }
     }
+
+
 }

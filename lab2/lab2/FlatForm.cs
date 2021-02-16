@@ -126,7 +126,7 @@ namespace lab2
         private void textBoxDistrict_KeyPress(object sender, KeyPressEventArgs e)
         {
             string Symbol = e.KeyChar.ToString();
-            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success && e.KeyChar != 8)
+            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success && e.KeyChar != 8 && e.KeyChar != 32)
             {
                 e.Handled = true;
             }
@@ -135,7 +135,7 @@ namespace lab2
         private void textBoxStreet_KeyPress(object sender, KeyPressEventArgs e)
         {
             string Symbol = e.KeyChar.ToString();
-            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success && e.KeyChar != 8)
+            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success && e.KeyChar != 8 && e.KeyChar != 32)
             {
                 e.Handled = true;
             }
@@ -211,6 +211,10 @@ namespace lab2
             {
                 MessageBox.Show($"{ex.Message}");
             }
+            finally
+            {
+                MessageBox.Show($"Данные успешно записаны в файл \"flat.xml\"");
+            }
         }
 
         private void buttonGetCost_MouseEnter(object sender, EventArgs e)
@@ -228,6 +232,30 @@ namespace lab2
         private void trackBarFootage_Scroll(object sender, EventArgs e)
         {
             labelFootage.Text = $"Метраж: {trackBarFootage.Value}  М^2";
+        }
+
+        private void buttonAddRoom_Click(object sender, EventArgs e)
+        {
+            RoomForm roomForm = new RoomForm();
+            roomForm.Show();
+        }
+
+        private void buttonOutputRoomInfo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var deserializeRoom = XmlSerializeWrapper.Deserialize<Room>("room.xml");
+                StringBuilder roomInfo = new StringBuilder();
+                roomInfo.AppendLine($"Название комнаты: {deserializeRoom.Name}");
+                roomInfo.AppendLine($"Метраж комнаты: {deserializeRoom.Footage}");
+                roomInfo.AppendLine($"Количество окон: {deserializeRoom.AmountWindows}");
+                roomInfo.AppendLine($"Сторона окон: {deserializeRoom.SideWindows}");
+                textBoxRoomInfo.Text = roomInfo.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}");
+            }
         }
     }
 }

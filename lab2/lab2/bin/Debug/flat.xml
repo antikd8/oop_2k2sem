@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <flat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="lab2">
-  <footage>104</footage>
-  <Year_of_foundation>2015</Year_of_foundation>
-  <Material_of_building>Бетонные плиты</Material_of_building>
-  <Floor>15</Floor>
-  <Cost_of_flat>123107.5</Cost_of_flat>
+  <footage>99</footage>
+  <Year_of_foundation>2021</Year_of_foundation>
+  <Material_of_building>Блоки</Material_of_building>
+  <Floor>3</Floor>
+  <Cost_of_flat>114610.5</Cost_of_flat>
   <address>
-    <Country>Минск</Country>
-    <District>Первомайский</District>
-    <Street>ААА</Street>
-    <Number_of_house>24</Number_of_house>
-    <Number_of_flat>2</Number_of_flat>
+    <Country>Колорадо</Country>
+    <District>Ленинский</District>
+    <Street>Бобруйская</Street>
+    <Number_of_house>345</Number_of_house>
+    <Number_of_flat>354</Number_of_flat>
   </address>
 </flat>
