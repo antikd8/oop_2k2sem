@@ -607,6 +607,8 @@
             this.buttonOutputRoomInfo.Text = "Вывести информацию о комнате";
             this.buttonOutputRoomInfo.UseVisualStyleBackColor = false;
             this.buttonOutputRoomInfo.Click += new System.EventHandler(this.buttonOutputRoomInfo_Click);
+            this.buttonOutputRoomInfo.MouseEnter += new System.EventHandler(this.buttonGetCost_MouseEnter);
+            this.buttonOutputRoomInfo.MouseLeave += new System.EventHandler(this.buttonGetCost_MouseLeave);
             // 
             // FlatForm
             // 

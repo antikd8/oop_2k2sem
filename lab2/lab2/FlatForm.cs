@@ -64,6 +64,10 @@ namespace lab2
             textBoxCost.Text = string.Empty;
             textBoxFlatInfo.Text = string.Empty;
             treeViewCountry.SelectedNode = null;
+            textBoxStreet.ReadOnly = false;
+            textBoxDistrict.ReadOnly = false;
+            textBoxNumberFlat.ReadOnly = false;
+            textBoxNumberHouse.ReadOnly = false;
             treeViewCountry.CollapseAll();
         }
 
@@ -130,6 +134,8 @@ namespace lab2
             {
                 e.Handled = true;
             }
+            if (textBoxDistrict.TextLength > 30)
+                textBoxDistrict.ReadOnly = true;    
         }
 
         private void textBoxStreet_KeyPress(object sender, KeyPressEventArgs e)
@@ -139,6 +145,8 @@ namespace lab2
             {
                 e.Handled = true;
             }
+            if (textBoxStreet.TextLength > 30)
+                textBoxStreet.ReadOnly = true;
         }
 
         private void textBoxNumberHouse_KeyPress(object sender, KeyPressEventArgs e)
@@ -148,6 +156,8 @@ namespace lab2
             {
                 e.Handled = true;
             }
+            if (textBoxNumberHouse.Text.Length > 4)
+                textBoxNumberHouse.ReadOnly = true;
         }
 
         private void textBoxNumberFlat_KeyPress(object sender, KeyPressEventArgs e)
@@ -157,6 +167,8 @@ namespace lab2
             {
                 e.Handled = true;
             }
+            if (textBoxNumberFlat.Text.Length > 4)
+                textBoxNumberFlat.ReadOnly = true;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

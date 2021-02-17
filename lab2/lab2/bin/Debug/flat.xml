@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <flat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="lab2">
-  <footage>99</footage>
-  <Year_of_foundation>2021</Year_of_foundation>
+  <footage>134</footage>
+  <Year_of_foundation>2002</Year_of_foundation>
   <Material_of_building>Блоки</Material_of_building>
   <Floor>3</Floor>
-  <Cost_of_flat>114610.5</Cost_of_flat>
+  <Cost_of_flat>153101</Cost_of_flat>
   <address>
-    <Country>Колорадо</Country>
+    <Country>Украина</Country>
     <District>Ленинский</District>
-    <Street>Бобруйская</Street>
-    <Number_of_house>345</Number_of_house>
-    <Number_of_flat>354</Number_of_flat>
+    <Street>Петрова</Street>
+    <Number_of_house>666</Number_of_house>
+    <Number_of_flat>666</Number_of_flat>
   </address>
+</flat>
 </flat>
