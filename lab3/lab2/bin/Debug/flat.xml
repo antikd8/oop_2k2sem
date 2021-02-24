@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<flat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="lab2">
+  <footage>154</footage>
+  <Year_of_foundation>2043</Year_of_foundation>
+  <Material_of_building>Блоки</Material_of_building>
+  <Floor>3</Floor>
+  <Cost_of_flat>174371.5</Cost_of_flat>
+  <address>
+    <Country>Техас</Country>
+    <District>ауе</District>
+    <Street>петрова</Street>
+    <Number_of_house>5</Number_of_house>
+    <Number_of_flat>56</Number_of_flat>
+  </address>
+</flat>address>
+</flat>
+</flat>

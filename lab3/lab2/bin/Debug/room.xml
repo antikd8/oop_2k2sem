@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Room xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name_of_room>комната</Name_of_room>
+  <Footage_of_room>7</Footage_of_room>
+  <Amount_of_windows>2</Amount_of_windows>
+  <Side_of_windows>Юг</Side_of_windows>
+</Room>
