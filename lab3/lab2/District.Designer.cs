@@ -29,6 +29,7 @@ namespace lab2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(District));
             this.labelDistrict = new System.Windows.Forms.Label();
             this.textBoxAddDistrict = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -76,8 +77,9 @@ namespace lab2
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxAddDistrict);
             this.Controls.Add(this.labelDistrict);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "District";
-            this.Text = "District";
+            this.Text = "Добавление района";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -19,6 +19,7 @@ namespace lab2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FlatForm());
+
         }
     }
 
@@ -27,15 +28,23 @@ namespace lab2
         double CountCost();
     }
 
+    public enum SearchType
+    {
+        searchYear = 0,
+        searchDistrict,
+        searchRooms
+    }
+
     [Serializable]
     [XmlRoot(Namespace = "lab2")]
     [XmlType("flat")]
     public class Flat : IOperations
     {
-        public Flat(double footage, int year, string material,int floor, bool kitchen,
+        public Flat(double footage, int amounOfRooms, int year, string material, int floor, bool kitchen,
             bool balcony, bool basement, bool livingRoom, bool bathroom, Address address)
         {
             Footage = footage;
+            AmountOfRooms = amounOfRooms;
             Year = year;
             Material = material;
             Floor = floor;
@@ -50,25 +59,25 @@ namespace lab2
         public Flat() { }
         [XmlElement(ElementName = "footage")]
         public double Footage { get; set; }
-        [XmlIgnore]
+        [XmlElement(ElementName = "amount_of_rooms")]
         public int AmountOfRooms { get; set; }
-        [XmlIgnore]
+        [XmlElement(ElementName = "kitchen")]
         public bool Kitchen { get; set; }
-        [XmlIgnore]
+        [XmlElement(ElementName = "living_room")]
         public bool LivingRoom { get; set; }
-        [XmlIgnore]
+        [XmlElement(ElementName = "bathroom")]
         public bool Bathroom { get; set; }
-        [XmlIgnore]
+        [XmlElement(ElementName = "balcony")]
         public bool Balcony { get; set; }
-        [XmlIgnore]
+        [XmlElement(ElementName = "basement")]
         public bool Basement { get; set; }
         [XmlElement(ElementName = "Year_of_foundation")]
         public int Year { get; set; }
         [XmlElement(ElementName = "Material_of_building")]
         public string Material { get; set; } = "none";
-        [XmlElement(ElementName ="Floor")]
+        [XmlElement(ElementName = "Floor")]
         public int Floor { get; set; }
-        [XmlElement(ElementName ="Cost_of_flat")]
+        [XmlElement(ElementName = "Cost_of_flat")]
         public double Cost { get; set; }
         public Address address { get; set; }
 
@@ -102,6 +111,28 @@ namespace lab2
             resultCost += Year * 0.5;
             return resultCost;
         }
+        public TreeNode TakeElementTree()
+        {
+            TreeNode name = new TreeNode("Квартира");
+            name.Nodes.Add("Метраж: " + Footage);
+            name.Nodes.Add("Этаж: " + Floor);
+            name.Nodes.Add("Кол-во комнат: " + AmountOfRooms);
+            name.Nodes.Add("Год: " + Year);
+            name.Nodes.Add("Адрес: ")
+                .Nodes.Add("Район:" + address.District)
+                .Nodes.Add("Улица:" + address.Street);
+        /*   name.Nodes.Add("Вид контроля: " + ((pass == PassType.Exam) ? "экзамен" : "зачёт"));
+            TreeNode Lector = new TreeNode("Лектор");
+            TreeNode books = new TreeNode("Список литературы");
+            Lector.Nodes.Add("Ф.И.О.: " + lector.snp);
+            Lector.Nodes.Add("Кафедра: " + lector.pulpit);
+            Lector.Nodes.Add("Аудитория: " + lector.WorkPlace);
+            name.Nodes.Add(Lector);
+            foreach (Book x in bookList)
+                books.Nodes.Add(x.ToString());
+            name.Nodes.Add(books); */
+            return name;
+        }
     }
     [Serializable]
     public class Address
@@ -124,18 +155,6 @@ namespace lab2
         [XmlElement(ElementName = "Number_of_flat")]
         public string FlatNumber { get; set; } = "none";
     }
-    [Serializable]
-    public class Room
-    {
-        [XmlElement(ElementName ="Name_of_room")]
-        public string Name { get; set; }
-        [XmlElement(ElementName ="Footage_of_room")]
-        public double Footage { get; set; }
-        [XmlElement(ElementName ="Amount_of_windows")]
-        public int AmountWindows { get; set; }
-        [XmlElement(ElementName ="Side_of_windows")]
-        public string SideWindows { get; set; }
-    }
 
     public static class XmlSerializeWrapper
     {
@@ -150,14 +169,13 @@ namespace lab2
         public static T Deserialize<T>(string filename)
         {
             T obj;
-            using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read))
             {
-                XmlSerializer formatter = new XmlSerializer(typeof(T));
-                obj = (T)formatter.Deserialize(fs);
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                obj = (T)serializer.Deserialize(fs);
             }
             return obj;
         }
     }
-
 
 }
