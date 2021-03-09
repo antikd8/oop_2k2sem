@@ -13,7 +13,11 @@ namespace lab2
             {
                 return true;
             }
-            else return false;
+            else
+            {
+                ErrorMessage = "Неверно введён индекс!";
+                return false;
+            }
         }
     }
 }

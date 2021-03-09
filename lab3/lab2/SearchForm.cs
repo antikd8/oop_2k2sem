@@ -34,12 +34,12 @@ namespace lab2
         private void comboBoxDistrict_TextChanged(object sender, EventArgs e)
         {
             treeViewResult.Nodes.Clear();
-            string distrcit = comboBoxDistrict.Text;
-            var selectedFlats = from Item in flats
-                                where Item.address.District.ToString() == distrcit
+            string district = comboBoxDistrict.Text;
+            ogForm.searchedDistrict = from Item in flats
+                                where Item.address.District.ToString() == district
                                 select Item;
-            if (selectedFlats.Count() > 0)
-                foreach (var item in selectedFlats)
+            if (ogForm.searchedDistrict.Count() > 0)
+                foreach (var item in ogForm.searchedDistrict)
                 {
                     treeViewResult.Nodes.Add(item.TakeElementTree());
                     printInfoToOriginal(item);
@@ -52,11 +52,11 @@ namespace lab2
         {
             treeViewResult.Nodes.Clear();
             string year = dateTimePickerYear.Value.Year.ToString();
-            var selectedFlats = from Item in flats
+            ogForm.searchedYear = from Item in flats
                                 where Item.Year.ToString() == year
                                 select Item;
-            if (selectedFlats.Count() > 0)
-                foreach (var item in selectedFlats)
+            if (ogForm.searchedYear.Count() > 0)
+                foreach (var item in ogForm.searchedYear)
                 {
                     treeViewResult.Nodes.Add(item.TakeElementTree());
                     printInfoToOriginal(item);
@@ -89,7 +89,7 @@ namespace lab2
             outputLine.AppendLine("Адрес:" + item.address.Country + "\n" + item.address.District + "," + item.address.Street + "\n д." +
                 item.address.HouseNumber + ", кв." + item.address.FlatNumber + ";");
             outputLine.AppendLine($"Цена квартиры: {item.Cost}");
-            outputLine.AppendLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+            outputLine.AppendLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
             ogForm.textBoxSearched.Text += outputLine.ToString();
             MessageBox.Show($"Результат поиска добавлен на \nглавную форму под номером {ogForm.countModifiedFlats}");
         }
@@ -108,11 +108,11 @@ namespace lab2
         {
             treeViewResult.Nodes.Clear();
             string amountRooms = textBoxSearchRooms.Text;
-            var selectedFlats = from Item in flats
+            ogForm.searchedRooms = from Item in flats
                                 where Item.AmountOfRooms.ToString() == amountRooms
                                 select Item;
-            if (selectedFlats.Count() > 0)
-                foreach (var item in selectedFlats)
+            if (ogForm.searchedRooms.Count() > 0)
+                foreach (var item in ogForm.searchedRooms)
                 {
                     treeViewResult.Nodes.Add(item.TakeElementTree());
                     printInfoToOriginal(item);

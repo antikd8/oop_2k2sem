@@ -115,23 +115,48 @@
             this.toolStripMenuItemSortYear = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSortFootage = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSortPrice = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSaveResult = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSortResult = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSearchResult = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSave = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxSearched = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxSorted = new System.Windows.Forms.TextBox();
+            this.buttonSearchSave = new System.Windows.Forms.Button();
+            this.buttonSortSave = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonAbout = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButtonSearch = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripDropDownButtonSort = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItemYear = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemFootage = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemPrice = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButtonSave = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItemSortRes = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSearchRes = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemYearSear = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDistrictSear = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemRoomsSear = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButtonClearInfo = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripMenuItemHideTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelDate = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelTime = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarFootage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFloor)).BeginInit();
             this.groupBoxAddress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRooms)).BeginInit();
             this.menuStripMain.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label1.Location = new System.Drawing.Point(26, 38);
+            this.label1.Location = new System.Drawing.Point(26, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(325, 31);
             this.label1.TabIndex = 0;
@@ -141,7 +166,7 @@
             // 
             this.labelFootage.AutoSize = true;
             this.labelFootage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelFootage.Location = new System.Drawing.Point(78, 89);
+            this.labelFootage.Location = new System.Drawing.Point(78, 116);
             this.labelFootage.Name = "labelFootage";
             this.labelFootage.Size = new System.Drawing.Size(169, 25);
             this.labelFootage.TabIndex = 1;
@@ -151,7 +176,7 @@
             // 
             this.labelRooms.AutoSize = true;
             this.labelRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelRooms.Location = new System.Drawing.Point(78, 184);
+            this.labelRooms.Location = new System.Drawing.Point(78, 211);
             this.labelRooms.Name = "labelRooms";
             this.labelRooms.Size = new System.Drawing.Size(199, 25);
             this.labelRooms.TabIndex = 3;
@@ -161,7 +186,7 @@
             // 
             this.checkBoxKitchen.AutoSize = true;
             this.checkBoxKitchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBoxKitchen.Location = new System.Drawing.Point(84, 264);
+            this.checkBoxKitchen.Location = new System.Drawing.Point(84, 291);
             this.checkBoxKitchen.Name = "checkBoxKitchen";
             this.checkBoxKitchen.Size = new System.Drawing.Size(87, 29);
             this.checkBoxKitchen.TabIndex = 5;
@@ -172,7 +197,7 @@
             // 
             this.checkBoxLivingRoom.AutoSize = true;
             this.checkBoxLivingRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBoxLivingRoom.Location = new System.Drawing.Point(84, 298);
+            this.checkBoxLivingRoom.Location = new System.Drawing.Point(84, 325);
             this.checkBoxLivingRoom.Name = "checkBoxLivingRoom";
             this.checkBoxLivingRoom.Size = new System.Drawing.Size(122, 29);
             this.checkBoxLivingRoom.TabIndex = 6;
@@ -183,7 +208,7 @@
             // 
             this.checkBoxBathroom.AutoSize = true;
             this.checkBoxBathroom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBoxBathroom.Location = new System.Drawing.Point(84, 332);
+            this.checkBoxBathroom.Location = new System.Drawing.Point(84, 359);
             this.checkBoxBathroom.Name = "checkBoxBathroom";
             this.checkBoxBathroom.Size = new System.Drawing.Size(185, 29);
             this.checkBoxBathroom.TabIndex = 7;
@@ -194,7 +219,7 @@
             // 
             this.checkBoxBalcony.AutoSize = true;
             this.checkBoxBalcony.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBoxBalcony.Location = new System.Drawing.Point(84, 368);
+            this.checkBoxBalcony.Location = new System.Drawing.Point(84, 395);
             this.checkBoxBalcony.Name = "checkBoxBalcony";
             this.checkBoxBalcony.Size = new System.Drawing.Size(100, 29);
             this.checkBoxBalcony.TabIndex = 8;
@@ -205,7 +230,7 @@
             // 
             this.checkBoxBasement.AutoSize = true;
             this.checkBoxBasement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBoxBasement.Location = new System.Drawing.Point(84, 404);
+            this.checkBoxBasement.Location = new System.Drawing.Point(84, 431);
             this.checkBoxBasement.Name = "checkBoxBasement";
             this.checkBoxBasement.Size = new System.Drawing.Size(103, 29);
             this.checkBoxBasement.TabIndex = 9;
@@ -216,7 +241,7 @@
             // 
             this.trackBarFootage.AllowDrop = true;
             this.trackBarFootage.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.trackBarFootage.Location = new System.Drawing.Point(69, 116);
+            this.trackBarFootage.Location = new System.Drawing.Point(69, 143);
             this.trackBarFootage.Maximum = 300;
             this.trackBarFootage.Minimum = 1;
             this.trackBarFootage.Name = "trackBarFootage";
@@ -230,7 +255,7 @@
             // 
             this.labelYear.AutoSize = true;
             this.labelYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelYear.Location = new System.Drawing.Point(77, 455);
+            this.labelYear.Location = new System.Drawing.Point(77, 482);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(150, 25);
             this.labelYear.TabIndex = 11;
@@ -242,7 +267,7 @@
             this.dateTimePickerYear.CustomFormat = "yyyy";
             this.dateTimePickerYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dateTimePickerYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerYear.Location = new System.Drawing.Point(84, 491);
+            this.dateTimePickerYear.Location = new System.Drawing.Point(84, 518);
             this.dateTimePickerYear.Name = "dateTimePickerYear";
             this.dateTimePickerYear.Size = new System.Drawing.Size(75, 26);
             this.dateTimePickerYear.TabIndex = 12;
@@ -251,7 +276,7 @@
             // 
             this.labelMaterial.AutoSize = true;
             this.labelMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelMaterial.Location = new System.Drawing.Point(79, 541);
+            this.labelMaterial.Location = new System.Drawing.Point(79, 568);
             this.labelMaterial.Name = "labelMaterial";
             this.labelMaterial.Size = new System.Drawing.Size(155, 25);
             this.labelMaterial.TabIndex = 13;
@@ -268,7 +293,7 @@
             "Дерево",
             "Блоки",
             "Бетонные плиты"});
-            this.comboBoxMaterial.Location = new System.Drawing.Point(84, 572);
+            this.comboBoxMaterial.Location = new System.Drawing.Point(84, 599);
             this.comboBoxMaterial.Name = "comboBoxMaterial";
             this.comboBoxMaterial.Size = new System.Drawing.Size(157, 28);
             this.comboBoxMaterial.TabIndex = 14;
@@ -277,7 +302,7 @@
             // 
             this.labelFloor.AutoSize = true;
             this.labelFloor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelFloor.Location = new System.Drawing.Point(77, 617);
+            this.labelFloor.Location = new System.Drawing.Point(83, 633);
             this.labelFloor.Name = "labelFloor";
             this.labelFloor.Size = new System.Drawing.Size(65, 25);
             this.labelFloor.TabIndex = 15;
@@ -287,7 +312,7 @@
             // 
             this.numericUpDownFloor.BackColor = System.Drawing.Color.LightYellow;
             this.numericUpDownFloor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.numericUpDownFloor.Location = new System.Drawing.Point(84, 645);
+            this.numericUpDownFloor.Location = new System.Drawing.Point(90, 661);
             this.numericUpDownFloor.Maximum = new decimal(new int[] {
             30,
             0,
@@ -321,7 +346,7 @@
             this.groupBoxAddress.Controls.Add(this.labelDistrict);
             this.groupBoxAddress.Controls.Add(this.treeViewCountry);
             this.groupBoxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.groupBoxAddress.Location = new System.Drawing.Point(377, 48);
+            this.groupBoxAddress.Location = new System.Drawing.Point(377, 75);
             this.groupBoxAddress.Name = "groupBoxAddress";
             this.groupBoxAddress.Size = new System.Drawing.Size(623, 296);
             this.groupBoxAddress.TabIndex = 17;
@@ -503,7 +528,7 @@
             // 
             this.numericUpDownRooms.BackColor = System.Drawing.Color.LightYellow;
             this.numericUpDownRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.numericUpDownRooms.Location = new System.Drawing.Point(82, 220);
+            this.numericUpDownRooms.Location = new System.Drawing.Point(82, 247);
             this.numericUpDownRooms.Maximum = new decimal(new int[] {
             10,
             0,
@@ -527,7 +552,7 @@
             // 
             this.buttonOutputFlatInfo.BackColor = System.Drawing.Color.LightGreen;
             this.buttonOutputFlatInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonOutputFlatInfo.Location = new System.Drawing.Point(377, 359);
+            this.buttonOutputFlatInfo.Location = new System.Drawing.Point(377, 386);
             this.buttonOutputFlatInfo.Name = "buttonOutputFlatInfo";
             this.buttonOutputFlatInfo.Size = new System.Drawing.Size(269, 85);
             this.buttonOutputFlatInfo.TabIndex = 22;
@@ -541,7 +566,7 @@
             // 
             this.textBoxFlatInfo.BackColor = System.Drawing.Color.LightYellow;
             this.textBoxFlatInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxFlatInfo.Location = new System.Drawing.Point(377, 456);
+            this.textBoxFlatInfo.Location = new System.Drawing.Point(377, 483);
             this.textBoxFlatInfo.Multiline = true;
             this.textBoxFlatInfo.Name = "textBoxFlatInfo";
             this.textBoxFlatInfo.ReadOnly = true;
@@ -552,10 +577,10 @@
             // buttonClearInfo
             // 
             this.buttonClearInfo.BackColor = System.Drawing.Color.LightGreen;
-            this.buttonClearInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonClearInfo.Location = new System.Drawing.Point(234, 783);
+            this.buttonClearInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonClearInfo.Location = new System.Drawing.Point(88, 774);
             this.buttonClearInfo.Name = "buttonClearInfo";
-            this.buttonClearInfo.Size = new System.Drawing.Size(163, 58);
+            this.buttonClearInfo.Size = new System.Drawing.Size(144, 57);
             this.buttonClearInfo.TabIndex = 24;
             this.buttonClearInfo.Text = "ОЧИСТИТЬ";
             this.buttonClearInfo.UseVisualStyleBackColor = false;
@@ -566,12 +591,12 @@
             // buttonSave
             // 
             this.buttonSave.BackColor = System.Drawing.Color.LightGreen;
-            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonSave.Location = new System.Drawing.Point(654, 783);
+            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonSave.Location = new System.Drawing.Point(454, 774);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(169, 58);
+            this.buttonSave.Size = new System.Drawing.Size(198, 55);
             this.buttonSave.TabIndex = 26;
-            this.buttonSave.Text = "СОХРАНИТЬ";
+            this.buttonSave.Text = "СОХРАНИТЬ\r\n данные о квартире\r\n";
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             this.buttonSave.MouseEnter += new System.EventHandler(this.buttonAutoFill_MouseEnter);
@@ -581,7 +606,7 @@
             // 
             this.labelCostFlat.AutoSize = true;
             this.labelCostFlat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelCostFlat.Location = new System.Drawing.Point(79, 691);
+            this.labelCostFlat.Location = new System.Drawing.Point(85, 707);
             this.labelCostFlat.Name = "labelCostFlat";
             this.labelCostFlat.Size = new System.Drawing.Size(213, 25);
             this.labelCostFlat.TabIndex = 27;
@@ -591,7 +616,7 @@
             // 
             this.textBoxCost.BackColor = System.Drawing.Color.LightYellow;
             this.textBoxCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxCost.Location = new System.Drawing.Point(82, 719);
+            this.textBoxCost.Location = new System.Drawing.Point(88, 735);
             this.textBoxCost.Name = "textBoxCost";
             this.textBoxCost.ReadOnly = true;
             this.textBoxCost.Size = new System.Drawing.Size(100, 26);
@@ -600,10 +625,10 @@
             // buttonAutoFill
             // 
             this.buttonAutoFill.BackColor = System.Drawing.Color.LightGreen;
-            this.buttonAutoFill.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.buttonAutoFill.Location = new System.Drawing.Point(413, 783);
+            this.buttonAutoFill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAutoFill.Location = new System.Drawing.Point(238, 774);
             this.buttonAutoFill.Name = "buttonAutoFill";
-            this.buttonAutoFill.Size = new System.Drawing.Size(217, 58);
+            this.buttonAutoFill.Size = new System.Drawing.Size(210, 57);
             this.buttonAutoFill.TabIndex = 29;
             this.buttonAutoFill.Text = "АВТОЗАПОЛНЕНИЕ";
             this.buttonAutoFill.UseVisualStyleBackColor = false;
@@ -616,7 +641,7 @@
             this.labelBucks.AutoSize = true;
             this.labelBucks.BackColor = System.Drawing.Color.Transparent;
             this.labelBucks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelBucks.Location = new System.Drawing.Point(188, 720);
+            this.labelBucks.Location = new System.Drawing.Point(194, 736);
             this.labelBucks.Name = "labelBucks";
             this.labelBucks.Size = new System.Drawing.Size(23, 25);
             this.labelBucks.TabIndex = 30;
@@ -628,10 +653,12 @@
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemSearch,
             this.toolStripMenuItemSort,
-            this.toolStripMenuItemSave});
+            this.ToolStripMenuItemSaveResult,
+            this.toolStripMenuItemSave,
+            this.ToolStripMenuItemHideTool});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(1361, 28);
+            this.menuStripMain.Size = new System.Drawing.Size(1361, 30);
             this.menuStripMain.TabIndex = 32;
             // 
             // toolStripMenuItemSearch
@@ -641,27 +668,27 @@
             this.toolStripMenuItemSearchDistrict,
             this.toolStripMenuItemSearchAmountRooms});
             this.toolStripMenuItemSearch.Name = "toolStripMenuItemSearch";
-            this.toolStripMenuItemSearch.Size = new System.Drawing.Size(66, 24);
+            this.toolStripMenuItemSearch.Size = new System.Drawing.Size(66, 26);
             this.toolStripMenuItemSearch.Text = "Поиск";
             // 
             // toolStripMenuItemSearchYear
             // 
             this.toolStripMenuItemSearchYear.Name = "toolStripMenuItemSearchYear";
-            this.toolStripMenuItemSearchYear.Size = new System.Drawing.Size(215, 26);
+            this.toolStripMenuItemSearchYear.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItemSearchYear.Text = "По году";
             this.toolStripMenuItemSearchYear.Click += new System.EventHandler(this.toolStripMenuItemSearchYear_Click);
             // 
             // toolStripMenuItemSearchDistrict
             // 
             this.toolStripMenuItemSearchDistrict.Name = "toolStripMenuItemSearchDistrict";
-            this.toolStripMenuItemSearchDistrict.Size = new System.Drawing.Size(215, 26);
+            this.toolStripMenuItemSearchDistrict.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItemSearchDistrict.Text = "По району";
             this.toolStripMenuItemSearchDistrict.Click += new System.EventHandler(this.toolStripMenuItemSearchDistrict_Click);
             // 
             // toolStripMenuItemSearchAmountRooms
             // 
             this.toolStripMenuItemSearchAmountRooms.Name = "toolStripMenuItemSearchAmountRooms";
-            this.toolStripMenuItemSearchAmountRooms.Size = new System.Drawing.Size(215, 26);
+            this.toolStripMenuItemSearchAmountRooms.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItemSearchAmountRooms.Text = "По кол-ву комнат";
             this.toolStripMenuItemSearchAmountRooms.Click += new System.EventHandler(this.toolStripMenuItemSearchAmountRooms_Click);
             // 
@@ -672,7 +699,7 @@
             this.toolStripMenuItemSortFootage,
             this.toolStripMenuItemSortPrice});
             this.toolStripMenuItemSort.Name = "toolStripMenuItemSort";
-            this.toolStripMenuItemSort.Size = new System.Drawing.Size(138, 24);
+            this.toolStripMenuItemSort.Size = new System.Drawing.Size(138, 26);
             this.toolStripMenuItemSort.Text = "Сортировать по:";
             // 
             // toolStripMenuItemSortYear
@@ -696,10 +723,33 @@
             this.toolStripMenuItemSortPrice.Text = "Цене";
             this.toolStripMenuItemSortPrice.Click += new System.EventHandler(this.toolStripMenuItemSortPrice_Click);
             // 
+            // ToolStripMenuItemSaveResult
+            // 
+            this.ToolStripMenuItemSaveResult.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemSortResult,
+            this.ToolStripMenuItemSearchResult});
+            this.ToolStripMenuItemSaveResult.Name = "ToolStripMenuItemSaveResult";
+            this.ToolStripMenuItemSaveResult.Size = new System.Drawing.Size(168, 26);
+            this.ToolStripMenuItemSaveResult.Text = "Сохранить результат";
+            // 
+            // ToolStripMenuItemSortResult
+            // 
+            this.ToolStripMenuItemSortResult.Name = "ToolStripMenuItemSortResult";
+            this.ToolStripMenuItemSortResult.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemSortResult.Text = "Сортировки";
+            this.ToolStripMenuItemSortResult.Click += new System.EventHandler(this.ToolStripMenuItemSortResult_Click);
+            // 
+            // ToolStripMenuItemSearchResult
+            // 
+            this.ToolStripMenuItemSearchResult.Name = "ToolStripMenuItemSearchResult";
+            this.ToolStripMenuItemSearchResult.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemSearchResult.Text = "Поиска";
+            this.ToolStripMenuItemSearchResult.Click += new System.EventHandler(this.ToolStripMenuItemSearchResult_Click);
+            // 
             // toolStripMenuItemSave
             // 
             this.toolStripMenuItemSave.Name = "toolStripMenuItemSave";
-            this.toolStripMenuItemSave.Size = new System.Drawing.Size(118, 24);
+            this.toolStripMenuItemSave.Size = new System.Drawing.Size(118, 26);
             this.toolStripMenuItemSave.Text = "О программе";
             this.toolStripMenuItemSave.Click += new System.EventHandler(this.toolStripMenuItemSave_Click);
             // 
@@ -707,7 +757,7 @@
             // 
             this.textBoxSearched.BackColor = System.Drawing.Color.LightYellow;
             this.textBoxSearched.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxSearched.Location = new System.Drawing.Point(689, 456);
+            this.textBoxSearched.Location = new System.Drawing.Point(689, 483);
             this.textBoxSearched.Multiline = true;
             this.textBoxSearched.Name = "textBoxSearched";
             this.textBoxSearched.ReadOnly = true;
@@ -719,7 +769,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(695, 387);
+            this.label2.Location = new System.Drawing.Point(695, 414);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(305, 25);
             this.label2.TabIndex = 35;
@@ -729,7 +779,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(1033, 61);
+            this.label3.Location = new System.Drawing.Point(1033, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(230, 25);
             this.label3.TabIndex = 36;
@@ -739,7 +789,7 @@
             // 
             this.textBoxSorted.BackColor = System.Drawing.Color.LightYellow;
             this.textBoxSorted.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxSorted.Location = new System.Drawing.Point(1038, 95);
+            this.textBoxSorted.Location = new System.Drawing.Point(1038, 122);
             this.textBoxSorted.Multiline = true;
             this.textBoxSorted.Name = "textBoxSorted";
             this.textBoxSorted.ReadOnly = true;
@@ -747,12 +797,202 @@
             this.textBoxSorted.Size = new System.Drawing.Size(243, 635);
             this.textBoxSorted.TabIndex = 37;
             // 
+            // buttonSearchSave
+            // 
+            this.buttonSearchSave.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonSearchSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonSearchSave.Location = new System.Drawing.Point(689, 756);
+            this.buttonSearchSave.Name = "buttonSearchSave";
+            this.buttonSearchSave.Size = new System.Drawing.Size(311, 75);
+            this.buttonSearchSave.TabIndex = 38;
+            this.buttonSearchSave.Text = "СОХРАНИТЬ\r\n результат поиска";
+            this.buttonSearchSave.UseVisualStyleBackColor = false;
+            this.buttonSearchSave.Click += new System.EventHandler(this.buttonSearchSave_Click);
+            // 
+            // buttonSortSave
+            // 
+            this.buttonSortSave.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonSortSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonSortSave.Location = new System.Drawing.Point(1038, 754);
+            this.buttonSortSave.Name = "buttonSortSave";
+            this.buttonSortSave.Size = new System.Drawing.Size(243, 75);
+            this.buttonSortSave.TabIndex = 39;
+            this.buttonSortSave.Text = "СОХРАНИТЬ\r\n результат поиска";
+            this.buttonSortSave.UseVisualStyleBackColor = false;
+            this.buttonSortSave.Click += new System.EventHandler(this.buttonSortSave_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButtonSearch,
+            this.toolStripDropDownButtonSort,
+            this.toolStripDropDownButtonSave,
+            this.toolStripButtonAbout,
+            this.toolStripButtonClearInfo});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 30);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1361, 31);
+            this.toolStrip1.TabIndex = 40;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButtonAbout
+            // 
+            this.toolStripButtonAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAbout.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAbout.Image")));
+            this.toolStripButtonAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAbout.Name = "toolStripButtonAbout";
+            this.toolStripButtonAbout.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButtonAbout.Text = "О программе";
+            this.toolStripButtonAbout.Click += new System.EventHandler(this.toolStripButtonAbout_Click);
+            // 
+            // toolStripDropDownButtonSearch
+            // 
+            this.toolStripDropDownButtonSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButtonSearch.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemYearSear,
+            this.toolStripMenuItemDistrictSear,
+            this.toolStripMenuItemRoomsSear});
+            this.toolStripDropDownButtonSearch.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonSearch.Image")));
+            this.toolStripDropDownButtonSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButtonSearch.Name = "toolStripDropDownButtonSearch";
+            this.toolStripDropDownButtonSearch.Size = new System.Drawing.Size(34, 28);
+            this.toolStripDropDownButtonSearch.Text = "Поиск";
+            // 
+            // toolStripDropDownButtonSort
+            // 
+            this.toolStripDropDownButtonSort.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButtonSort.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemYear,
+            this.toolStripMenuItemFootage,
+            this.toolStripMenuItemPrice});
+            this.toolStripDropDownButtonSort.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonSort.Image")));
+            this.toolStripDropDownButtonSort.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButtonSort.Name = "toolStripDropDownButtonSort";
+            this.toolStripDropDownButtonSort.Size = new System.Drawing.Size(34, 28);
+            this.toolStripDropDownButtonSort.Text = "Сортировка по:";
+            // 
+            // toolStripMenuItemYear
+            // 
+            this.toolStripMenuItemYear.Name = "toolStripMenuItemYear";
+            this.toolStripMenuItemYear.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItemYear.Text = "Году";
+            this.toolStripMenuItemYear.Click += new System.EventHandler(this.toolStripMenuItemYear_Click);
+            // 
+            // toolStripMenuItemFootage
+            // 
+            this.toolStripMenuItemFootage.Name = "toolStripMenuItemFootage";
+            this.toolStripMenuItemFootage.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItemFootage.Text = "Метражу";
+            this.toolStripMenuItemFootage.Click += new System.EventHandler(this.toolStripMenuItemFootage_Click);
+            // 
+            // toolStripMenuItemPrice
+            // 
+            this.toolStripMenuItemPrice.Name = "toolStripMenuItemPrice";
+            this.toolStripMenuItemPrice.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItemPrice.Text = "Цене";
+            this.toolStripMenuItemPrice.Click += new System.EventHandler(this.toolStripMenuItemRooms_Click);
+            // 
+            // toolStripDropDownButtonSave
+            // 
+            this.toolStripDropDownButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButtonSave.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemSortRes,
+            this.toolStripMenuItemSearchRes});
+            this.toolStripDropDownButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonSave.Image")));
+            this.toolStripDropDownButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButtonSave.Name = "toolStripDropDownButtonSave";
+            this.toolStripDropDownButtonSave.Size = new System.Drawing.Size(34, 28);
+            this.toolStripDropDownButtonSave.Text = "Сохранить результат";
+            // 
+            // toolStripMenuItemSortRes
+            // 
+            this.toolStripMenuItemSortRes.Name = "toolStripMenuItemSortRes";
+            this.toolStripMenuItemSortRes.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItemSortRes.Text = "Сортировки";
+            this.toolStripMenuItemSortRes.Click += new System.EventHandler(this.toolStripMenuItemSortRes_Click);
+            // 
+            // toolStripMenuItemSearchRes
+            // 
+            this.toolStripMenuItemSearchRes.Name = "toolStripMenuItemSearchRes";
+            this.toolStripMenuItemSearchRes.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItemSearchRes.Text = "Поиска";
+            this.toolStripMenuItemSearchRes.Click += new System.EventHandler(this.toolStripMenuItemSearchRes_Click);
+            // 
+            // toolStripMenuItemYearSear
+            // 
+            this.toolStripMenuItemYearSear.Name = "toolStripMenuItemYearSear";
+            this.toolStripMenuItemYearSear.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItemYearSear.Text = "Году";
+            this.toolStripMenuItemYearSear.Click += new System.EventHandler(this.toolStripMenuItemYearSear_Click);
+            // 
+            // toolStripMenuItemDistrictSear
+            // 
+            this.toolStripMenuItemDistrictSear.Name = "toolStripMenuItemDistrictSear";
+            this.toolStripMenuItemDistrictSear.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItemDistrictSear.Text = "Району";
+            this.toolStripMenuItemDistrictSear.Click += new System.EventHandler(this.toolStripMenuItemDistrictSear_Click);
+            // 
+            // toolStripMenuItemRoomsSear
+            // 
+            this.toolStripMenuItemRoomsSear.Name = "toolStripMenuItemRoomsSear";
+            this.toolStripMenuItemRoomsSear.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItemRoomsSear.Text = "Кол-ву комнат";
+            this.toolStripMenuItemRoomsSear.Click += new System.EventHandler(this.toolStripMenuItemRoomsSear_Click);
+            // 
+            // toolStripButtonClearInfo
+            // 
+            this.toolStripButtonClearInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonClearInfo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonClearInfo.Image")));
+            this.toolStripButtonClearInfo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonClearInfo.Name = "toolStripButtonClearInfo";
+            this.toolStripButtonClearInfo.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButtonClearInfo.Text = "Очистить";
+            this.toolStripButtonClearInfo.Click += new System.EventHandler(this.toolStripButtonClearInfo_Click);
+            // 
+            // ToolStripMenuItemHideTool
+            // 
+            this.ToolStripMenuItemHideTool.Name = "ToolStripMenuItemHideTool";
+            this.ToolStripMenuItemHideTool.Size = new System.Drawing.Size(229, 26);
+            this.ToolStripMenuItemHideTool.Text = "Скрыть панель инструментов";
+            this.ToolStripMenuItemHideTool.Click += new System.EventHandler(this.ToolStripMenuItemHideTool_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelDate,
+            this.toolStripStatusLabelTime});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 874);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1361, 29);
+            this.statusStrip1.TabIndex = 41;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabelDate
+            // 
+            this.toolStripStatusLabelDate.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.toolStripStatusLabelDate.Name = "toolStripStatusLabelDate";
+            this.toolStripStatusLabelDate.Size = new System.Drawing.Size(134, 23);
+            this.toolStripStatusLabelDate.Text = "Текущее время:";
+            // 
+            // toolStripStatusLabelTime
+            // 
+            this.toolStripStatusLabelTime.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.toolStripStatusLabelTime.Name = "toolStripStatusLabelTime";
+            this.toolStripStatusLabelTime.Size = new System.Drawing.Size(59, 23);
+            this.toolStripStatusLabelTime.Text = "время";
+            // 
             // FlatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1361, 925);
+            this.ClientSize = new System.Drawing.Size(1361, 903);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.buttonSortSave);
+            this.Controls.Add(this.buttonSearchSave);
             this.Controls.Add(this.textBoxSorted);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -794,6 +1034,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRooms)).EndInit();
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -851,6 +1095,29 @@
         public System.Windows.Forms.TextBox textBoxSearched;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox textBoxSorted;
+        private System.Windows.Forms.Button buttonSearchSave;
+        private System.Windows.Forms.Button buttonSortSave;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonAbout;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSaveResult;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSortResult;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSearchResult;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonSearch;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemYearSear;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDistrictSear;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemRoomsSear;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonSort;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemYear;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFootage;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemPrice;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonSave;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSortRes;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSearchRes;
+        private System.Windows.Forms.ToolStripButton toolStripButtonClearInfo;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemHideTool;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelDate;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelTime;
     }
 }
 

@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace lab2
@@ -16,11 +15,29 @@ namespace lab2
         public double cost;
         public int countModifiedFlats = 0;
         public int countSortedFlats = 0;
-
+        public IEnumerable<Flat> sortedPrice;
+        public IEnumerable<Flat> sortedYear;
+        public IEnumerable<Flat> sortedFootage;
+        public IEnumerable<Flat> searchedYear;
+        public IEnumerable<Flat> searchedDistrict;
+        public IEnumerable<Flat> searchedRooms;
+        int sortType;
+        int searchType;
         List<Flat> flats = new List<Flat>();
         public FlatForm()
         {
             InitializeComponent();
+            toolStripStatusLabelTime.Text = DateTime.Now.ToLongTimeString();
+            Timer timer;
+            timer = new Timer() { Interval = 1000 };
+            timer.Tick += timer_Tick;
+            timer.Start();
+
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            toolStripStatusLabelTime.Text = DateTime.Now.ToLongTimeString();
         }
 
         private void buttonOutputInfo_Click(object sender, EventArgs e)
@@ -52,7 +69,7 @@ namespace lab2
                 outputLine.AppendLine("Адрес:" + flat.address.Country + "\n" + flat.address.District + "," + flat.address.Street + "\n д." +
                     flat.address.HouseNumber + ", кв." + flat.address.FlatNumber + ";");
                 outputLine.AppendLine(labelCostFlat.Text + " : " + flat.Cost + "$ ;");
-                outputLine.AppendLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+                outputLine.AppendLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
                 textBoxFlatInfo.Text += outputLine.ToString();
             }
         }
@@ -81,6 +98,8 @@ namespace lab2
             textBoxNumberFlat.ReadOnly = false;
             textBoxNumberHouse.ReadOnly = false;
             textBoxIndex.Text = string.Empty;
+            textBoxSorted.Text = string.Empty;
+            textBoxSearched.Text = string.Empty;
             treeViewCountry.CollapseAll();
         }
 
@@ -261,6 +280,7 @@ namespace lab2
         private void toolStripMenuItemSearchYear_Click(object sender, EventArgs e)
         {
             SearchForm sf = new SearchForm(flats, SearchType.searchYear, this);
+            searchType = 0;
             sf.Show();
         }
 
@@ -268,12 +288,14 @@ namespace lab2
         {
             SearchForm sf = new SearchForm(flats, SearchType.searchDistrict, this);
             sf.Show();
+            searchType = 1;
         }
 
         private void toolStripMenuItemSearchAmountRooms_Click(object sender, EventArgs e)
         {
             SearchForm sf = new SearchForm(flats, SearchType.searchRooms, this);
             sf.Show();
+            searchType = 2;
         }
 
 
@@ -307,13 +329,14 @@ namespace lab2
 
         private void toolStripMenuItemSortFootage_Click(object sender, EventArgs e)
         {
+            sortType = 1;
             if (flats.Count < 1)
                 MessageBox.Show($"Вы не сохранили ни одну квартиру!");
             else
             {
-                var sortedFootage = from item in flats
-                                    orderby item.Footage
-                                    select item;
+                sortedFootage = from item in flats
+                                orderby item.Footage
+                                select item;
                 textBoxSorted.Text = string.Empty;
                 countSortedFlats = 0;
                 foreach (var item in sortedFootage)
@@ -323,13 +346,14 @@ namespace lab2
 
         private void toolStripMenuItemSortYear_Click(object sender, EventArgs e)
         {
+            sortType = 0;
             if (flats.Count < 1)
                 MessageBox.Show($"Вы не сохранили ни одну квартиру!");
             else
             {
-                var sortedYear = from item in flats
-                                 orderby item.Year
-                                 select item;
+                sortedYear = from item in flats
+                             orderby item.Year
+                             select item;
                 textBoxSorted.Text = string.Empty;
                 countSortedFlats = 0;
                 foreach (var item in sortedYear)
@@ -339,18 +363,151 @@ namespace lab2
 
         private void toolStripMenuItemSortPrice_Click(object sender, EventArgs e)
         {
+            sortType = 2;
             if (flats.Count < 1)
                 MessageBox.Show($"Вы не сохранили ни одну квартиру!");
             else
             {
-                var sortedPrice = from item in flats
-                                  orderby item.Cost
-                                  select item;
+                sortedPrice = from item in flats
+                              orderby item.Cost
+                              select item;
                 textBoxSorted.Text = string.Empty;
                 countSortedFlats = 0;
                 foreach (var item in sortedPrice)
                     printSortedInfo(item);
             }
         }
+
+        private void buttonSearchSave_Click(object sender, EventArgs e)
+        {
+            List<Flat> list = new List<Flat>();
+            switch (searchType)
+            {
+                case 1:
+                    if (searchedDistrict.Count() > 0)
+                        foreach (var item in searchedDistrict)
+                            list.Add(item);
+                    break;
+                case 2:
+                    if (searchedRooms.Count() > 0)
+                        foreach (var item in searchedRooms)
+                            list.Add(item);
+                    break;
+                case 0:
+                    if (searchedYear.Count() > 0)
+                        foreach (var item in searchedYear)
+                            list.Add(item);
+                    break;
+            }
+            XmlSerializeWrapper.Serialize(list, "search_result.xml");        
+        }
+
+        private void buttonSortSave_Click(object sender, EventArgs e)
+        {
+            List<Flat> list = new List<Flat>();
+            switch (sortType)
+            {
+                case 0:
+                    if (sortedYear.Count() > 0)
+                        foreach (var item in sortedYear)
+                            list.Add(item);
+                    break;
+                case 1:
+                    if (sortedFootage.Count() > 0)
+                        foreach (var item in sortedFootage)
+                            list.Add(item);
+                    break;
+                case 2:
+                    if (sortedPrice.Count() > 0)
+                        foreach (var item in sortedPrice)
+                            list.Add(item);
+                    break;
+            }
+            XmlSerializeWrapper.Serialize(list, "sort_result.xml");
+        }
+
+        private void toolStripButtonSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButtonSort_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToolStripMenuItemSortResult_Click(object sender, EventArgs e)
+        {
+            buttonSortSave_Click(this, e);
+        }
+
+        private void ToolStripMenuItemSearchResult_Click(object sender, EventArgs e)
+        {
+            buttonSearchSave_Click(this, e);
+        }
+
+        private void toolStripMenuItemYearSear_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItemSearchYear_Click(this, e);
+        }
+
+        private void toolStripMenuItemDistrictSear_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItemSearchDistrict_Click(this, e);
+        }
+
+        private void toolStripMenuItemRoomsSear_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItemSearchAmountRooms_Click(this, e);
+        }
+
+        private void toolStripMenuItemYear_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItemSortYear_Click(this, e);
+        }
+
+        private void toolStripMenuItemFootage_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItemSortFootage_Click(this, e);
+        }
+
+        private void toolStripMenuItemRooms_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItemSortPrice_Click(this, e);
+        }
+
+        private void toolStripMenuItemSortRes_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItemSortResult_Click(this, e);
+        }
+
+        private void toolStripMenuItemSearchRes_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItemSearchResult_Click(this, e);
+        }
+
+        private void toolStripButtonAbout_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItemSave_Click(this, e);
+        }
+
+        private void toolStripButtonClearInfo_Click(object sender, EventArgs e)
+        {
+            buttonClearInfo_Click(this, e);
+        }
+
+        private void ToolStripMenuItemHideTool_Click(object sender, EventArgs e)
+        {
+            if (toolStrip1.Visible)
+            {
+                toolStrip1.Hide();
+                ToolStripMenuItemHideTool.Text = "Показать панель инструментов";
+            }
+            else
+            {
+                toolStrip1.Show();
+                ToolStripMenuItemHideTool.Text = "Скрыть панель инструментов";
+            }
+        }   
     }
 }

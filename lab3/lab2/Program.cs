@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -58,8 +59,12 @@ namespace lab2
 
         public Flat() { }
         [XmlElement(ElementName = "footage")]
+        [Required]
+        [Range(1, 300, ErrorMessage = "Диапазон площади 300 м^2")]
         public double Footage { get; set; }
+        [Required(AllowEmptyStrings = true)]
         [XmlElement(ElementName = "amount_of_rooms")]
+        [RegularExpression(@"\d+",ErrorMessage = "Неверно введено кол-во комнат")]
         public int AmountOfRooms { get; set; }
         [XmlElement(ElementName = "kitchen")]
         public bool Kitchen { get; set; }
@@ -74,12 +79,16 @@ namespace lab2
         [XmlElement(ElementName = "Year_of_foundation")]
         public int Year { get; set; }
         [XmlElement(ElementName = "Material_of_building")]
+        [Required(ErrorMessage ="Отсутствует материал")]
         public string Material { get; set; } = "none";
         [XmlElement(ElementName = "Floor")]
         public int Floor { get; set; }
         [XmlElement(ElementName = "Cost_of_flat")]
         public double Cost { get; set; }
+        [Required]
         public Address address { get; set; }
+        [Index]
+        public string ZipCode { get; set; }
 
 
         public double CountCost()
