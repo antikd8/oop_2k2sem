@@ -47,6 +47,7 @@ namespace lab2
             // 
             // textBoxAddDistrict
             // 
+            this.textBoxAddDistrict.BackColor = System.Drawing.Color.LightYellow;
             this.textBoxAddDistrict.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBoxAddDistrict.Location = new System.Drawing.Point(51, 65);
             this.textBoxAddDistrict.Name = "textBoxAddDistrict";

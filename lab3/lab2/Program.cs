@@ -118,19 +118,12 @@ namespace lab2
             name.Nodes.Add("Этаж: " + Floor);
             name.Nodes.Add("Кол-во комнат: " + AmountOfRooms);
             name.Nodes.Add("Год: " + Year);
-            name.Nodes.Add("Адрес: ")
-                .Nodes.Add("Район:" + address.District)
-                .Nodes.Add("Улица:" + address.Street);
-        /*   name.Nodes.Add("Вид контроля: " + ((pass == PassType.Exam) ? "экзамен" : "зачёт"));
-            TreeNode Lector = new TreeNode("Лектор");
-            TreeNode books = new TreeNode("Список литературы");
-            Lector.Nodes.Add("Ф.И.О.: " + lector.snp);
-            Lector.Nodes.Add("Кафедра: " + lector.pulpit);
-            Lector.Nodes.Add("Аудитория: " + lector.WorkPlace);
-            name.Nodes.Add(Lector);
-            foreach (Book x in bookList)
-                books.Nodes.Add(x.ToString());
-            name.Nodes.Add(books); */
+            name.Nodes.Add("Адрес: ");
+            name.Nodes.Add("Район:" + address.District);
+            name.Nodes.Add("Улица:" + address.Street);
+            name.Nodes.Add("Номер дома: " + address.HouseNumber);
+            name.Nodes.Add("Номер квартиры: " + address.FlatNumber);
+            name.Nodes.Add("Индекс: " + address.Index);
             return name;
         }
     }
@@ -138,7 +131,7 @@ namespace lab2
     public class Address
     {
         public Address() { }
-        public Address(string country, string district, string street, string houseNumber, string flatNumber)
+        public Address(string country, string district, string street, string houseNumber, string flatNumber, string index)
         {
             Country = country;
             District = district;
@@ -154,6 +147,8 @@ namespace lab2
         public string HouseNumber { get; set; } = "none";
         [XmlElement(ElementName = "Number_of_flat")]
         public string FlatNumber { get; set; } = "none";
+        [XmlElement(ElementName = "Postal_code")]
+        public string Index { get; set; }
     }
 
     public static class XmlSerializeWrapper

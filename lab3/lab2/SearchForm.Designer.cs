@@ -35,16 +35,15 @@ namespace lab2
             this.labelSearchRooms = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelYear = new System.Windows.Forms.Panel();
-            this.panelDistrict = new System.Windows.Forms.Panel();
-            this.panelRooms = new System.Windows.Forms.Panel();
-            this.comboBoxDistrict = new System.Windows.Forms.ComboBox();
-            this.numericUpDownRooms = new System.Windows.Forms.NumericUpDown();
             this.dateTimePickerYear = new System.Windows.Forms.DateTimePicker();
+            this.panelDistrict = new System.Windows.Forms.Panel();
+            this.comboBoxDistrict = new System.Windows.Forms.ComboBox();
+            this.panelRooms = new System.Windows.Forms.Panel();
+            this.textBoxSearchRooms = new System.Windows.Forms.TextBox();
             this.treeViewResult = new System.Windows.Forms.TreeView();
             this.panelYear.SuspendLayout();
             this.panelDistrict.SuspendLayout();
             this.panelRooms.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRooms)).BeginInit();
             this.SuspendLayout();
             // 
             // labelSearchYear
@@ -96,6 +95,18 @@ namespace lab2
             this.panelYear.Size = new System.Drawing.Size(200, 100);
             this.panelYear.TabIndex = 8;
             // 
+            // dateTimePickerYear
+            // 
+            this.dateTimePickerYear.CalendarMonthBackground = System.Drawing.Color.LightYellow;
+            this.dateTimePickerYear.CustomFormat = "yyyy";
+            this.dateTimePickerYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateTimePickerYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerYear.Location = new System.Drawing.Point(17, 49);
+            this.dateTimePickerYear.Name = "dateTimePickerYear";
+            this.dateTimePickerYear.Size = new System.Drawing.Size(89, 26);
+            this.dateTimePickerYear.TabIndex = 23;
+            this.dateTimePickerYear.ValueChanged += new System.EventHandler(this.dateTimePickerYear_ValueChanged);
+            // 
             // panelDistrict
             // 
             this.panelDistrict.Controls.Add(this.comboBoxDistrict);
@@ -104,15 +115,6 @@ namespace lab2
             this.panelDistrict.Name = "panelDistrict";
             this.panelDistrict.Size = new System.Drawing.Size(200, 100);
             this.panelDistrict.TabIndex = 9;
-            // 
-            // panelRooms
-            // 
-            this.panelRooms.Controls.Add(this.numericUpDownRooms);
-            this.panelRooms.Controls.Add(this.labelSearchRooms);
-            this.panelRooms.Location = new System.Drawing.Point(51, 210);
-            this.panelRooms.Name = "panelRooms";
-            this.panelRooms.Size = new System.Drawing.Size(200, 100);
-            this.panelRooms.TabIndex = 10;
             // 
             // comboBoxDistrict
             // 
@@ -135,44 +137,30 @@ namespace lab2
             "-Добавить-"});
             this.comboBoxDistrict.Location = new System.Drawing.Point(17, 50);
             this.comboBoxDistrict.Name = "comboBoxDistrict";
-            this.comboBoxDistrict.Size = new System.Drawing.Size(146, 28);
+            this.comboBoxDistrict.Size = new System.Drawing.Size(164, 28);
             this.comboBoxDistrict.TabIndex = 33;
+            this.comboBoxDistrict.SelectedIndexChanged += new System.EventHandler(this.comboBoxDistrict_SelectedIndexChanged);
             this.comboBoxDistrict.TextChanged += new System.EventHandler(this.comboBoxDistrict_TextChanged);
             // 
-            // numericUpDownRooms
+            // panelRooms
             // 
-            this.numericUpDownRooms.BackColor = System.Drawing.Color.LightYellow;
-            this.numericUpDownRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.numericUpDownRooms.Location = new System.Drawing.Point(17, 60);
-            this.numericUpDownRooms.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDownRooms.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownRooms.Name = "numericUpDownRooms";
-            this.numericUpDownRooms.Size = new System.Drawing.Size(89, 26);
-            this.numericUpDownRooms.TabIndex = 22;
-            this.numericUpDownRooms.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.panelRooms.Controls.Add(this.textBoxSearchRooms);
+            this.panelRooms.Controls.Add(this.labelSearchRooms);
+            this.panelRooms.Location = new System.Drawing.Point(51, 210);
+            this.panelRooms.Name = "panelRooms";
+            this.panelRooms.Size = new System.Drawing.Size(200, 100);
+            this.panelRooms.TabIndex = 10;
             // 
-            // dateTimePickerYear
+            // textBoxSearchRooms
             // 
-            this.dateTimePickerYear.CalendarMonthBackground = System.Drawing.Color.LightYellow;
-            this.dateTimePickerYear.CustomFormat = "yyyy";
-            this.dateTimePickerYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePickerYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerYear.Location = new System.Drawing.Point(17, 49);
-            this.dateTimePickerYear.Name = "dateTimePickerYear";
-            this.dateTimePickerYear.Size = new System.Drawing.Size(89, 26);
-            this.dateTimePickerYear.TabIndex = 23;
+            this.textBoxSearchRooms.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxSearchRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBoxSearchRooms.Location = new System.Drawing.Point(17, 62);
+            this.textBoxSearchRooms.Name = "textBoxSearchRooms";
+            this.textBoxSearchRooms.Size = new System.Drawing.Size(164, 26);
+            this.textBoxSearchRooms.TabIndex = 3;
+            this.textBoxSearchRooms.TextChanged += new System.EventHandler(this.textBoxSearchRooms_TextChanged);
+            this.textBoxSearchRooms.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchRooms_KeyPress);
             // 
             // treeViewResult
             // 
@@ -202,7 +190,6 @@ namespace lab2
             this.panelDistrict.PerformLayout();
             this.panelRooms.ResumeLayout(false);
             this.panelRooms.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRooms)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,8 +205,8 @@ namespace lab2
         private System.Windows.Forms.Panel panelDistrict;
         private System.Windows.Forms.Panel panelRooms;
         public System.Windows.Forms.ComboBox comboBoxDistrict;
-        private System.Windows.Forms.NumericUpDown numericUpDownRooms;
         private System.Windows.Forms.DateTimePicker dateTimePickerYear;
+        private System.Windows.Forms.TextBox textBoxSearchRooms;
         private System.Windows.Forms.TreeView treeViewResult;
     }
 }

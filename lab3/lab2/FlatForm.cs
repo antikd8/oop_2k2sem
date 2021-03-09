@@ -14,6 +14,8 @@ namespace lab2
     public partial class FlatForm : Form
     {
         public double cost;
+        public int countModifiedFlats = 0;
+        public int countSortedFlats = 0;
 
         List<Flat> flats = new List<Flat>();
         public FlatForm()
@@ -78,6 +80,7 @@ namespace lab2
             textBoxStreet.ReadOnly = false;
             textBoxNumberFlat.ReadOnly = false;
             textBoxNumberHouse.ReadOnly = false;
+            textBoxIndex.Text = string.Empty;
             treeViewCountry.CollapseAll();
         }
 
@@ -86,7 +89,7 @@ namespace lab2
         {
             double footage = 58;
             int amountOfRooms = 3;
-            int year = 2021;
+            int year = 1865;
             string material = "Блоки";
             int floor = 2;
             string country = "Страна";
@@ -94,23 +97,25 @@ namespace lab2
             string street = "Ленинская";
             string houseNumber = "21а";
             string flatNumber = "59";
+            string index = "34ABC56";
             bool balcony = false;
             bool basement = false;
             bool bathroom = true;
             bool kitchen = true;
             bool livingRoom = true;
-            Address address = new Address(country,district,street,houseNumber,flatNumber);
-            Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom,address);
+            Address address = new Address(country, district, street, houseNumber, flatNumber, index);
+            Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom, address);
             trackBarFootage.Value = 58;
             labelFootage.Text = $"Метраж: {trackBarFootage.Value}  М^2";
             numericUpDownRooms.Value = 3;
-            dateTimePickerYear.Value = DateTime.Now;
+            dateTimePickerYear.Value = DateTime.Parse("1856-02-02");
             comboBoxMaterial.SelectedIndex = 2;
             numericUpDownFloor.Value = 2;
             comboBoxDistrict.SelectedIndex = 3;
             textBoxStreet.Text = "Ленинская";
             textBoxNumberHouse.Text = "21a";
             textBoxNumberFlat.Text = "59";
+            textBoxIndex.Text = "34ABC56";
             checkBoxBalcony.Checked = false;
             checkBoxBasement.Checked = false;
             checkBoxBathroom.Checked = true;
@@ -171,6 +176,7 @@ namespace lab2
             string street;
             string houseNumber;
             string flatNumber;
+            string index;
             bool balcony = false;
             bool basement = false;
             bool bathroom = false;
@@ -192,6 +198,7 @@ namespace lab2
                 street = textBoxStreet.Text;
                 houseNumber = textBoxNumberHouse.Text;
                 flatNumber = textBoxNumberFlat.Text;
+                index = textBoxIndex.Text;
                 if (checkBoxBalcony.Checked)
                     balcony = true;
                 if (checkBoxBasement.Checked)
@@ -202,9 +209,10 @@ namespace lab2
                     kitchen = true;
                 if (checkBoxLivingRoom.Checked)
                     livingRoom = true;
-                Address address = new Address(country, district, street, houseNumber, flatNumber);
+                Address address = new Address(country, district, street, houseNumber, flatNumber, index);
                 Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom, address);
                 flat.Cost = flat.CountCost();
+                textBoxCost.Text = flat.Cost.ToString();
                 flats.Add(flat);
                 XmlSerializeWrapper.Serialize(flats, "flat.xml");
             }
@@ -240,7 +248,7 @@ namespace lab2
         {
             if (comboBoxDistrict.SelectedItem != null && comboBoxDistrict.SelectedItem.ToString() == "-Добавить-")
             {
-                District district = new District(this);
+                District district = new District(this, true);
                 district.Show();
             }
         }
@@ -252,20 +260,97 @@ namespace lab2
 
         private void toolStripMenuItemSearchYear_Click(object sender, EventArgs e)
         {
-            SearchForm sf = new SearchForm(flats, SearchType.searchYear);
+            SearchForm sf = new SearchForm(flats, SearchType.searchYear, this);
             sf.Show();
         }
 
         private void toolStripMenuItemSearchDistrict_Click(object sender, EventArgs e)
         {
-            SearchForm sf = new SearchForm(flats, SearchType.searchDistrict);
+            SearchForm sf = new SearchForm(flats, SearchType.searchDistrict, this);
             sf.Show();
         }
 
         private void toolStripMenuItemSearchAmountRooms_Click(object sender, EventArgs e)
         {
-            SearchForm sf = new SearchForm(flats, SearchType.searchRooms);
+            SearchForm sf = new SearchForm(flats, SearchType.searchRooms, this);
             sf.Show();
+        }
+
+
+        public void printSortedInfo(Flat item)
+        {
+            countSortedFlats++;
+            StringBuilder outputLine = new StringBuilder();
+            outputLine.AppendLine($"Квартира [ {countSortedFlats} ]");
+            outputLine.AppendLine("Метраж квартиры :" + item.Footage.ToString() + ";");
+            outputLine.AppendLine($"Количество комнат: {item.AmountOfRooms};");
+            outputLine.AppendLine("Комнаты: ");
+            if (item.Balcony)
+                outputLine.AppendLine(" - Балкон;");
+            if (item.Basement)
+                outputLine.AppendLine(" - Подвал;");
+            if (item.Bathroom)
+                outputLine.AppendLine(" - Ванная комната;");
+            if (item.Kitchen)
+                outputLine.AppendLine(" - Кухня");
+            if (item.LivingRoom)
+                outputLine.AppendLine(" - Спальня");
+            outputLine.AppendLine($"Год постройки: {item.Year};");
+            outputLine.AppendLine($"Материал постройки: {item.Material};");
+            outputLine.AppendLine($"Этаж: {item.Floor};");
+            outputLine.AppendLine("Адрес:" + item.address.Country + "\n" + item.address.District + "," + item.address.Street + "\n д." +
+                item.address.HouseNumber + ", кв." + item.address.FlatNumber + ";");
+            outputLine.AppendLine($"Цена квартиры: {item.Cost}");
+            outputLine.AppendLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+            textBoxSorted.Text += outputLine.ToString();
+        }
+
+        private void toolStripMenuItemSortFootage_Click(object sender, EventArgs e)
+        {
+            if (flats.Count < 1)
+                MessageBox.Show($"Вы не сохранили ни одну квартиру!");
+            else
+            {
+                var sortedFootage = from item in flats
+                                    orderby item.Footage
+                                    select item;
+                textBoxSorted.Text = string.Empty;
+                countSortedFlats = 0;
+                foreach (var item in sortedFootage)
+                    printSortedInfo(item);
+            }
+        }
+
+        private void toolStripMenuItemSortYear_Click(object sender, EventArgs e)
+        {
+            if (flats.Count < 1)
+                MessageBox.Show($"Вы не сохранили ни одну квартиру!");
+            else
+            {
+                var sortedYear = from item in flats
+                                 orderby item.Year
+                                 select item;
+                textBoxSorted.Text = string.Empty;
+                countSortedFlats = 0;
+                foreach (var item in sortedYear)
+                    printSortedInfo(item);
+            }
+        }
+
+        private void toolStripMenuItemSortPrice_Click(object sender, EventArgs e)
+        {
+            if (flats.Count < 1)
+                MessageBox.Show($"Вы не сохранили ни одну квартиру!");
+            else
+            {
+                var sortedPrice = from item in flats
+                                  orderby item.Cost
+                                  select item;
+                textBoxSorted.Text = string.Empty;
+                countSortedFlats = 0;
+                foreach (var item in sortedPrice)
+                    printSortedInfo(item);
+            }
         }
     }
 }

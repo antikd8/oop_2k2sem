@@ -15,16 +15,24 @@ namespace lab2
     {
 
         FlatForm flatForm;
-        public District(FlatForm flatForm)
+        SearchForm searchForm;
+        bool flag;
+        public District(Form form, bool flag)
         {
             InitializeComponent();
-            this.flatForm = flatForm;
+            this.flag = flag;
+            if (flag)
+                flatForm = (FlatForm)form;
+            else if (!flag)
+            {
+                searchForm = (SearchForm)form;
+            }
         }
 
         private void textBoxAddDistrict_KeyPress(object sender, KeyPressEventArgs e)
         {
             string Symbol = e.KeyChar.ToString();
-            if (!Regex.Match(Symbol, @"[а-яА-Яa-zA-Z]").Success && e.KeyChar != 8 && e.KeyChar!=32)
+            if (!Regex.Match(Symbol, @"[а-яА-Яa-zA-Z]").Success && e.KeyChar != 8 && e.KeyChar != 32)
             {
                 e.Handled = true;
             }
@@ -46,10 +54,21 @@ namespace lab2
                 MessageBox.Show($"Введите название района!");
             else
             {
-                flatForm.comboBoxDistrict.Items.Insert(0, textBoxAddDistrict.Text);
-                flatForm.comboBoxDistrict.Text = textBoxAddDistrict.Text;
-                MessageBox.Show("Район добавлен в форму!");
-                Close();
+                if (flag)
+                {
+                    flatForm.comboBoxDistrict.Items.Insert(0, textBoxAddDistrict.Text);
+                    flatForm.comboBoxDistrict.Text = textBoxAddDistrict.Text;
+                    Hide();
+                    MessageBox.Show("Район добавлен в форму!");
+                }
+                else
+                {
+                    searchForm.comboBoxDistrict.Items.Insert(0, textBoxAddDistrict.Text);
+                    searchForm.comboBoxDistrict.Text = textBoxAddDistrict.Text;
+                    searchForm.comboBoxDistrict.SelectedItem = 2;
+                    Hide();
+                    MessageBox.Show("Район добавлен в форму!"); 
+                }
             }
 
         }

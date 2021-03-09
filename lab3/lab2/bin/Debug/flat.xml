@@ -8,10 +8,10 @@
     <bathroom xmlns="lab2">true</bathroom>
     <balcony xmlns="lab2">false</balcony>
     <basement xmlns="lab2">false</basement>
-    <Year_of_foundation xmlns="lab2">2021</Year_of_foundation>
+    <Year_of_foundation xmlns="lab2">1856</Year_of_foundation>
     <Material_of_building xmlns="lab2">Блоки</Material_of_building>
     <Floor xmlns="lab2">2</Floor>
-    <Cost_of_flat xmlns="lab2">72460.5</Cost_of_flat>
+    <Cost_of_flat xmlns="lab2">72378</Cost_of_flat>
     <address xmlns="lab2">
       <Country>Страна</Country>
       <District>Казимировка</District>
@@ -20,24 +20,44 @@
       <Number_of_flat>59</Number_of_flat>
     </address>
   </flat>
-</ArrayOfFlat><footage xmlns="lab2">58</footage>
-    <amount_of_rooms xmlns="lab2">3</amount_of_rooms>
+  <flat>
+    <footage xmlns="lab2">144</footage>
+    <amount_of_rooms xmlns="lab2">6</amount_of_rooms>
     <kitchen xmlns="lab2">true</kitchen>
     <living_room xmlns="lab2">true</living_room>
     <bathroom xmlns="lab2">true</bathroom>
-    <balcony xmlns="lab2">false</balcony>
-    <basement xmlns="lab2">false</basement>
-    <Year_of_foundation xmlns="lab2">2021</Year_of_foundation>
+    <balcony xmlns="lab2">true</balcony>
+    <basement xmlns="lab2">true</basement>
+    <Year_of_foundation xmlns="lab2">1856</Year_of_foundation>
     <Material_of_building xmlns="lab2">Блоки</Material_of_building>
     <Floor xmlns="lab2">2</Floor>
-    <Cost_of_flat xmlns="lab2">72460.5</Cost_of_flat>
+    <Cost_of_flat xmlns="lab2">171778</Cost_of_flat>
     <address xmlns="lab2">
       <Country>Страна</Country>
-      <District>kekov</District>
+      <District>Казимировка</District>
       <Street>Ленинская</Street>
       <Number_of_house>21a</Number_of_house>
       <Number_of_flat>59</Number_of_flat>
     </address>
   </flat>
-</ArrayOfFlat>at>
+  <flat>
+    <footage xmlns="lab2">144</footage>
+    <amount_of_rooms xmlns="lab2">6</amount_of_rooms>
+    <kitchen xmlns="lab2">true</kitchen>
+    <living_room xmlns="lab2">true</living_room>
+    <bathroom xmlns="lab2">true</bathroom>
+    <balcony xmlns="lab2">true</balcony>
+    <basement xmlns="lab2">true</basement>
+    <Year_of_foundation xmlns="lab2">1856</Year_of_foundation>
+    <Material_of_building xmlns="lab2">Блоки</Material_of_building>
+    <Floor xmlns="lab2">2</Floor>
+    <Cost_of_flat xmlns="lab2">171778</Cost_of_flat>
+    <address xmlns="lab2">
+      <Country>Страна</Country>
+      <District>Окт</District>
+      <Street>Ленинская</Street>
+      <Number_of_house>21a</Number_of_house>
+      <Number_of_flat>59</Number_of_flat>
+    </address>
+  </flat>
 </ArrayOfFlat>
