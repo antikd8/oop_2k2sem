@@ -23,6 +23,7 @@ namespace lab2
         public IEnumerable<Flat> searchedRooms;
         int sortType;
         int searchType;
+        int amountObjects = 0;
         List<Flat> flats = new List<Flat>();
         public FlatForm()
         {
@@ -32,6 +33,7 @@ namespace lab2
             timer = new Timer() { Interval = 1000 };
             timer.Tick += timer_Tick;
             timer.Start();
+            toolStripStatusLabelAmount.Text = amountObjects.ToString();
 
         }
 
@@ -72,6 +74,7 @@ namespace lab2
                 outputLine.AppendLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
                 textBoxFlatInfo.Text += outputLine.ToString();
             }
+            toolStripStatusLabelAction.Text = "Вывод из файла";
         }
 
         private void buttonClearInfo_Click(object sender, EventArgs e)
@@ -101,6 +104,7 @@ namespace lab2
             textBoxSorted.Text = string.Empty;
             textBoxSearched.Text = string.Empty;
             treeViewCountry.CollapseAll();
+            toolStripStatusLabelAction.Text = "Все данные были очищены";
         }
 
 
@@ -147,7 +151,7 @@ namespace lab2
             textBoxStreet.ReadOnly = false;
             textBoxNumberFlat.ReadOnly = false;
             textBoxNumberHouse.ReadOnly = false;
-            treeViewCountry.CollapseAll();
+            toolStripStatusLabelAction.Text = "Автозаполнение";
         }
 
         private void textBoxStreet_KeyPress(object sender, KeyPressEventArgs e)
@@ -243,6 +247,9 @@ namespace lab2
             {
                 MessageBox.Show($"Данные успешно записаны в файл \"flat.xml\"");
             }
+            amountObjects++;
+            toolStripStatusLabelAmount.Text = amountObjects.ToString();
+            toolStripStatusLabelAction.Text = "Данные были записаны в файл";
         }
 
         private void buttonAutoFill_MouseEnter(object sender, EventArgs e)
@@ -275,6 +282,7 @@ namespace lab2
         private void toolStripMenuItemSave_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"Версия : 1.0\nРазработал: Другов Антон");
+            toolStripStatusLabelAction.Text = "Просмотрена информация о программе";
         }
 
         private void toolStripMenuItemSearchYear_Click(object sender, EventArgs e)
@@ -341,6 +349,7 @@ namespace lab2
                 countSortedFlats = 0;
                 foreach (var item in sortedFootage)
                     printSortedInfo(item);
+                toolStripStatusLabelAction.Text = "Произведена сортировка по метражу";
             }
         }
 
@@ -358,6 +367,8 @@ namespace lab2
                 countSortedFlats = 0;
                 foreach (var item in sortedYear)
                     printSortedInfo(item);
+                toolStripStatusLabelAction.Text = "Произведена сортировка по году";
+                
             }
         }
 
@@ -375,6 +386,7 @@ namespace lab2
                 countSortedFlats = 0;
                 foreach (var item in sortedPrice)
                     printSortedInfo(item);
+                toolStripStatusLabelAction.Text = "Произведена сортировка по цене";
             }
         }
 
@@ -399,7 +411,8 @@ namespace lab2
                             list.Add(item);
                     break;
             }
-            XmlSerializeWrapper.Serialize(list, "search_result.xml");        
+            XmlSerializeWrapper.Serialize(list, "search_result.xml");
+            toolStripStatusLabelAction.Text = "Сохранены результаты поиска";
         }
 
         private void buttonSortSave_Click(object sender, EventArgs e)
@@ -424,6 +437,7 @@ namespace lab2
                     break;
             }
             XmlSerializeWrapper.Serialize(list, "sort_result.xml");
+            toolStripStatusLabelAction.Text = "Сохранены результаты сортировки";
         }
 
         private void toolStripButtonSearch_Click(object sender, EventArgs e)

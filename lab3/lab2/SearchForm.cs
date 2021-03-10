@@ -43,6 +43,7 @@ namespace lab2
                 {
                     treeViewResult.Nodes.Add(item.TakeElementTree());
                     printInfoToOriginal(item);
+                    ogForm.toolStripStatusLabelAction.Text = "Поиск по району";
                 }
             else
                 treeViewResult.Nodes.Add("Ничего не найдено!");
@@ -60,6 +61,7 @@ namespace lab2
                 {
                     treeViewResult.Nodes.Add(item.TakeElementTree());
                     printInfoToOriginal(item);
+                    ogForm.toolStripStatusLabelAction.Text = "Поиск по году";
                 }
             else
                 treeViewResult.Nodes.Add("Ничего не найдено!");
@@ -116,6 +118,7 @@ namespace lab2
                 {
                     treeViewResult.Nodes.Add(item.TakeElementTree());
                     printInfoToOriginal(item);
+                    ogForm.toolStripStatusLabelAction.Text = "Поиск по кол-ву комнат";
                 }
             else
                 treeViewResult.Nodes.Add("Ничего не найдено!");

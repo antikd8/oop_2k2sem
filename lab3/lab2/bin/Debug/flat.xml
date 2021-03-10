@@ -13,7 +13,47 @@
     <Floor xmlns="lab2">2</Floor>
     <Cost_of_flat xmlns="lab2">72378</Cost_of_flat>
     <address xmlns="lab2">
-      <Country>Страна</Country>
+      <Country>Германия</Country>
+      <District>Казимировка</District>
+      <Street>Ленинская</Street>
+      <Number_of_house>21a</Number_of_house>
+      <Number_of_flat>59</Number_of_flat>
+    </address>
+  </flat>
+  <flat>
+    <footage xmlns="lab2">129</footage>
+    <amount_of_rooms xmlns="lab2">3</amount_of_rooms>
+    <kitchen xmlns="lab2">true</kitchen>
+    <living_room xmlns="lab2">true</living_room>
+    <bathroom xmlns="lab2">true</bathroom>
+    <balcony xmlns="lab2">false</balcony>
+    <basement xmlns="lab2">false</basement>
+    <Year_of_foundation xmlns="lab2">1856</Year_of_foundation>
+    <Material_of_building xmlns="lab2">Блоки</Material_of_building>
+    <Floor xmlns="lab2">2</Floor>
+    <Cost_of_flat xmlns="lab2">150478</Cost_of_flat>
+    <address xmlns="lab2">
+      <Country>Германия</Country>
+      <District>Казимировка</District>
+      <Street>Ленинская</Street>
+      <Number_of_house>21a</Number_of_house>
+      <Number_of_flat>59</Number_of_flat>
+    </address>
+  </flat>
+  <flat>
+    <footage xmlns="lab2">19</footage>
+    <amount_of_rooms xmlns="lab2">3</amount_of_rooms>
+    <kitchen xmlns="lab2">true</kitchen>
+    <living_room xmlns="lab2">true</living_room>
+    <bathroom xmlns="lab2">true</bathroom>
+    <balcony xmlns="lab2">false</balcony>
+    <basement xmlns="lab2">false</basement>
+    <Year_of_foundation xmlns="lab2">1856</Year_of_foundation>
+    <Material_of_building xmlns="lab2">Блоки</Material_of_building>
+    <Floor xmlns="lab2">2</Floor>
+    <Cost_of_flat xmlns="lab2">29478</Cost_of_flat>
+    <address xmlns="lab2">
+      <Country>Германия</Country>
       <District>Казимировка</District>
       <Street>Ленинская</Street>
       <Number_of_house>21a</Number_of_house>
