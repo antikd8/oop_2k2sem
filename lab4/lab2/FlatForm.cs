@@ -12,6 +12,9 @@ namespace lab2
 {
     public partial class FlatForm : Form
     {
+        public static MakeAddress maker = new MakeAddress();
+        //ProducerBuilder builder = new Producer1();
+        public static Address producer = maker.Make(new Address1());
         public double cost;
         public int countModifiedFlats = 0;
         public int countSortedFlats = 0;
@@ -21,10 +24,14 @@ namespace lab2
         public IEnumerable<Flat> searchedYear;
         public IEnumerable<Flat> searchedDistrict;
         public IEnumerable<Flat> searchedRooms;
+        public static string country, district, street, houseNumber, flatNumber, index;
         int sortType;
         int searchType;
         int amountObjects = 0;
         List<Flat> flats = new List<Flat>();
+        Flat tempFlat = new Flat();
+
+
         public FlatForm()
         {
             InitializeComponent();
@@ -115,18 +122,24 @@ namespace lab2
             string material = "Блоки";
             int floor = 2;
             string country = "Страна";
+            country = "Беларусь";
             string district = "Казимировка";
+            district = "Казимировка";
             string street = "Ленинская";
+            street = "Ленинская";
             string houseNumber = "21а";
+            houseNumber = "21a";
             string flatNumber = "59";
+            flatNumber = "59";
             string index = "34ABC56";
             bool balcony = false;
             bool basement = false;
             bool bathroom = true;
             bool kitchen = true;
             bool livingRoom = true;
+            string property = "Квартира продается!";
             Address address = new Address(country, district, street, houseNumber, flatNumber, index);
-            Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom, address);
+            Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom, property, address);
             trackBarFootage.Value = 58;
             labelFootage.Text = $"Метраж: {trackBarFootage.Value}  М^2";
             numericUpDownRooms.Value = 3;
@@ -142,6 +155,7 @@ namespace lab2
             checkBoxBasement.Checked = false;
             checkBoxBathroom.Checked = true;
             checkBoxKitchen.Checked = true;
+            radioButtonSalling.Checked = true;
             checkBoxLivingRoom.Checked = true;
             textBoxCost.Text = flat.CountCost().ToString();
             textBoxFlatInfo.Text = string.Empty;
@@ -204,6 +218,7 @@ namespace lab2
             bool bathroom = false;
             bool kitchen = false;
             bool livingRoom = false;
+            string property = null;
             try
             {
                 street = textBoxStreet.Text;
@@ -231,8 +246,12 @@ namespace lab2
                     kitchen = true;
                 if (checkBoxLivingRoom.Checked)
                     livingRoom = true;
+                if (tempFlat.Property == string.Empty)
+                    MessageBox.Show("Выберите, продается ли квартира!");
+                else
+                    property = tempFlat.Property;
                 Address address = new Address(country, district, street, houseNumber, flatNumber, index);
-                Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom, address);
+                Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom, property, address);
                 flat.Cost = flat.CountCost();
                 textBoxCost.Text = flat.Cost.ToString();
                 Prototype clone = flat.Clone();
@@ -523,6 +542,26 @@ namespace lab2
                 toolStrip1.Show();
                 ToolStripMenuItemHideTool.Text = "Скрыть панель инструментов";
             }
-        }   
+        }
+
+        private void radioButtonSalling_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonSalling.Checked)
+            {
+                IFactory sallingFactory = new SallingFactory();
+                var property = sallingFactory.setProperty();
+                tempFlat.Property = property.Property;
+            }
+        }
+
+        private void radioButtonNotSalling_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonNotSalling.Checked)
+            {
+                IFactory notSallingFactory = new NotSallingFactory();
+                var property = notSallingFactory.setProperty();
+                tempFlat.Property = property.Property;
+            }
+        }
     }
 }

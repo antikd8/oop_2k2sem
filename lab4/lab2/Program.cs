@@ -25,10 +25,46 @@ namespace lab2
         }
     }
 
+    public interface IFactory
+    {
+        IProperty setProperty();
+    }
+
+    public interface IProperty
+    {
+        string Property { get; }
+    }
+
+    public class SallingFlat : IProperty
+    {
+        public string Property => "Квартира продается!";
+    }
+
+    public class NotSallingFlat : IProperty
+    {
+        public string Property => "Квартира не продается!";
+    }
+
+    public class SallingFactory : IFactory
+    {
+        public IProperty setProperty()
+        {
+            return new SallingFlat();
+        }
+    }
+
+    public class NotSallingFactory : IFactory
+    {
+        public IProperty setProperty()
+        {
+            return new NotSallingFlat();
+        }
+    }
+
     public sealed class Singletone
     {
         private static Singletone instance;
-        private Singletone () { }
+        private Singletone() { }
         private static Singletone GetInstance()
         {
             return instance ?? (instance = new Singletone());
@@ -64,7 +100,7 @@ namespace lab2
     public class Flat : IOperations, Prototype
     {
         public Flat(double footage, int amounOfRooms, int year, string material, int floor, bool kitchen,
-            bool balcony, bool basement, bool livingRoom, bool bathroom, Address address)
+            bool balcony, bool basement, bool livingRoom, bool bathroom, string property, Address address)
         {
             Footage = footage;
             AmountOfRooms = amounOfRooms;
@@ -76,6 +112,7 @@ namespace lab2
             Basement = basement;
             LivingRoom = livingRoom;
             Bathroom = bathroom;
+            Property = property;
             this.address = address;
         }
 
@@ -86,7 +123,7 @@ namespace lab2
         public double Footage { get; set; }
         [Required(AllowEmptyStrings = true)]
         [XmlElement(ElementName = "amount_of_rooms")]
-        [RegularExpression(@"\d+",ErrorMessage = "Неверно введено кол-во комнат")]
+        [RegularExpression(@"\d+", ErrorMessage = "Неверно введено кол-во комнат")]
         public int AmountOfRooms { get; set; }
         [XmlElement(ElementName = "kitchen")]
         public bool Kitchen { get; set; }
@@ -101,12 +138,14 @@ namespace lab2
         [XmlElement(ElementName = "Year_of_foundation")]
         public int Year { get; set; }
         [XmlElement(ElementName = "Material_of_building")]
-        [Required(ErrorMessage ="Отсутствует материал")]
+        [Required(ErrorMessage = "Отсутствует материал")]
         public string Material { get; set; } = "none";
         [XmlElement(ElementName = "Floor")]
         public int Floor { get; set; }
         [XmlElement(ElementName = "Cost_of_flat")]
         public double Cost { get; set; }
+        [XmlElement(ElementName = "Property")]
+        public string Property { get; set; }
         [Required]
         public Address address { get; set; }
         [Index]
@@ -171,9 +210,67 @@ namespace lab2
                 this.Basement,
                 this.LivingRoom,
                 this.Bathroom,
+                this.Property,
                 this.address);
         }
     }
+
+    public abstract class AddressBuilder
+    {
+        public Address address { get; private set; }
+        public void CreateAddress()
+        {
+            address = new Address();
+        }
+        public abstract void setCountry(string counrty);
+        public abstract void setDistrict(string district);
+        public abstract void setStreet(string street);
+        public abstract void setHouseNumber(string hiuseNumber);
+        public abstract void setFlatNumber(string flatNumber);
+    }
+
+    public class Address1 : AddressBuilder
+    {
+        public override void setCountry(string counrty)
+        {
+            address.Country = counrty;
+        }
+
+        public override void setDistrict(string district)
+        {
+            address.District = district;
+        }
+
+        public override void setFlatNumber(string flatNumber)
+        {
+            address.FlatNumber = flatNumber;
+        }
+
+        public override void setHouseNumber(string houseNumber)
+        {
+            address.HouseNumber = houseNumber;
+        }
+
+        public override void setStreet(string street)
+        {
+            address.Street = street;
+        }
+    }
+
+    public class MakeAddress
+    {
+        public Address Make(AddressBuilder builder)
+        {
+            builder.CreateAddress();
+            builder.setCountry(FlatForm.country);
+            builder.setDistrict(FlatForm.district);
+            builder.setFlatNumber(FlatForm.flatNumber);
+            builder.setHouseNumber(FlatForm.houseNumber);
+            builder.setStreet(FlatForm.street);
+            return builder.address;
+        }
+    }
+
     [Serializable]
     public class Address
     {
@@ -185,6 +282,7 @@ namespace lab2
             Street = street;
             HouseNumber = houseNumber;
             FlatNumber = flatNumber;
+            Index = index;
         }
         public string Country { get; set; } = "none";
         [XmlElement(ElementName = "District")]

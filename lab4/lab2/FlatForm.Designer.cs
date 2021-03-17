@@ -28,47 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Минск");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Могилев");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Гомель");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Беларусь", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Колорадо");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Вайоминг");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Техас");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("США", new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6,
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Киев");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Львов");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Одесса");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Украина", new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode10,
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Нюрбург");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Франкфурт");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Берлин");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Германия", new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14,
-            treeNode15});
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Москва");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Санкт-Петербург");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Владивосток");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Россия", new System.Windows.Forms.TreeNode[] {
-            treeNode17,
-            treeNode18,
-            treeNode19});
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Страна", new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode8,
-            treeNode12,
-            treeNode16,
-            treeNode20});
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Минск");
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Могилев");
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Гомель");
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Беларусь", new System.Windows.Forms.TreeNode[] {
+            treeNode43,
+            treeNode44,
+            treeNode45});
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Колорадо");
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Вайоминг");
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Техас");
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("США", new System.Windows.Forms.TreeNode[] {
+            treeNode47,
+            treeNode48,
+            treeNode49});
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Киев");
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Львов");
+            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Одесса");
+            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Украина", new System.Windows.Forms.TreeNode[] {
+            treeNode51,
+            treeNode52,
+            treeNode53});
+            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Нюрбург");
+            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Франкфурт");
+            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Берлин");
+            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Германия", new System.Windows.Forms.TreeNode[] {
+            treeNode55,
+            treeNode56,
+            treeNode57});
+            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Москва");
+            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Санкт-Петербург");
+            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("Владивосток");
+            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("Россия", new System.Windows.Forms.TreeNode[] {
+            treeNode59,
+            treeNode60,
+            treeNode61});
+            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("Страна", new System.Windows.Forms.TreeNode[] {
+            treeNode46,
+            treeNode50,
+            treeNode54,
+            treeNode58,
+            treeNode62});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FlatForm));
             this.label1 = new System.Windows.Forms.Label();
             this.labelFootage = new System.Windows.Forms.Label();
@@ -147,6 +147,9 @@
             this.toolStripStatusLabelAction = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelObjectsAmount = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelAmount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButtonSalling = new System.Windows.Forms.RadioButton();
+            this.radioButtonNotSalling = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarFootage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFloor)).BeginInit();
             this.groupBoxAddress.SuspendLayout();
@@ -154,6 +157,7 @@
             this.menuStripMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -328,7 +332,7 @@
             0,
             0});
             this.numericUpDownFloor.Name = "numericUpDownFloor";
-            this.numericUpDownFloor.Size = new System.Drawing.Size(88, 26);
+            this.numericUpDownFloor.Size = new System.Drawing.Size(46, 26);
             this.numericUpDownFloor.TabIndex = 16;
             this.numericUpDownFloor.Value = new decimal(new int[] {
             1,
@@ -481,50 +485,50 @@
             this.treeViewCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.treeViewCountry.Location = new System.Drawing.Point(27, 47);
             this.treeViewCountry.Name = "treeViewCountry";
-            treeNode1.Name = "Minsk";
-            treeNode1.Text = "Минск";
-            treeNode2.Name = "Mogilev";
-            treeNode2.Text = "Могилев";
-            treeNode3.Name = "Gomel";
-            treeNode3.Text = "Гомель";
-            treeNode4.Name = "Belarus";
-            treeNode4.Text = "Беларусь";
-            treeNode5.Name = "Colorado";
-            treeNode5.Text = "Колорадо";
-            treeNode6.Name = "Wayoming";
-            treeNode6.Text = "Вайоминг";
-            treeNode7.Name = "Texas";
-            treeNode7.Text = "Техас";
-            treeNode8.Name = "USA";
-            treeNode8.Text = "США";
-            treeNode9.Name = "Kiev";
-            treeNode9.Text = "Киев";
-            treeNode10.Name = "Lviv";
-            treeNode10.Text = "Львов";
-            treeNode11.Name = "Odessa";
-            treeNode11.Text = "Одесса";
-            treeNode12.Name = "Ukraine";
-            treeNode12.Text = "Украина";
-            treeNode13.Name = "Nurburg";
-            treeNode13.Text = "Нюрбург";
-            treeNode14.Name = "Frankfurt";
-            treeNode14.Text = "Франкфурт";
-            treeNode15.Name = "Berlin";
-            treeNode15.Text = "Берлин";
-            treeNode16.Name = "Germany";
-            treeNode16.Text = "Германия";
-            treeNode17.Name = "Moscow";
-            treeNode17.Text = "Москва";
-            treeNode18.Name = "SPB";
-            treeNode18.Text = "Санкт-Петербург";
-            treeNode19.Name = "Vladivostok";
-            treeNode19.Text = "Владивосток";
-            treeNode20.Name = "Russia";
-            treeNode20.Text = "Россия";
-            treeNode21.Name = "Country";
-            treeNode21.Text = "Страна";
+            treeNode43.Name = "Minsk";
+            treeNode43.Text = "Минск";
+            treeNode44.Name = "Mogilev";
+            treeNode44.Text = "Могилев";
+            treeNode45.Name = "Gomel";
+            treeNode45.Text = "Гомель";
+            treeNode46.Name = "Belarus";
+            treeNode46.Text = "Беларусь";
+            treeNode47.Name = "Colorado";
+            treeNode47.Text = "Колорадо";
+            treeNode48.Name = "Wayoming";
+            treeNode48.Text = "Вайоминг";
+            treeNode49.Name = "Texas";
+            treeNode49.Text = "Техас";
+            treeNode50.Name = "USA";
+            treeNode50.Text = "США";
+            treeNode51.Name = "Kiev";
+            treeNode51.Text = "Киев";
+            treeNode52.Name = "Lviv";
+            treeNode52.Text = "Львов";
+            treeNode53.Name = "Odessa";
+            treeNode53.Text = "Одесса";
+            treeNode54.Name = "Ukraine";
+            treeNode54.Text = "Украина";
+            treeNode55.Name = "Nurburg";
+            treeNode55.Text = "Нюрбург";
+            treeNode56.Name = "Frankfurt";
+            treeNode56.Text = "Франкфурт";
+            treeNode57.Name = "Berlin";
+            treeNode57.Text = "Берлин";
+            treeNode58.Name = "Germany";
+            treeNode58.Text = "Германия";
+            treeNode59.Name = "Moscow";
+            treeNode59.Text = "Москва";
+            treeNode60.Name = "SPB";
+            treeNode60.Text = "Санкт-Петербург";
+            treeNode61.Name = "Vladivostok";
+            treeNode61.Text = "Владивосток";
+            treeNode62.Name = "Russia";
+            treeNode62.Text = "Россия";
+            treeNode63.Name = "Country";
+            treeNode63.Text = "Страна";
             this.treeViewCountry.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode21});
+            treeNode63});
             this.treeViewCountry.Size = new System.Drawing.Size(214, 213);
             this.treeViewCountry.TabIndex = 0;
             // 
@@ -582,7 +586,7 @@
             // 
             this.buttonClearInfo.BackColor = System.Drawing.Color.LightGreen;
             this.buttonClearInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonClearInfo.Location = new System.Drawing.Point(88, 774);
+            this.buttonClearInfo.Location = new System.Drawing.Point(86, 801);
             this.buttonClearInfo.Name = "buttonClearInfo";
             this.buttonClearInfo.Size = new System.Drawing.Size(144, 57);
             this.buttonClearInfo.TabIndex = 24;
@@ -596,7 +600,7 @@
             // 
             this.buttonSave.BackColor = System.Drawing.Color.LightGreen;
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonSave.Location = new System.Drawing.Point(454, 774);
+            this.buttonSave.Location = new System.Drawing.Point(452, 801);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(198, 55);
             this.buttonSave.TabIndex = 26;
@@ -610,7 +614,7 @@
             // 
             this.labelCostFlat.AutoSize = true;
             this.labelCostFlat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelCostFlat.Location = new System.Drawing.Point(85, 707);
+            this.labelCostFlat.Location = new System.Drawing.Point(85, 690);
             this.labelCostFlat.Name = "labelCostFlat";
             this.labelCostFlat.Size = new System.Drawing.Size(213, 25);
             this.labelCostFlat.TabIndex = 27;
@@ -620,7 +624,7 @@
             // 
             this.textBoxCost.BackColor = System.Drawing.Color.LightYellow;
             this.textBoxCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxCost.Location = new System.Drawing.Point(88, 735);
+            this.textBoxCost.Location = new System.Drawing.Point(90, 722);
             this.textBoxCost.Name = "textBoxCost";
             this.textBoxCost.ReadOnly = true;
             this.textBoxCost.Size = new System.Drawing.Size(100, 26);
@@ -630,7 +634,7 @@
             // 
             this.buttonAutoFill.BackColor = System.Drawing.Color.LightGreen;
             this.buttonAutoFill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAutoFill.Location = new System.Drawing.Point(238, 774);
+            this.buttonAutoFill.Location = new System.Drawing.Point(236, 801);
             this.buttonAutoFill.Name = "buttonAutoFill";
             this.buttonAutoFill.Size = new System.Drawing.Size(210, 57);
             this.buttonAutoFill.TabIndex = 29;
@@ -645,7 +649,7 @@
             this.labelBucks.AutoSize = true;
             this.labelBucks.BackColor = System.Drawing.Color.Transparent;
             this.labelBucks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelBucks.Location = new System.Drawing.Point(194, 736);
+            this.labelBucks.Location = new System.Drawing.Point(200, 723);
             this.labelBucks.Name = "labelBucks";
             this.labelBucks.Size = new System.Drawing.Size(23, 25);
             this.labelBucks.TabIndex = 30;
@@ -1015,12 +1019,48 @@
             this.toolStripStatusLabelAmount.Size = new System.Drawing.Size(88, 23);
             this.toolStripStatusLabelAmount.Text = "количество";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radioButtonNotSalling);
+            this.panel1.Controls.Add(this.radioButtonSalling);
+            this.panel1.Location = new System.Drawing.Point(54, 755);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(297, 40);
+            this.panel1.TabIndex = 42;
+            // 
+            // radioButtonSalling
+            // 
+            this.radioButtonSalling.AutoSize = true;
+            this.radioButtonSalling.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.radioButtonSalling.Location = new System.Drawing.Point(3, 3);
+            this.radioButtonSalling.Name = "radioButtonSalling";
+            this.radioButtonSalling.Size = new System.Drawing.Size(124, 24);
+            this.radioButtonSalling.TabIndex = 0;
+            this.radioButtonSalling.TabStop = true;
+            this.radioButtonSalling.Text = "Продается";
+            this.radioButtonSalling.UseVisualStyleBackColor = true;
+            this.radioButtonSalling.CheckedChanged += new System.EventHandler(this.radioButtonSalling_CheckedChanged);
+            // 
+            // radioButtonNotSalling
+            // 
+            this.radioButtonNotSalling.AutoSize = true;
+            this.radioButtonNotSalling.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.radioButtonNotSalling.Location = new System.Drawing.Point(134, 3);
+            this.radioButtonNotSalling.Name = "radioButtonNotSalling";
+            this.radioButtonNotSalling.Size = new System.Drawing.Size(149, 24);
+            this.radioButtonNotSalling.TabIndex = 1;
+            this.radioButtonNotSalling.TabStop = true;
+            this.radioButtonNotSalling.Text = "Не продается";
+            this.radioButtonNotSalling.UseVisualStyleBackColor = true;
+            this.radioButtonNotSalling.CheckedChanged += new System.EventHandler(this.radioButtonNotSalling_CheckedChanged);
+            // 
             // FlatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(1361, 903);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonSortSave);
@@ -1070,6 +1110,8 @@
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1154,6 +1196,9 @@
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelAction;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelObjectsAmount;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelAmount;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioButtonNotSalling;
+        private System.Windows.Forms.RadioButton radioButtonSalling;
     }
 }
 
