@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("shopping-basket.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("iconfinder_harvest_2998126.ico")]
 
 

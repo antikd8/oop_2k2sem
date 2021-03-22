@@ -25,29 +25,11 @@ namespace lab6_7
             InitializeComponent();
         }
 
-        private void ButtonOutputGood_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonEditBasket_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void ButtonAddGood_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void ButtonOutputBacket_MouseEnter(object sender, MouseEventArgs e)
-        {
-            ButtonOutputBasket.FontSize = 16;
-        }
-
-        private void ButtonOutputBasket_MouseLeave(object sender, MouseEventArgs e)
-        {
-            ButtonOutputBasket.FontSize = 12;
+            AddGood windowAddGood = new AddGood();
+            windowAddGood.Show();
+            
         }
     }
 }
