@@ -51,7 +51,7 @@
             <ColumnDefinition Width="37*"/>
         </Grid.ColumnDefinitions>
         <Border BorderThickness="3" BorderBrush="#2c2f33" Margin="0,0,0.8,0.4" Grid.RowSpan="4">
-            <StackPanel Grid.ColumnSpan="1" Background="#23272a" >
+            <StackPanel Grid.ColumnSpan="1" Background="#23272a" Margin="-0.2,-0.2,-0.2,-49.4" >
                 <TextBlock x:Name="LabelMenu" FontSize="15pt" Padding="0,8" Height="36" Style="{StaticResource centeredText}" FontWeight="Bold" Text="{DynamicResource menu}"></TextBlock>
                 <Button x:Name="ButtonOutputBasket" Style="{StaticResource menuButtons}" Margin="0,10,0,20">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource OutputBasket}"></TextBlock>
@@ -62,12 +62,16 @@
                 <Button x:Name="ButtonAddGood" Style="{StaticResource menuButtons}" Background="#7289da" Foreground="#2c2f33">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource AddGood}"></TextBlock>
                 </Button>
+                <Button x:Name="ButtonEN" Height="50" Width="50" Margin="-80,20,0,0" Background="Transparent" BorderThickness="0" Click="ButtonEN_Click" Tag="ru-RU">
+                    <Image Source="united-states-of-america.png"></Image>
+                </Button>
+                <Button x:Name="ButtonRU" Height="50" Width="50" Margin="80,-50,0 0" Background="Transparent" BorderThickness="0" Click="ButtonRU_Click">
+                    <Image Source="russia.png" Tag="en-US"></Image>
+                </Button>
             </StackPanel>
         </Border>
         <StackPanel Grid.ColumnSpan="2" Grid.Column="1" Margin="0.2,0,-0.4,0">
-            <TextBlock FontSize="18" Style="{StaticResource centeredText}" Padding="0,14,0,0" Height="40" Margin="0,0,-0.2,0" >
-                ДОБАВЛЕНИЕ ТОВАРА
-            </TextBlock>
+            <TextBlock FontSize="18" Style="{StaticResource centeredText}" Padding="0,14,0,0" Height="40" Margin="0,0,-0.2,0" Text="{DynamicResource AddingGood}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="0.2,1,371.6,0.4" Grid.Row="1" Grid.RowSpan="10">
             <Button Margin="30,20,0,0" Width="230" Height="350">
@@ -81,7 +85,12 @@
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="2" Height="54">
                 <TextBlock x:Name="TextBlockCategory" Style="{StaticResource paramsText}" Text="{DynamicResource Category}"></TextBlock>
-                <ComboBox x:Name="ComboBoxCategory" Width="150" Height="20" Margin="160,-22,0,0"></ComboBox>
+                <ComboBox x:Name="ComboBoxCategory" Width="150" Height="20" Margin="160,-22,0,0">
+                    <ComboBoxItem Content="{DynamicResource Berrys}"/>
+                    <ComboBoxItem Content="{DynamicResource Dairy}"/>
+                    <ComboBoxItem Content="{DynamicResource Fruits}"/>
+                    <ComboBoxItem Content="{DynamicResource Vegetables}"/>
+                </ComboBox>
             </StackPanel>
             <StackPanel Grid.Row="3" Grid.Column="2" Height="53">
                 <TextBlock x:Name="TextBlockPrice" Style="{StaticResource paramsText}" Text="{DynamicResource Price}"></TextBlock>
@@ -95,8 +104,8 @@
             <StackPanel Grid.Row="5" Grid.Column="2" Height="53">
                 <TextBlock x:Name="TextBlockAvailable" Style="{StaticResource paramsText}" Text="{DynamicResource Available}"></TextBlock>
                 <RadioButton x:Name="RadioButtonAvailable" Margin="-134,-18.5,0,0" Width="15"></RadioButton>
-                <TextBlock x:Name="TextBlockNotAvailable" Style="{StaticResource paramsText}" Margin="160,-22,0,0" Text="{DynamicResource NotAvailable}"></TextBlock>
-                <RadioButton x:Name="RadioButtonNotAvailable" Margin="220,-19,0,0" Width="15"></RadioButton>
+                <TextBlock x:Name="TextBlockNotAvailable" Style="{StaticResource paramsText}" Margin="150,-22,0,0" Text="{DynamicResource NotAvailable}"></TextBlock>
+                <RadioButton x:Name="RadioButtonNotAvailable" Margin="230,-19,0,0" Width="15"></RadioButton>
             </StackPanel>
             <StackPanel Grid.Row="6" Grid.Column="2" Height="264">
                 <TextBlock x:Name="TextBlockDescription" Style="{StaticResource paramsText}" Text="{DynamicResource Description}"></TextBlock>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,18 @@ namespace lab6_7
         private void ButtonAddGood_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ButtonRU_Click(object sender, RoutedEventArgs e)
+        {
+            CultureInfo lang = new CultureInfo("ru-RU");
+            App.Language = lang;
+        }
+
+        private void ButtonEN_Click(object sender, RoutedEventArgs e)
+        {
+            CultureInfo lang = new CultureInfo("en-US");
+            App.Language = lang;
         }
     }
 }

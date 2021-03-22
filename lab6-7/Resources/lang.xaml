@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:lab6_7.Resources"
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
-    <v:String x:Key="menu">МЕНЮ</v:String>
+    <v:String x:Key="menu">МЕНЮ:</v:String>
     <v:String x:Key="OutputBasket">вывод всех товаров</v:String>
     <v:String x:Key="EditBasket">изменение товаров</v:String>
     <v:String x:Key="AddGood">добавление товара</v:String>
@@ -17,4 +17,9 @@
     <v:String x:Key="Available">В НАЛИЧИИ</v:String>
     <v:String x:Key="NotAvailable">ОТСУТСТВУЕТ</v:String>
     <v:String x:Key="Description">ОПИСАНИЕ ТОВАРА:</v:String>
+    <v:String x:Key="Vegetables">ОВОЩИ</v:String>
+    <v:String x:Key="Berrys">ЯГОДЫ</v:String>
+    <v:String x:Key="Dairy">МОЛОЧНЫЕ ПРОДУКТЫ</v:String>
+    <v:String x:Key="Fruits">ФРУКТЫ</v:String>
+
 </ResourceDictionary>
