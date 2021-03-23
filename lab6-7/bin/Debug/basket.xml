@@ -24,4 +24,12 @@
     <is_alailable>В наличии</is_alailable>
     <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/фрукты/photo-1587334206596-c0f9f7dccbe6.jfif</path_of_picture>
   </Item>
+  <Item>
+    <name_of_item>картошка</name_of_item>
+    <category_of_item>Vegetables</category_of_item>
+    <price_for_one_kg>5</price_for_one_kg>
+    <origin_country>россия</origin_country>
+    <is_alailable>В наличии</is_alailable>
+    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/фрукты/photo-1519162808019-7de1683fa2ad.jfif</path_of_picture>
+  </Item>
 </ArrayOfItem>

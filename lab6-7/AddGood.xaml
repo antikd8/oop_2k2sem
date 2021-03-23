@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab6_7"
         mc:Ignorable="d"
-        Title="Добавление товара в корзину" Height="600" Width="800" Icon="shopping-basket.png" Background="#2c2f33" MinWidth="800" MinHeight="600">
+        Title="Добавление товара в корзину" Height="600" Width="800" Icon="iconfinder_Harvest_2998126.ico" Background="#2c2f33" MinWidth="800" MinHeight="600">
     <Window.Resources>
         <Style TargetType="Button" x:Key="menuButtons">
             <Setter Property="FontFamily" Value="Arial Black"></Setter>
@@ -50,10 +50,10 @@
             <ColumnDefinition Width="26*"/>
             <ColumnDefinition Width="37*"/>
         </Grid.ColumnDefinitions>
-        <Border BorderThickness="3" BorderBrush="#2c2f33" Margin="0,0,0.8,0.4" Grid.RowSpan="4">
+        <Border BorderThickness="0,0,3,0" BorderBrush="#2c2f33" Margin="0,0,0.8,0.4" Grid.RowSpan="4">
             <StackPanel Grid.ColumnSpan="1" Background="#23272a" Margin="-0.2,-0.2,-0.2,-49.4" >
                 <TextBlock x:Name="LabelMenu" FontSize="15pt" Padding="0,8" Height="36" Style="{StaticResource centeredText}" FontWeight="Bold" Text="{DynamicResource menu}"></TextBlock>
-                <Button x:Name="ButtonOutputBasket" Style="{StaticResource menuButtons}" Margin="0,10,0,20">
+                <Button x:Name="ButtonOutputBasket" Style="{StaticResource menuButtons}" Margin="0,10,0,20" Click="ButtonOutputBacket_Click">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource OutputBasket}"></TextBlock>
                 </Button>
                 <Button x:Name="ButtonEditBasket" Style="{StaticResource menuButtons}" Margin="0,0,0,20" Click="ButtonEditBasket_Click">
@@ -89,7 +89,7 @@
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="1" Grid.RowSpan="10" Margin="0.4,0,-0.4,0.4">
             <StackPanel Grid.Row="1" Grid.Column="2" Height="54">
-                <TextBlock x:Name="TextBlockNameGood" Style="{StaticResource paramsText}" Text="{DynamicResource GoodName}"></TextBlock>
+                <TextBlock x:Name="TextBlockNameGood" Style="{StaticResource paramsText}" Text="{DynamicResource ItemName}"></TextBlock>
                 <TextBox x:Name="TextBoxNameGood" Width="150" Margin="160,-24,0,0" Height="20"></TextBox>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="2" Height="54">

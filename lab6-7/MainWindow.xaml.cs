@@ -35,25 +35,10 @@ namespace lab6_7
 
         }
 
-        private void ChangeLanguageClick(Object sender, EventArgs e)
-        {
-            MenuItem mi = sender as MenuItem;
-            if (mi != null)
-            {
-                CultureInfo lang = mi.Tag as CultureInfo;
-                if (lang != null)
-                {
-                    App.Language = lang;
-                }
-            }
-
-        }
-
         private void ButtonAddGood_Click(object sender, RoutedEventArgs e)
         {
             AddGood windowAddGood = new AddGood();
             windowAddGood.Show();
-            
         }
 
         private void ButtonEN_click(object sender, RoutedEventArgs e)
@@ -71,6 +56,12 @@ namespace lab6_7
         private void ButtonEditBasket_Click(object sender, RoutedEventArgs e)
         {
             EditBasket window = new EditBasket();
+            window.Show();
+        }
+
+        private void ButtonOutputBasket_Click(object sender, RoutedEventArgs e)
+        {
+            OutputGoods window = new OutputGoods();
             window.Show();
         }
     }

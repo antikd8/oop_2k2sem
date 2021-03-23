@@ -165,5 +165,11 @@ namespace lab6_7
             RadioButtonNotAvailable.IsChecked = false;
             ItemPicture.Source = null;
         }
+
+        private void ButtonOutputBacket_Click(object sender, RoutedEventArgs e)
+        {
+            OutputGoods window = new OutputGoods();
+            window.Show();
+        }
     }
 }
