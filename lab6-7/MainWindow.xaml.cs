@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static lab6_7.AddGood;
 
 namespace lab6_7
 {
@@ -65,6 +66,12 @@ namespace lab6_7
         {
             CultureInfo lang = new CultureInfo("ru-RU");
             App.Language = lang;
+        }
+
+        private void ButtonEditBasket_Click(object sender, RoutedEventArgs e)
+        {
+            EditBasket window = new EditBasket();
+            window.Show();
         }
     }
 }

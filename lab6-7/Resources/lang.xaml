@@ -23,5 +23,7 @@
     <v:String x:Key="Fruits">ФРУКТЫ</v:String>
     <v:String x:Key="ButtonAddItem">ДОБАВИТЬ ТОВАР В КОРЗИНУ</v:String>
     <v:String x:Key="ButtonAddPic">ДОБАВИТЬ ИЗОБРАЖЕНИЕ</v:String>
+    <v:String x:Key="ButtonClearInfo">ОЧИСТИТЬ ИНФОРМАЦИЮ</v:String>
+
 
 </ResourceDictionary>

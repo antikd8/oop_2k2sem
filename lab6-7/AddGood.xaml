@@ -56,7 +56,7 @@
                 <Button x:Name="ButtonOutputBasket" Style="{StaticResource menuButtons}" Margin="0,10,0,20">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource OutputBasket}"></TextBlock>
                 </Button>
-                <Button x:Name="ButtonEditBasket" Style="{StaticResource menuButtons}" Margin="0,0,0,20">
+                <Button x:Name="ButtonEditBasket" Style="{StaticResource menuButtons}" Margin="0,0,0,20" Click="ButtonEditBasket_Click">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource EditBasket}"></TextBlock>
                 </Button>
                 <Button x:Name="ButtonAddGood" Style="{StaticResource menuButtons}" Background="#7289da" Foreground="#2c2f33">
@@ -75,11 +75,16 @@
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="0.2,1,371.6,0.4" Grid.Row="1" Grid.RowSpan="10">
             <Image x:Name="ItemPicture" Height="280" Width="230" Margin="0,20,0,0" Source="empty-cart.png"></Image>
-            <Button x:Name="ButtonAddPicture" Margin="10,26,0,0" Width="230" Height="45" Background="#7289da" FontWeight="Bold" Click="ButtonAddPicture_Click">
+            <Button x:Name="ButtonAddPicture" Margin="10,26,0,0" Width="230" Height="44" Background="#7289da" FontWeight="Bold" Click="ButtonAddPicture_Click">
                 <TextBlock Style="{StaticResource centeredText}" FontSize="12" TextWrapping="Wrap" Foreground="#2c2f33" Text="{DynamicResource ButtonAddPic}"></TextBlock>
             </Button>
-            <Button x:Name="ButtonAddItem" Width="230" Height="50" Margin="10,25,0,0" Background="#7289da" Click="ButtonAddItem_Click">
+            <Button x:Name="ButtonAddItem" Width="230" Height="44" Margin="10,25,0,0" Background="#7289da" Click="ButtonAddItem_Click">
                 <TextBlock Style="{StaticResource centeredText}" Foreground="#2c2f33" FontWeight="Bold" Text="{DynamicResource ButtonAddItem}"></TextBlock>
+            </Button>
+            <Button x:Name="ButtonClearInfo" Width="230" Background="#7289da" Margin="10,25,0,0" Height="43" Click="ButtonClearInfo_Click">
+                <TextBlock Text="{DynamicResource ButtonClearInfo}" FontWeight="Bold" Foreground="#2c2f33">
+                    
+                </TextBlock>
             </Button>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="1" Grid.RowSpan="10" Margin="0.4,0,-0.4,0.4">
@@ -113,7 +118,7 @@
             </StackPanel>
             <StackPanel Grid.Row="6" Grid.Column="2" Height="264">
                 <TextBlock x:Name="TextBlockDescription" Style="{StaticResource paramsText}" Text="{DynamicResource Description}"></TextBlock>
-                <TextBox x:Name="TextBoxDescription" Width="320" Height="120" Margin="-10,20,0,0"></TextBox>
+                <TextBox x:Name="TextBoxDescription" Width="320" Height="180" Margin="-10,20,0,0"></TextBox>
             </StackPanel>
         </StackPanel>
     </Grid>

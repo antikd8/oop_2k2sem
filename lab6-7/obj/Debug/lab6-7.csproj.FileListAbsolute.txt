@@ -18,3 +18,5 @@ C:\Users\antik\source\repos\lab6-7\obj\Debug\AddGood.baml
 C:\Users\antik\source\repos\lab6-7\obj\Debug\App.baml
 C:\Users\antik\source\repos\lab6-7\obj\Debug\Resources\lang.baml
 C:\Users\antik\source\repos\lab6-7\obj\Debug\Resources\lang.en-US.baml
+C:\Users\antik\source\repos\lab6-7\obj\Debug\EditBasket.g.cs
+C:\Users\antik\source\repos\lab6-7\obj\Debug\EditBasket.baml

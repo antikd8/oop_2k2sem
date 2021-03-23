@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ArrayOfItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Item>
+    <name_of_item>чеснок от вампиров))))</name_of_item>
+    <category_of_item>ОВОЩИ</category_of_item>
+    <price_for_one_kg>2</price_for_one_kg>
+    <origin_country>вампирия</origin_country>
+    <is_alailable>В наличии</is_alailable>
+    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/овощи/photo-1587049332298-1c42e83937a7.jfif</path_of_picture>
+  </Item>
+  <Item>
+    <name_of_item>огурец использованный</name_of_item>
+    <category_of_item>ОВОЩИ</category_of_item>
+    <price_for_one_kg>3</price_for_one_kg>
+    <origin_country>огуречная</origin_country>
+    <is_alailable>Отсутствует</is_alailable>
+    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/овощи/photo-1589621316382-008455b857cd.jfif</path_of_picture>
+  </Item>
+  <Item>
+    <name_of_item>бананы прикольные</name_of_item>
+    <category_of_item>ФРУКТЫ</category_of_item>
+    <price_for_one_kg>5</price_for_one_kg>
+    <origin_country>обезьянья</origin_country>
+    <is_alailable>В наличии</is_alailable>
+    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/фрукты/photo-1587334206596-c0f9f7dccbe6.jfif</path_of_picture>
+  </Item>
+</ArrayOfItem>

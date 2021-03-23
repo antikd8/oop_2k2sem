@@ -23,5 +23,6 @@
     <v:String x:Key="Fruits">FRUITS</v:String>
     <v:String x:Key="ButtonAddItem">ADD ITEM</v:String>
     <v:String x:Key="ButtonAddPic">ADD PICTURE FOR ITEM</v:String>
+    <v:String x:Key="ButtonClearInfo">CLEAR INFORMATION</v:String>
 
 </ResourceDictionary>
