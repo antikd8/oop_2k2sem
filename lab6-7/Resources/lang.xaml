@@ -21,5 +21,7 @@
     <v:String x:Key="Berrys">ЯГОДЫ</v:String>
     <v:String x:Key="Dairy">МОЛОЧНЫЕ ПРОДУКТЫ</v:String>
     <v:String x:Key="Fruits">ФРУКТЫ</v:String>
+    <v:String x:Key="ButtonAddItem">ДОБАВИТЬ ТОВАР В КОРЗИНУ</v:String>
+    <v:String x:Key="ButtonAddPic">ДОБАВИТЬ ИЗОБРАЖЕНИЕ</v:String>
 
 </ResourceDictionary>

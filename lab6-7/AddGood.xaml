@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab6_7"
         mc:Ignorable="d"
-        Title="Добавление товара в корзину" Height="600" Width="800" Icon="shopping-basket.png" Background="#2c2f33" MinWidth="800" MinHeight="550">
+        Title="Добавление товара в корзину" Height="600" Width="800" Icon="shopping-basket.png" Background="#2c2f33" MinWidth="800" MinHeight="600">
     <Window.Resources>
         <Style TargetType="Button" x:Key="menuButtons">
             <Setter Property="FontFamily" Value="Arial Black"></Setter>
@@ -74,8 +74,12 @@
             <TextBlock FontSize="18" Style="{StaticResource centeredText}" Padding="0,14,0,0" Height="40" Margin="0,0,-0.2,0" Text="{DynamicResource AddingGood}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="0.2,1,371.6,0.4" Grid.Row="1" Grid.RowSpan="10">
-            <Button Margin="30,20,0,0" Width="230" Height="350">
-                <TextBlock Style="{StaticResource centeredText}" FontSize="15" TextWrapping="Wrap" Foreground="#2c2f33">ДОБАВИТЬ ИЗОБРАЖЕНИЕ</TextBlock>
+            <Image x:Name="ItemPicture" Height="280" Width="230" Margin="0,20,0,0" Source="empty-cart.png"></Image>
+            <Button x:Name="ButtonAddPicture" Margin="10,26,0,0" Width="230" Height="45" Background="#7289da" FontWeight="Bold" Click="ButtonAddPicture_Click">
+                <TextBlock Style="{StaticResource centeredText}" FontSize="12" TextWrapping="Wrap" Foreground="#2c2f33" Text="{DynamicResource ButtonAddPic}"></TextBlock>
+            </Button>
+            <Button x:Name="ButtonAddItem" Width="230" Height="50" Margin="10,25,0,0" Background="#7289da" Click="ButtonAddItem_Click">
+                <TextBlock Style="{StaticResource centeredText}" Foreground="#2c2f33" FontWeight="Bold" Text="{DynamicResource ButtonAddItem}"></TextBlock>
             </Button>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="1" Grid.RowSpan="10" Margin="0.4,0,-0.4,0.4">
@@ -94,7 +98,7 @@
             </StackPanel>
             <StackPanel Grid.Row="3" Grid.Column="2" Height="53">
                 <TextBlock x:Name="TextBlockPrice" Style="{StaticResource paramsText}" Text="{DynamicResource Price}"></TextBlock>
-                <TextBox x:Name="TextBoxPrice" Width="100" Margin="160,-24,50,0" Height="20"></TextBox>
+                <TextBox x:Name="TextBoxPrice" Width="100" Margin="160,-24,50,0" Height="20" KeyDown="TextBoxPrice_KeyDown"></TextBox>
                 <TextBlock x:Name="TextBlockCurrency" Style="{StaticResource leftText}" Width="50" Height="20" Margin="300,-20,0,0" Text="{DynamicResource Currency}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="4" Grid.Column="2" Height="53">

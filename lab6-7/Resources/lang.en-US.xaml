@@ -21,4 +21,7 @@
     <v:String x:Key="Berrys">BERRYS</v:String>
     <v:String x:Key="Dairy">DAIRY</v:String>
     <v:String x:Key="Fruits">FRUITS</v:String>
+    <v:String x:Key="ButtonAddItem">ADD ITEM</v:String>
+    <v:String x:Key="ButtonAddPic">ADD PICTURE FOR ITEM</v:String>
+
 </ResourceDictionary>

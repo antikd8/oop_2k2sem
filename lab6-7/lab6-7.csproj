@@ -124,5 +124,8 @@
   <ItemGroup>
     <Resource Include="united-states-of-america.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="empty-cart.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
