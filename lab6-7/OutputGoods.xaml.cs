@@ -27,21 +27,25 @@ namespace lab6_7
             InitializeComponent();
             items = XmlSerializeWrapper.Deserialize<List<Item>>("basket.xml");
             int counter = 0;
-            foreach(var item in items)
+            Image[]  images= { image1, image2,image3};
+            TextBlock[] names = { name1, name2, name3};
+            TextBlock[] categorys = { category1, category2, category3 };
+            TextBlock[] prices = { price1, price2, price3 };
+            TextBlock[] countrys = { country1, country2, country3 };
+            foreach (var item in items)
             {
-                if (counter != 1)
-                {
-                    BitmapImage image = new BitmapImage();
-                    image.BeginInit();
-                    image.UriSource = new Uri(item.PicturePath);
-                    image.EndInit();
-                    image1.Source = image;
-                    counter++;
-                }
-                else
-                {
+                if (counter >= 3)
                     break;
-                }
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(item.PicturePath);
+                image.EndInit();
+                images[counter].Source = image;
+                names[counter].Text = item.NameItem;
+                categorys[counter].Text = item.Category;
+                prices[counter].Text = item.Price.ToString() + " у.е.";
+                countrys[counter].Text = item.Country;
+                counter++;
             }
         }
 

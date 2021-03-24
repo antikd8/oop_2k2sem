@@ -32,4 +32,20 @@
     <is_alailable>В наличии</is_alailable>
     <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/фрукты/photo-1519162808019-7de1683fa2ad.jfif</path_of_picture>
   </Item>
+  <Item>
+    <name_of_item>арбуз</name_of_item>
+    <category_of_item>Berrys</category_of_item>
+    <price_for_one_kg>12</price_for_one_kg>
+    <origin_country>омерика</origin_country>
+    <is_alailable>В наличии</is_alailable>
+    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/ягоды/photo-1587049352846-4a222e784d38.jfif</path_of_picture>
+  </Item>
+  <Item>
+    <name_of_item>сыровое))))</name_of_item>
+    <category_of_item>Молочные продукты</category_of_item>
+    <price_for_one_kg>30</price_for_one_kg>
+    <origin_country>крысиная</origin_country>
+    <is_alailable>В наличии</is_alailable>
+    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/молочка/cheese-isolated-on-white-background_88281-289.jpg</path_of_picture>
+  </Item>
 </ArrayOfItem>

@@ -40,15 +40,7 @@
     <v:String x:Key="OutputList">Списком</v:String>
     <v:String x:Key="OutputTable">Таблицей</v:String>
     <v:String x:Key="ItemPicture">Изображение</v:String>
-
-
-
-
-
-
-
-
-
-
+    <v:String x:Key="EditingBasket">ИЗМЕНЕНИЕ ТОВАРОВ</v:String>
+    <v:String x:Key="Operations">Операции</v:String>
 
 </ResourceDictionary>

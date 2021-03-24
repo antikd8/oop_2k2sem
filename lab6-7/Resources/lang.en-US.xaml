@@ -40,7 +40,8 @@
     <v:String x:Key="OutputList">List</v:String>
     <v:String x:Key="OutputTable">Table</v:String>
     <v:String x:Key="ItemPicture">Picture</v:String>
-
+    <v:String x:Key="EditingBasket">EDITING GOODS</v:String>
+    <v:String x:Key="Operations">Operations</v:String>
 
 
 
