@@ -84,7 +84,7 @@ namespace lab6_7
             ObservableCollection<Item> tempItems = new ObservableCollection<Item>();
             foreach (var item in items)
             {
-                if (item.IsAvailable == "В наличии" || item.IsAvailable == "AVAILABLE")
+                if (item.IsAvailable == "В НАЛИЧИИ" || item.IsAvailable == "AVAILABLE")
                     tempItems.Add(item);
             }
             items = tempItems;
@@ -97,7 +97,7 @@ namespace lab6_7
             ObservableCollection<Item> tempItems = new ObservableCollection<Item>();
             foreach (var item in items)
             {
-                if (item.IsAvailable == "Отсутствует" || item.IsAvailable == "NOT AVAILABLE")
+                if (item.IsAvailable == "ОТСУТСТВУЕТ" || item.IsAvailable == "NOT AVAILABLE")
                     tempItems.Add(item);
             }
             items = tempItems;
@@ -125,6 +125,7 @@ namespace lab6_7
 
         private void ButtonSetFilters_Click(object sender, RoutedEventArgs e)
         {
+            items = XmlSerializeWrapper.Deserialize<ObservableCollection<Item>>("basket.xml");
             double minPrice = 0;
             double maxPrice = 0;
             string Category = null;
@@ -169,22 +170,33 @@ namespace lab6_7
             if (RadioButtonAvailable.IsChecked == true)
                 foreach (var item in tempItems)
                 {
-                    if (item.IsAvailable == "В наличии" || item.IsAvailable == "AVAILABLE")
+                    if (item.IsAvailable == "В НАЛИЧИИ" || item.IsAvailable == "AVAILABLE")
                         items.Add(item);
                 }
-            else 
-                foreach(var item in tempItems)
+            else
+                foreach (var item in tempItems)
                 {
-                    if (item.IsAvailable == "Отсутствует" || item.IsAvailable == "NOT AVAILABLE")
+                    if (item.IsAvailable == "ОТСУТСТВУЕТ" || item.IsAvailable == "NOT AVAILABLE")
                         items.Add(item);
                 }
-            if(items.Count<1)
+            if (items.Count < 1)
             {
-                MessageBox.Show("По заданным критерями не найдено ни одного товара!");
+                MessageBox.Show("По заданным критерям не найдено ни одного товара!");
                 return;
             }
-            ListViewTable.ItemsSource = items;
+            else
+                ListViewTable.ItemsSource = items;
             items = XmlSerializeWrapper.Deserialize<ObservableCollection<Item>>("basket.xml");
+        }
+
+        private void ButtonResetFilters_Click(object sender, RoutedEventArgs e)
+        {
+            ComboBoxCategoryFilter.SelectedIndex = -1;
+            RadioButtonAvailable.IsChecked = false;
+            RadioButtonNotAvailable.IsChecked = false;
+            TextBoxMaxPrice.Text = string.Empty;
+            TextBoxMinPrice.Text = string.Empty;
+            ListViewTable.ItemsSource = items;
         }
     }
 }

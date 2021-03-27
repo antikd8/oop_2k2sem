@@ -30,8 +30,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
             <RowDefinition Height="26*"/>
-            <RowDefinition Height="253*"/>
-            <RowDefinition Height="292*"/>
+            <RowDefinition Height="176*"/>
+            <RowDefinition Height="77*"/>
+            <RowDefinition Height="72*"/>
+            <RowDefinition Height="219*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="158*"/>
@@ -42,7 +44,7 @@
             <ColumnDefinition Width="49*"/>
             <ColumnDefinition Width="120*"/>
         </Grid.ColumnDefinitions>
-        <Border BorderThickness="0,0,3,0" BorderBrush="#2c2f33"  Grid.RowSpan="4" Margin="0,0,0.6,-3">
+        <Border BorderThickness="0,0,3,0" BorderBrush="#2c2f33"  Grid.RowSpan="6" Margin="0,0,0.6,-3">
             <StackPanel Grid.ColumnSpan="1" Background="#23272a">
                 <Button x:Name="ButtonBrowseHome"
                         Background="Transparent" 
@@ -67,12 +69,12 @@
                 </Button>
             </StackPanel>
         </Border>
-        <Border BorderThickness="0,0,0,3" Grid.Column="1" BorderBrush="#2c2f33" Grid.ColumnSpan="6" Margin="0.4,0,-3.4,0.6">
+        <Border BorderThickness="0,0,0,3" Grid.Column="1" BorderBrush="#2c2f33" Grid.ColumnSpan="6" Margin="0.4,0,-3.4,0.4">
             <StackPanel>
                 <TextBlock Style="{StaticResource centeredText}" Padding="0,10,0,12" FontSize="18" Text="{DynamicResource OutputGoods}" FontWeight="bold"></TextBlock>
             </StackPanel>
         </Border>
-        <Border Grid.Column="1" Margin="0.4,46,3,-2" Grid.RowSpan="4" BorderThickness="0,0,2,0" BorderBrush="#2c2f33">
+        <Border Grid.Column="1" Margin="0.4,46,3,-2" Grid.RowSpan="6" BorderThickness="0,0,2,0" BorderBrush="#2c2f33">
             <StackPanel>
                 <TextBlock Style="{DynamicResource centeredText}" Text="{DynamicResource FilterGoods}" Padding="0,5,0,5" FontSize="13" TextWrapping="Wrap" FontWeight="Bold"></TextBlock>
                 <TextBlock Style="{StaticResource leftText}" FontSize="14" Padding="10,0,0,0" Height="20" Text="{DynamicResource CategoryLC}"  Margin="0,20,0,0" FontWeight="DemiBold"></TextBlock>
@@ -102,6 +104,16 @@
                             Foreground="#23272a"
                             FontWeight="bold" Click="ButtonSetFilters_Click"></Button>
                 </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="1" Grid.RowSpan="3">
+                    <Button x:Name="ButtonResetFilters" 
+                            Background="#7289da" 
+                            Width="240" 
+                            Height="50"
+                            Content="{DynamicResource ResetFilters}" 
+                            FontSize="16" 
+                            Foreground="#23272a"
+                            FontWeight="bold" Click="ButtonResetFilters_Click" Margin="0,30,0,0"></Button>
+                </StackPanel>
             </StackPanel>
         </Border>
 
@@ -109,10 +121,10 @@
             ItemsSource="{Binding items}" 
             x:Name="ListViewTable"
             Grid.Row="1"
-            Grid.RowSpan="3"
+            Grid.RowSpan="5"
             Grid.Column="2"
             Grid.ColumnSpan="5"
-            Background="#23272a" BorderThickness="0" Margin="0,0.4,-0.4,0">
+            Background="#23272a" BorderThickness="0" Margin="0,0.6,-0.4,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="140" Header="{DynamicResource ItemPicture}">
