@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,8 @@ namespace lab6_7
             InitializeComponent();
             App.LanguageChanged += LanguageChanged;
             CultureInfo currLang = App.Language;
+            ObservableCollection<Item> items = new ObservableCollection<Item>();
+            XmlSerializeWrapper.Serialize(items, "foreignBasket.xml");
         }
 
         private void LanguageChanged(Object sender, EventArgs e)
