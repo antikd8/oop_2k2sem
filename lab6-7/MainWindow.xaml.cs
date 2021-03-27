@@ -40,6 +40,7 @@ namespace lab6_7
         {
             AddGood windowAddGood = new AddGood();
             windowAddGood.Show();
+            this.Hide();
         }
 
         private void ButtonEN_click(object sender, RoutedEventArgs e)
@@ -58,12 +59,14 @@ namespace lab6_7
         {
             EditBasket window = new EditBasket();
             window.Show();
+            this.Hide();
         }
 
         private void ButtonOutputBasket_Click(object sender, RoutedEventArgs e)
         {
             OutputGoods window = new OutputGoods();
             window.Show();
+            this.Hide();
         }
     }
 }

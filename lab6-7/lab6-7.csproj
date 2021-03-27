@@ -66,6 +66,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EditItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,6 +83,9 @@
     </Compile>
     <Compile Include="EditBasket.xaml.cs">
       <DependentUpon>EditBasket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditItem.xaml.cs">
+      <DependentUpon>EditItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -140,6 +147,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="empty-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="diskette.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

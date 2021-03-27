@@ -33,7 +33,7 @@
     <v:String x:Key="ButtonAddPic">ADD PICTURE FOR ITEM</v:String>
     <v:String x:Key="ButtonClearInfo">CLEAR INFORMATION</v:String>
     <v:String x:Key="OutputGoods">GOODS</v:String>
-    <v:String x:Key="FilterGoods">Filtering goods</v:String>
+    <v:String x:Key="FilterGoods">Filtering</v:String>
     <v:String x:Key="minPrice">From:</v:String>
     <v:String x:Key="maxPrice">To:</v:String>
     <v:String x:Key="OutputType">Display goods in:</v:String>
@@ -42,6 +42,8 @@
     <v:String x:Key="ItemPicture">Picture</v:String>
     <v:String x:Key="EditingBasket">EDITING GOODS</v:String>
     <v:String x:Key="Operations">Operations</v:String>
+    <v:String x:Key="EditPicture">EDIT PICTURE</v:String>
+    <v:String x:Key="SaveEditings">SAVE EDITINGS</v:String>
 
 
 

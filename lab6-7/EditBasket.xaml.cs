@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static lab6_7.AddGood;
 
 namespace lab6_7
 {
@@ -20,21 +21,26 @@ namespace lab6_7
     /// </summary>
     public partial class EditBasket : Window
     {
+        List<Item> items = new List<Item>();
         public EditBasket()
         {
             InitializeComponent();
+            items = XmlSerializeWrapper.Deserialize<List<Item>>("basket.xml");
+            ListViewTable.ItemsSource = items;
         }
 
         private void ButtonOutputBasket_Click(object sender, RoutedEventArgs e)
         {
             OutputGoods window = new OutputGoods();
             window.Show();
+            this.Hide();
         }
 
         private void ButtonAddGood_Click(object sender, RoutedEventArgs e)
         {
             AddGood window = new AddGood();
             window.Show();
+            this.Hide();
         }
 
         private void ButtonEN_click(object sender, RoutedEventArgs e)
@@ -47,6 +53,27 @@ namespace lab6_7
         {
             CultureInfo lang = new CultureInfo("ru-RU");
             App.Language = lang;
+        }
+        private void ButtonEditItem_Click(object sender, RoutedEventArgs e)
+        {
+            EditItem window = new EditItem(items, ListViewTable.SelectedIndex);
+            window.Show();
+        }
+
+        private void ButtonDeleteItem_Click(object sender, RoutedEventArgs e)
+        {
+            int counter = 0;
+            foreach(var item in items)
+            {
+                if(counter == ListViewTable.SelectedIndex)
+                {
+                    items.RemoveAt(counter);
+                    XmlSerializeWrapper.Serialize(items, "basket.xml");
+                    MessageBox.Show($"Товар {item.NameItem} удалён!");
+                    break;
+                }
+                counter++;
+            }
         }
     }
 }

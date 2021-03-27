@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("empty-cart.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("diskette.png")]
 
 

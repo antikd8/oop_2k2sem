@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab6_7"
         mc:Ignorable="d"
-        Title="EditBasket" Height="450" Width="800" Background="#23272a" MinWidth="800" MinHeight="600">
+        Title="EditBasket" Height="600" Width="1050" Background="#23272a" MinWidth="1000" MinHeight="600">
     <Window.Resources>
         <Style TargetType="Button" x:Key="menuButtons">
             <Setter Property="FontFamily" Value="Arial Black"></Setter>
@@ -25,13 +25,31 @@
             <Setter Property="FontFamily" Value="ArialBlack"></Setter>
             <Setter Property="FontSize" Value="15"></Setter>
         </Style>
+        <Style TargetType="TextBlock" x:Key="paramsText">
+            <Setter Property="TextAlignment" Value="Left"></Setter>
+            <Setter Property="Foreground" Value="#99aab5"></Setter>
+            <Setter Property="FontFamily" Value="ArialBlack"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="Height" Value="20"></Setter>
+            <Setter Property="Margin" Value="20,20,200,0"></Setter>
+            <Setter Property="Width" Value="150"></Setter>
+        </Style>
     </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="531*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="218*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="79*"/>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="322*"/>
         </Grid.ColumnDefinitions>
-        <Border BorderThickness="0,0,3,0" BorderBrush="#2c2f33">
+        <Border BorderThickness="0,0,3,0" BorderBrush="#2c2f33" Margin="0,0,0.6,0.4" Grid.RowSpan="2">
             <StackPanel Background="#23272a" >
                 <TextBlock x:Name="LabelMenu" FontSize="15pt" Padding="14" Height="50" Style="{StaticResource centeredText}" FontWeight="Bold" Text="{DynamicResource menu}"></TextBlock>
                 <Button x:Name="ButtonOutputBasket" Style="{StaticResource menuButtons}" Margin="0,10,0,20" Click="ButtonOutputBasket_Click">
@@ -51,44 +69,72 @@
                 </Button>
             </StackPanel>
         </Border>
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.ColumnSpan="6" Margin="0.4,0,-1.4,0.4" Grid.Column="1" Grid.RowSpan="2">
             <TextBlock Height="30" Text="{DynamicResource EditingBasket}" Foreground="#99aab5" Style="{StaticResource centeredText}" FontSize="18" FontWeight="Bold" Padding="0,10,0,0"></TextBlock>
         </StackPanel>
-        <StackPanel x:Name="StackPanelTable" Grid.Column="1" Margin="0,40,0,0">
-            <TextBlock Text="{DynamicResource ItemPicture}" Foreground="#99aab5" FontWeight="Bold" Width="86" Margin="-520,2,0,0"></TextBlock>
-            <TextBlock Text="{DynamicResource ItemNameLC}" Foreground="#99aab5" FontWeight="Bold" Margin="-300,-16,0,0" Width="100"></TextBlock>
-            <TextBlock Text="{DynamicResource CategoryLC}" Foreground="#99aab5" FontWeight="Bold" Width="70" Margin="-100,-16,0,0"></TextBlock>
-            <TextBlock Text="{DynamicResource PriceLC}" Foreground="#99aab5" FontWeight="Bold" Width="40" Margin="30,-16,0,0"></TextBlock>
-            <TextBlock Text="{DynamicResource CountryLC}" Foreground="#99aab5" FontWeight="Bold" Width="130" Margin="220,-16,0,0"></TextBlock>
-            <TextBlock Text="{DynamicResource Operations}" Foreground="#99aab5" FontWeight="Bold" Width="130" Margin="490,-16,0,0"></TextBlock>
-            <StackPanel x:Name="StackPanelItemPicture" Width="106" Height="512" Margin="-526,4,0,0">
-                <Image x:Name="image1" Width="80" Height="80" Margin="0,10,0,0"></Image>
-                <Image x:Name="image2" Width="80" Height="80" Margin="0,20,0,0"></Image>
-                <Image x:Name="image3" Width="80" Height="80" Margin="0,20,0,0"></Image>
-            </StackPanel>
-            <StackPanel x:Name="StackPanelItemName" Width="100" Height="512" Margin="-310,-512,0,0">
-                <TextBlock x:Name="name1" Width="100" Margin="6,20,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
-                <TextBlock x:Name="name2" Width="100" Margin="6,85,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
-                <TextBlock x:Name="name3" Width="100" Margin="6,55,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
-            </StackPanel>
-            <StackPanel x:Name="StackPanelCategory" Width="80" Height="512" Margin="-120,-512,0,0">
-                <TextBlock x:Name="category1" Width="70" Margin="8,20,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
-                <TextBlock x:Name="category2" Width="70" Margin="8,85,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
-                <TextBlock x:Name="category3" Width="70" Margin="8,85,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
-            </StackPanel>
-            <StackPanel x:Name="StackPanelPrice" Width="50" Height="512" Margin="20,-512,0,0">
-                <TextBlock x:Name="price1" TextWrapping="Wrap" Foreground="#99aab5" Margin="5,20,0,0"></TextBlock>
-                <TextBlock x:Name="price2" TextWrapping="Wrap" Foreground="#99aab5" Margin="5,85,0,0"></TextBlock>
-                <TextBlock x:Name="price3" TextWrapping="Wrap" Foreground="#99aab5" Margin="5,85,0,0"></TextBlock>
-            </StackPanel>
-            <StackPanel x:Name="StackPanelCountry" Width="126" Height="512" Margin="200,-512,0,0">
-                <TextBlock x:Name="country1" Width="120" TextWrapping="Wrap" Foreground="#99aab5" Margin="10,20,0,0"></TextBlock>
-                <TextBlock x:Name="country2" Width="120" TextWrapping="Wrap" Foreground="#99aab5" Margin="10,85,0,0"></TextBlock>
-                <TextBlock x:Name="country3" Width="120" TextWrapping="Wrap" Foreground="#99aab5" Margin="10,85,0,0"></TextBlock>
-            </StackPanel>
-            <StackPanel x:Name="StackPanelOperations" Width="140" Height="512" Margin="476,-512,0,0">
-            </StackPanel>
-
-        </StackPanel>
+        <ListView 
+            ItemsSource="{Binding items}" 
+            x:Name="ListViewTable"
+            Grid.ColumnSpan="6"
+            Background="#23272a"
+            Margin="0.4,0.2,-1.4,0.4" Grid.Column="1" Grid.Row="1" BorderThickness="0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="140" Header="{DynamicResource ItemPicture}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding PicturePath}" Height="90" Width="90" Margin="20,20,0,0" Stretch="UniformToFill"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" Header="{DynamicResource ItemNameLC}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NameItem}" FontSize="16" TextWrapping="Wrap" Foreground="#99aab5" Margin="10,0,0,0"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="{DynamicResource CategoryLC}" Width="110">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Category}" TextWrapping="Wrap" FontSize="16" Foreground="#99aab5" Margin="10,0,0,0" ></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="{DynamicResource PriceLC}" Width="80">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Price}" FontSize="16" TextWrapping="Wrap" Foreground="#99aab5" Margin="25,0,0,0"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="{DynamicResource CountryLC}" Width="130">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Country}" TextWrapping="Wrap" Foreground="#99aab5" FontSize="16" Margin="10,0,0,0"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="{DynamicResource Operations}" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="ButtonEditItem" Background="Transparent" BorderThickness="0" Click="ButtonEditItem_Click">
+                                    <Image Source="pencil.png" Width="30" Height="30" Margin="20,0,0,0"></Image>
+                                </Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="40">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="ButtonDeleteItem" Background="Transparent" Margin="-40,0,0,0" BorderThickness="0" Click="ButtonDeleteItem_Click">
+                                    <Image Source="delete.png" Width="30" Height="30" Margin="-5,0,0,0"></Image>
+                                </Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

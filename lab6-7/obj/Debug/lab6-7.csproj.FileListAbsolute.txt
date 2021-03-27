@@ -22,3 +22,5 @@ C:\Users\antik\source\repos\lab6-7\obj\Debug\EditBasket.g.cs
 C:\Users\antik\source\repos\lab6-7\obj\Debug\EditBasket.baml
 C:\Users\antik\source\repos\lab6-7\obj\Debug\OutputGoods.g.cs
 C:\Users\antik\source\repos\lab6-7\obj\Debug\OutputGoods.baml
+C:\Users\antik\source\repos\lab6-7\obj\Debug\EditItem.g.cs
+C:\Users\antik\source\repos\lab6-7\obj\Debug\EditItem.baml

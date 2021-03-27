@@ -53,7 +53,7 @@ namespace lab6_7
             public static void Serialize<T>(T obj, string filename)
             {
                 XmlSerializer formatter = new XmlSerializer(typeof(T));
-                using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(filename, FileMode.Create))
                 {
                     formatter.Serialize(fs, obj);
                 }
@@ -61,12 +61,16 @@ namespace lab6_7
             public static T Deserialize<T>(string filename)
             {
                 T obj;
-                using (FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read))
+                if (File.Exists(filename))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(T));
-                    obj = (T)serializer.Deserialize(fs);
+                    using (FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read))
+                    {
+                        XmlSerializer serializer = new XmlSerializer(typeof(T));
+                        obj = (T)serializer.Deserialize(fs);
+                    }
+                    return obj;
                 }
-                return obj;
+                return default(T);
             }
         }
         private void ButtonAddGood_Click(object sender, RoutedEventArgs e)
@@ -90,22 +94,22 @@ namespace lab6_7
         {
             try
             {
-                Item item = new Item();
-                item.NameItem = TextBoxNameGood.Text;
-                item.Category = ComboBoxCategory.Text;
+                Item tempItem = new Item();
+                tempItem.NameItem = TextBoxNameGood.Text;
+                tempItem.Category = ComboBoxCategory.Text;
                 if (Double.TryParse(TextBoxPrice.Text, out double price))
-                    item.Price = price;
+                    tempItem.Price = price;
                 else
                     throw new Exception("Неверные данные в поле с ценой");
-                item.Country = TextBoxCountry.Text;
+                tempItem.Country = TextBoxCountry.Text;
                 if (RadioButtonAvailable.IsChecked == true)
-                    item.IsAvailable = "В наличии";
+                    tempItem.IsAvailable = "В наличии";
                 if (RadioButtonNotAvailable.IsChecked == true)
-                    item.IsAvailable = "Отсутствует";
-                item.Description = TextBoxDescription.Text;
-                item.PicturePath = ItemPicture.Source.ToString();
-                itemsCollection.Add(item);
-                MessageBox.Show($"колво товаров в корзине: {itemsCollection.Count}");
+                    tempItem.IsAvailable = "Отсутствует";
+                tempItem.Description = TextBoxDescription.Text;
+                tempItem.PicturePath = ItemPicture.Source.ToString();
+                itemsCollection.Add(tempItem);
+                MessageBox.Show($"Кол-во товаров в корзине: {itemsCollection.Count}");
                 XmlSerializeWrapper.Serialize(itemsCollection, "basket.xml");
             }
             catch (Exception)
@@ -144,7 +148,6 @@ namespace lab6_7
                 image.UriSource = new Uri(dlg.FileName);
                 image.EndInit();
                 ItemPicture.Source = image;
-                MessageBox.Show(dlg.FileName);
             }
         }
 
@@ -152,6 +155,7 @@ namespace lab6_7
         {
             EditBasket window = new EditBasket();
             window.Show();
+            this.Hide();
         }
 
         private void ButtonClearInfo_Click(object sender, RoutedEventArgs e)
@@ -170,6 +174,7 @@ namespace lab6_7
         {
             OutputGoods window = new OutputGoods();
             window.Show();
+            this.Hide();
         }
     }
 }

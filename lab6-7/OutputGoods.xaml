@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab6_7"
         mc:Ignorable="d"
-        Title="OutputGoods" Height="610" Width="800" Background="#23272a" MinHeight="600" MinWidth="700">
+        Title="OutputGoods" Height="650" Width="1300" Background="#23272a" MinHeight="620" MinWidth="1250">
     <Window.Resources>
         <Style TargetType="Button" x:Key="menuButtons">
             <Setter Property="FontFamily" Value="Arial Black"></Setter>
@@ -29,8 +29,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="23*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="257*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="255*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="158*"/>
@@ -41,7 +41,7 @@
             <ColumnDefinition Width="49*"/>
             <ColumnDefinition Width="120*"/>
         </Grid.ColumnDefinitions>
-        <Border BorderThickness="0,0,3,0" BorderBrush="#2c2f33"  Grid.RowSpan="3" Margin="0,0,0.4,-1">
+        <Border BorderThickness="0,0,3,0" BorderBrush="#2c2f33"  Grid.RowSpan="3" Margin="0,0,0.6,-3">
             <StackPanel Grid.ColumnSpan="1" Background="#23272a">
                 <TextBlock x:Name="LabelMenu" FontSize="15pt" Padding="0,8" Height="36" Width="80" Style="{StaticResource centeredText}" FontWeight="Bold" Text="{DynamicResource menu}"></TextBlock>
                 <Button x:Name="ButtonOutputBasket" Style="{StaticResource menuButtons}"  Background="#7289da" Margin="0,10,0,20" Foreground="#2c2f33">
@@ -61,12 +61,12 @@
                 </Button>
             </StackPanel>
         </Border>
-        <Border BorderThickness="0,0,0,3" Grid.Column="1" BorderBrush="#2c2f33" Grid.ColumnSpan="6" Margin="0.6,0,-2.92,0.4">
+        <Border BorderThickness="0,0,0,3" Grid.Column="1" BorderBrush="#2c2f33" Grid.ColumnSpan="6" Margin="0.4,0,-3.4,0.4">
             <StackPanel>
                 <TextBlock Style="{StaticResource centeredText}" Padding="0,10,0,12" FontSize="18" Text="{DynamicResource OutputGoods}" FontWeight="bold"></TextBlock>
             </StackPanel>
         </Border>
-        <Border Grid.Column="1" Margin="0.6,46,105.88,0" Grid.RowSpan="3" Grid.ColumnSpan="2" BorderThickness="0,0,2,0" BorderBrush="#2c2f33">
+        <Border Grid.Column="1" Margin="0.4,46,2.8,-2" Grid.RowSpan="3" BorderThickness="0,0,2,0" BorderBrush="#2c2f33">
             <StackPanel>
                 <TextBlock Style="{DynamicResource centeredText}" Text="{DynamicResource FilterGoods}" Padding="0,5,0,5" FontSize="13" TextWrapping="Wrap" FontWeight="Bold"></TextBlock>
                 <TextBlock Style="{StaticResource leftText}" FontSize="12" Padding="10,0,0,0" Text="{DynamicResource CategoryLC}" FontWeight="DemiBold"></TextBlock>
@@ -75,10 +75,10 @@
                 <CheckBox Margin="10,10,0,0" Content="{DynamicResource Dairy}" Foreground="#99aab5"></CheckBox>
                 <CheckBox Margin="10,10,0,0" Content="{DynamicResource Berrys}" Foreground="#99aab5"></CheckBox>
                 <TextBlock Text="{DynamicResource PriceLC}" Foreground="#99aab5" Margin="10,10,0,0" Padding="0,0,0,10" FontWeight="DemiBold"></TextBlock>
-                <TextBlock Foreground="#99aab5" Margin="-100,0,0,0" Width="50" Text="{DynamicResource minPrice}"></TextBlock>
-                <TextBlock Foreground="#99aab5" Margin="60,-16,0,0" Width="50" Text="{DynamicResource maxPrice}"></TextBlock>
-                <TextBox Width="36" Height="10" Margin="-46,-12,0,0"></TextBox>
-                <TextBox Width="40" Height="10" Margin="90,-12,0,0"></TextBox>
+                <TextBlock Foreground="#99aab5" Margin="-100,0,0,0" Width="50" FontSize="14" Text="{DynamicResource minPrice}"></TextBlock>
+                <TextBlock Foreground="#99aab5" Margin="60,-16,0,0" Width="50" FontSize="14" Text="{DynamicResource maxPrice}"></TextBlock>
+                <TextBox Width="36" Height="20" Margin="-46,-22,0,0"></TextBox>
+                <TextBox Width="40" Height="20" Margin="110,-22,0,0"></TextBox>
                 <TextBlock Text="{DynamicResource IsAvailableLC}" Foreground="#99aab5" Margin="10,10,0,0" FontWeight="DemiBold"></TextBlock>
                 <StackPanel>
                     <RadioButton Content="{DynamicResource AvailableLC}" Foreground="#99aab5" Margin="20,10,0,0"></RadioButton>
@@ -91,38 +91,94 @@
                 </StackPanel>
             </StackPanel>
         </Border>
-        <StackPanel x:Name="StackPanelTable" Grid.Column="1" Grid.ColumnSpan="6" Margin="177.6,46,-2.92,0" Grid.RowSpan="3">
-            <TextBlock Text="{DynamicResource ItemPicture}" Foreground="#99aab5" FontWeight="Bold" Width="86" Margin="-340,2,0,0"></TextBlock>
-            <TextBlock Text="{DynamicResource ItemNameLC}" Foreground="#99aab5" FontWeight="Bold" Margin="-130,-16,0,0" Width="100"></TextBlock>
+
+        <ListView 
+            ItemsSource="{Binding items}" 
+            x:Name="ListViewTable"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Grid.ColumnSpan="5"
+            Background="#23272a" BorderThickness="0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="140" Header="{DynamicResource ItemPicture}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding PicturePath}" Height="90" Width="90" Margin="20,20,0,0" Stretch="UniformToFill"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" Header="{DynamicResource ItemNameLC}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NameItem}" TextWrapping="Wrap" FontSize="16" Foreground="#99aab5" Margin="10,0,0,0"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="{DynamicResource CategoryLC}" Width="110">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Category}" FontSize="16" TextWrapping="Wrap" Foreground="#99aab5" Margin="10,0,0,0" ></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="{DynamicResource PriceLC}" Width="80">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Price}" FontSize="16" TextWrapping="Wrap" Foreground="#99aab5" Margin="25,0,0,0"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="{DynamicResource CountryLC}" Width="130">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Country}" TextWrapping="Wrap" Foreground="#99aab5" FontSize="16" Margin="10,0,0,0"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="{DynamicResource IsAvailableLC}" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding IsAvailable}" TextWrapping="Wrap" Margin="0,0,0,0" Foreground="#99aab5" FontSize="16"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+     <!--  <StackPanel x:Name="StackPanelTable" Grid.Column="1" Width="570" Grid.ColumnSpan="6" Margin="224,46,22.6,-2" Grid.RowSpan="3">
+            <TextBlock Text="{DynamicResource ItemPicture}" Foreground="#99aab5" FontWeight="Bold" Width="86" Margin="-440,2,0,0"></TextBlock>
+            <TextBlock Text="{DynamicResource ItemNameLC}" Foreground="#99aab5" FontWeight="Bold" Margin="-180,-16,0,0" Width="100"></TextBlock>
             <TextBlock Text="{DynamicResource CategoryLC}" Foreground="#99aab5" FontWeight="Bold" Width="70" Margin="50,-16,0,0"></TextBlock>
-            <TextBlock Text="{DynamicResource PriceLC}" Foreground="#99aab5" FontWeight="Bold" Width="40" Margin="180,-16,0,0"></TextBlock>
-            <TextBlock Text="{DynamicResource CountryLC}" Foreground="#99aab5" FontWeight="Bold" Width="130" Margin="340,-16,0,0"></TextBlock>
-            <StackPanel x:Name="StackPanelItemPicture" Width="106" Height="512" Margin="-352,4,0,0">
+            <TextBlock Text="{DynamicResource PriceLC}" Foreground="#99aab5" FontWeight="Bold" Width="40" Margin="200,-16,0,0"></TextBlock>
+            <TextBlock Text="{DynamicResource CountryLC}" Foreground="#99aab5" FontWeight="Bold" Width="130" Margin="420,-16,0,0"></TextBlock>
+            <StackPanel x:Name="StackPanelItemPicture" Width="126" Height="512" Margin="-440,10,0,0">
                 <Image x:Name="image1" Width="80" Height="80" Margin="0,10,0,0"></Image>
                 <Image x:Name="image2" Width="80" Height="80" Margin="0,20,0,0"></Image>
                 <Image x:Name="image3" Width="80" Height="80" Margin="0,20,0,0"></Image>
             </StackPanel>
-            <StackPanel x:Name="StackPanelItemName" Width="100" Height="512" Margin="-140,-512,0,0">
+            <StackPanel x:Name="StackPanelItemName" Width="128" Height="512" Margin="-174,-512,0,0">
                 <TextBlock x:Name="name1" Width="100" Margin="6,20,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
                 <TextBlock x:Name="name2" Width="100" Margin="6,85,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
-                <TextBlock x:Name="name3" Width="100" Margin="6,55,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
+                <TextBlock x:Name="name3" Width="100" Margin="6,85,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
             </StackPanel>
-            <StackPanel x:Name="StackPanelCategory" Width="76" Height="512" Margin="40,-512,0,0">
+            <StackPanel x:Name="StackPanelCategory" Width="94" Height="512" Margin="60,-512,0,0">
                 <TextBlock x:Name="category1" Width="70" Margin="8,20,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
                 <TextBlock x:Name="category2" Width="70" Margin="8,85,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
                 <TextBlock x:Name="category3" Width="70" Margin="8,85,0,0" TextWrapping="Wrap" Foreground="#99aab5"></TextBlock>
             </StackPanel>
-            <StackPanel x:Name="StackPanelPrice" Width="36" Height="512" Margin="170,-512,0,0">
+            <StackPanel x:Name="StackPanelPrice" Width="60" Height="512" Margin="210,-512,0,0">
                 <TextBlock x:Name="price1" TextWrapping="Wrap" Foreground="#99aab5" Margin="5,20,0,0"></TextBlock>
                 <TextBlock x:Name="price2" TextWrapping="Wrap" Foreground="#99aab5" Margin="5,85,0,0"></TextBlock>
                 <TextBlock x:Name="price3" TextWrapping="Wrap" Foreground="#99aab5" Margin="5,85,0,0"></TextBlock>
             </StackPanel>
-            <StackPanel x:Name="StackPanelCountry" Width="126" Height="512" Margin="332,-512,0,0">
+            <StackPanel x:Name="StackPanelCountry" Width="150" Height="512" Margin="420,-512,0,0">
                 <TextBlock x:Name="country1" Width="120" TextWrapping="Wrap" Foreground="#99aab5" Margin="10,20,0,0"></TextBlock>
                 <TextBlock x:Name="country2" Width="120" TextWrapping="Wrap" Foreground="#99aab5" Margin="10,85,0,0"></TextBlock>
                 <TextBlock x:Name="country3" Width="120" TextWrapping="Wrap" Foreground="#99aab5" Margin="10,85,0,0"></TextBlock>
             </StackPanel>
 
-        </StackPanel>
+        </StackPanel> -->
     </Grid>
 </Window>

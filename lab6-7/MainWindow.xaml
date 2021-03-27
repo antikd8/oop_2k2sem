@@ -31,7 +31,7 @@
                 <Button x:Name="ButtonOutputBasket" Style="{StaticResource menuButtons}" Margin="0,10,0,20" Click="ButtonOutputBasket_Click">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource OutputBasket}"></TextBlock>
                 </Button>
-                <Button x:Name="ButtonEditBasket" Style="{StaticResource menuButtons}" Margin="0,0,0,20">
+                <Button x:Name="ButtonEditBasket" Style="{StaticResource menuButtons}" Margin="0,0,0,20" Click="ButtonEditBasket_Click">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource EditBasket}"></TextBlock>
                 </Button>
                 <Button x:Name="ButtonAddGood" Style="{StaticResource menuButtons}" Click="ButtonAddGood_Click">
