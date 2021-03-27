@@ -27,6 +27,15 @@ namespace lab6_7
             InitializeComponent();
             items = XmlSerializeWrapper.Deserialize<List<Item>>("basket.xml");
             ListViewTable.ItemsSource = items;
+            //Привязка command
+            CommandBinding commandAdd = new CommandBinding();
+            commandAdd.Command = ApplicationCommands.New;
+            commandAdd.Executed += ButtonAddGood_Click;
+            ButtonAddGood.CommandBindings.Add(commandAdd);
+            CommandBinding commandHome = new CommandBinding();
+            commandHome.Command = NavigationCommands.BrowseHome;
+            commandHome.Executed += ButtonBrowseHome_Click;
+            ButtonBrowseHome.CommandBindings.Add(commandHome);
         }
 
         private void ButtonOutputBasket_Click(object sender, RoutedEventArgs e)
@@ -75,6 +84,13 @@ namespace lab6_7
                 counter++;
             }
             ListViewTable.ItemsSource = items;
+        }
+
+        private void ButtonBrowseHome_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            MainWindow window = new MainWindow();
+            window.Show();
         }
     }
 }

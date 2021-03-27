@@ -52,11 +52,16 @@
         </Grid.ColumnDefinitions>
         <Border BorderThickness="0,0,3,0" BorderBrush="#2c2f33" Margin="0,0,0.8,0.4" Grid.RowSpan="4">
             <StackPanel Grid.ColumnSpan="1" Background="#23272a" Margin="-0.2,-0.2,-0.2,-49.4" >
-                <TextBlock x:Name="LabelMenu" FontSize="15pt" Padding="0,8" Height="36" Style="{StaticResource centeredText}" FontWeight="Bold" Text="{DynamicResource menu}"></TextBlock>
+                <Button x:Name="ButtonBrowseHome"
+                        Background="Transparent" 
+                        BorderThickness="0" 
+                        Command="BrowseHome">
+                    <TextBlock x:Name="LabelMenu" FontSize="15pt" Padding="0,8" Height="36" Style="{StaticResource centeredText}" FontWeight="Bold" Text="{DynamicResource menu}"></TextBlock>
+                </Button>
                 <Button x:Name="ButtonOutputBasket" Style="{StaticResource menuButtons}" Margin="0,10,0,20" Click="ButtonOutputBacket_Click">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource OutputBasket}"></TextBlock>
                 </Button>
-                <Button x:Name="ButtonEditBasket" Style="{StaticResource menuButtons}" Margin="0,0,0,20" Click="ButtonEditBasket_Click">
+                <Button x:Name="ButtonEditBasket" Command="CorrectionList" Style="{StaticResource menuButtons}" Margin="0,0,0,20">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource EditBasket}"></TextBlock>
                 </Button>
                 <Button x:Name="ButtonAddGood" Style="{StaticResource menuButtons}" Background="#7289da" Foreground="#2c2f33">
@@ -83,7 +88,7 @@
             </Button>
             <Button x:Name="ButtonClearInfo" Width="230" Background="#7289da" Margin="10,25,0,0" Height="43" Click="ButtonClearInfo_Click">
                 <TextBlock Text="{DynamicResource ButtonClearInfo}" FontWeight="Bold" Foreground="#2c2f33">
-                    
+
                 </TextBlock>
             </Button>
         </StackPanel>

@@ -51,14 +51,19 @@
         </Grid.ColumnDefinitions>
         <Border BorderThickness="0,0,3,0" BorderBrush="#2c2f33" Margin="0,0,0.6,0.4" Grid.RowSpan="2">
             <StackPanel Background="#23272a" >
-                <TextBlock x:Name="LabelMenu" FontSize="15pt" Padding="14" Height="50" Style="{StaticResource centeredText}" FontWeight="Bold" Text="{DynamicResource menu}"></TextBlock>
+                <Button x:Name="ButtonBrowseHome"
+                        Background="Transparent" 
+                        BorderThickness="0" 
+                        Command="BrowseHome">
+                    <TextBlock x:Name="LabelMenu" FontSize="15pt" Padding="14" Height="50" Style="{StaticResource centeredText}" FontWeight="Bold" Text="{DynamicResource menu}"></TextBlock>
+                </Button>
                 <Button x:Name="ButtonOutputBasket" Style="{StaticResource menuButtons}" Margin="0,10,0,20" Click="ButtonOutputBasket_Click">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource OutputBasket}"></TextBlock>
                 </Button>
                 <Button x:Name="ButtonEditBasket" Style="{StaticResource menuButtons}" Background="#7289da" Foreground="#23272a" Margin="0,0,0,20">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource EditBasket}"></TextBlock>
                 </Button>
-                <Button x:Name="ButtonAddGood" Style="{StaticResource menuButtons}" Click="ButtonAddGood_Click">
+                <Button x:Name="ButtonAddGood" Style="{StaticResource menuButtons}" Command="New">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource AddGood}"></TextBlock>
                 </Button>
                 <Button x:Name="ButtonEN" Height="50" Width="50" Margin="-80,20,0,0" Background="Transparent" BorderThickness="0" Click="ButtonEN_click" Tag="ru-RU">

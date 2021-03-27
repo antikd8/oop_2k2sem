@@ -29,6 +29,28 @@ namespace lab6_7
             InitializeComponent();
             items = XmlSerializeWrapper.Deserialize<ObservableCollection<Item>>("basket.xml");
             ListViewTable.ItemsSource = items;
+
+            CommandBinding commandHome = new CommandBinding();
+            commandHome.Command = NavigationCommands.BrowseHome;
+            commandHome.Executed += ButtonBrowseHome_Click;
+            ButtonBrowseHome.CommandBindings.Add(commandHome);
+
+            CommandBinding commandEdit = new CommandBinding();
+            commandEdit.Command = ApplicationCommands.CorrectionList;
+            commandEdit.Executed += ButtonEditBasket_Click;
+            ButtonEditBasket.CommandBindings.Add(commandEdit);
+
+            CommandBinding commandAdd = new CommandBinding();
+            commandAdd.Command = ApplicationCommands.New;
+            commandAdd.Executed += ButtonAddGood_Click;
+            ButtonAddGood.CommandBindings.Add(commandAdd);
+        }
+
+        private void ButtonBrowseHome_Click(object sender, ExecutedRoutedEventArgs e)
+        {
+            this.Hide();
+            MainWindow window = new MainWindow();
+            window.Show();
         }
 
         private void ButtonEN_Click(object sender, RoutedEventArgs e)

@@ -28,7 +28,23 @@ namespace lab6_7
         {
             InitializeComponent();
             itemsCollection = XmlSerializeWrapper.Deserialize<List<Item>>("basket.xml");
+            CommandBinding commandHome = new CommandBinding();
+            commandHome.Command = NavigationCommands.BrowseHome;
+            commandHome.Executed += ButtonBrowseHome_Click;
+            ButtonBrowseHome.CommandBindings.Add(commandHome);
+            CommandBinding commandEdit = new CommandBinding();
+            commandEdit.Command = ApplicationCommands.CorrectionList;
+            commandEdit.Executed += ButtonEditBasket_Click;
+            ButtonEditBasket.CommandBindings.Add(commandEdit);
         }
+
+        private void ButtonBrowseHome_Click(object sender, ExecutedRoutedEventArgs e)
+        {
+            this.Hide();
+            MainWindow window = new MainWindow();
+            window.Show();
+        }
+
         [Serializable]
         public class Item
         {

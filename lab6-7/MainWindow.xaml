@@ -52,7 +52,15 @@
             </StackPanel>
         </Border>
         <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,0,3,62" Grid.RowSpan="2">
-            <Button x:Name="ButtonExitApplication" Width="auto" Height="50" Margin="0,4,0,0" Background="#EF5B51" Foreground="#23272a" Content="{DynamicResource ButtonExit}" FontWeight="Bold" FontSize="16"></Button>
+            <Button x:Name="ButtonExitApplication" 
+                    Width="auto" 
+                    Height="50" 
+                    Margin="0,4,0,0" 
+                    Background="#EF5B51" 
+                    Foreground="#23272a" 
+                    Content="{DynamicResource ButtonExit}" 
+                    FontWeight="Bold" 
+                    FontSize="16" Click="ButtonExitApplication_Click"></Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Background="#23272a" Margin="3,0,0.6,-4" Grid.RowSpan="3">

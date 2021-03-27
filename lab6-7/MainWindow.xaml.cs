@@ -68,5 +68,10 @@ namespace lab6_7
             window.Show();
             this.Hide();
         }
+
+        private void ButtonExitApplication_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
