@@ -103,20 +103,20 @@ namespace lab6_7
                     throw new Exception("Неверные данные в поле с ценой");
                 tempItem.Country = TextBoxCountry.Text;
                 if (RadioButtonAvailable.IsChecked == true)
-                    tempItem.IsAvailable = "В наличии";
+                    tempItem.IsAvailable = TextBlockAvailable.Text;
                 if (RadioButtonNotAvailable.IsChecked == true)
-                    tempItem.IsAvailable = "Отсутствует";
+                    tempItem.IsAvailable = TextBlockNotAvailable.Text;
                 tempItem.Description = TextBoxDescription.Text;
                 tempItem.PicturePath = ItemPicture.Source.ToString();
                 itemsCollection.Add(tempItem);
-                MessageBox.Show($"Кол-во товаров в корзине: {itemsCollection.Count}");
                 XmlSerializeWrapper.Serialize(itemsCollection, "basket.xml");
             }
             catch (Exception)
             {
                 MessageBox.Show("Ошибка записи в файл!");
+                return;
             }
-            MessageBox.Show("Товар добавлен в корзину!");
+            MessageBox.Show($"Товар добавлен в корзину!\nКоличество товаров в корзине : {itemsCollection.Count}");
 
         }
 

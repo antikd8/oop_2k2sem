@@ -44,6 +44,7 @@
     <v:String x:Key="Operations">Операции</v:String>
     <v:String x:Key="EditPicture">ИЗМЕНИТЬ ИЗОБРАЖЕНИЕ</v:String>
     <v:String x:Key="SaveEditings">СОХРАНИТЬ ИЗМЕНЕНИЯ</v:String>
-
+    <v:String x:Key="SetFilters">Применить фильтры</v:String>
+    <v:String x:Key="ButtonExit">ВЫХОД</v:String>
 
 </ResourceDictionary>

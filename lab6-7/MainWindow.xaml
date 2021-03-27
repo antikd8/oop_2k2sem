@@ -1,12 +1,13 @@
-﻿<Window x:Class="lab6_7.MainWindow"
+﻿<Window x:Name="MainWindow1" x:Class="lab6_7.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab6_7"
         mc:Ignorable="d"
-        Title="Grocery Store" Height="610" Width="930" MinWidth="700" MinHeight="600" Icon="iconfinder_Harvest_2998126.ico">
+        Title="Grocery Store" Height="610" Width="900" MinWidth="900" MinHeight="600" Icon="iconfinder_Harvest_2998126.ico" Cursor="No">
     <Window.Resources>
+        <Cursor x:Key="UserCursor">D:\banana.cur</Cursor>
         <Style TargetType="Button" x:Key="menuButtons">
             <Setter Property="FontFamily" Value="Arial Black"></Setter>
             <Setter Property="Foreground" Value="#99aab5"></Setter>
@@ -20,13 +21,18 @@
             <Setter Property="FontFamily" Value="ArialBlack"></Setter>
         </Style>
     </Window.Resources>
-    <Grid Background="#23272a">
+    <Grid Background="#23272a" Cursor="{StaticResource UserCursor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="230*"/>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="31*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="112*"/>
+            <ColumnDefinition Width="335*"/>
         </Grid.ColumnDefinitions>
-        <Border BorderThickness="0,0,3,0" BorderBrush="#2c2f33">
-            <StackPanel Background="#23272a" >
+        <Border BorderThickness="0,0,3,0" BorderBrush="#2c2f33" Margin="0,0,18,-4" Grid.RowSpan="3" Grid.Column="0">
+            <StackPanel Background="#23272a" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Margin="0,0,-23.8,0">
                 <TextBlock x:Name="LabelMenu" FontSize="15pt" Padding="14" Height="50" Style="{StaticResource centeredText}" FontWeight="Bold" Text="{DynamicResource menu}"></TextBlock>
                 <Button x:Name="ButtonOutputBasket" Style="{StaticResource menuButtons}" Margin="0,10,0,20" Click="ButtonOutputBasket_Click">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource OutputBasket}"></TextBlock>
@@ -45,7 +51,11 @@
                 </Button>
             </StackPanel>
         </Border>
-        <StackPanel Grid.Column="1" Background="#23272a">
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,0,3,62" Grid.RowSpan="2">
+            <Button x:Name="ButtonExitApplication" Width="auto" Height="50" Margin="0,4,0,0" Background="#EF5B51" Foreground="#23272a" Content="{DynamicResource ButtonExit}" FontWeight="Bold" FontSize="16"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Background="#23272a" Margin="3,0,0.6,-4" Grid.RowSpan="3">
             <Image Source="shopping-basket.png" Height="260" Margin="0,80,0,0"/>
             <TextBlock Style="{StaticResource ResourceKey=centeredText}" FontSize="24pt" Height="50" Margin="0,50,0,0" Text="{DynamicResource Welcome}"></TextBlock>
             <TextBlock Style="{StaticResource ResourceKey=centeredText}" FontSize="18pt" Height="40" Margin="0,-10,0,0" Text="{DynamicResource GoodBuys}"></TextBlock>

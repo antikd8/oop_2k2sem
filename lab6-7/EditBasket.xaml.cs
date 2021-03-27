@@ -74,6 +74,7 @@ namespace lab6_7
                 }
                 counter++;
             }
+            ListViewTable.ItemsSource = items;
         }
     }
 }

@@ -44,7 +44,7 @@
     <v:String x:Key="Operations">Operations</v:String>
     <v:String x:Key="EditPicture">EDIT PICTURE</v:String>
     <v:String x:Key="SaveEditings">SAVE EDITINGS</v:String>
-
-
+    <v:String x:Key="SetFilters">Set filters</v:String>
+    <v:String x:Key="ButtonExit">EXIT</v:String>
 
 </ResourceDictionary>

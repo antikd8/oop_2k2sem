@@ -32,11 +32,11 @@ namespace lab6_7
         {
             InitializeComponent();
             this.items = items;
-            this.numItem  = (int) numItem;
+            this.numItem = (int)numItem;
             int counter = 0;
-            foreach(var item in items)
+            foreach (var item in items)
             {
-                if(counter == this.numItem)
+                if (counter == this.numItem)
                 {
                     TextBoxNameGood.Text = item.NameItem;
                     TextBoxPrice.Text = item.Price.ToString();
@@ -85,8 +85,10 @@ namespace lab6_7
             catch (Exception)
             {
                 MessageBox.Show($"Ошибка записи в файл!");
+                return;
             }
             MessageBox.Show("Информация о товаре изменена!");
+
             this.Hide();
         }
 
