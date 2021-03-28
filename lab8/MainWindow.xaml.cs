@@ -49,7 +49,6 @@ namespace lab6_7
                 theme = "Resources/DarkTheme";
             var uri = new Uri(theme + ".xaml", UriKind.Relative);
             ResourceDictionary resourceDictionary = (ResourceDictionary)Application.LoadComponent(uri);
-            Application.Current.Resources.Clear();
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
         }
 

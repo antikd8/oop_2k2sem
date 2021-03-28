@@ -25,6 +25,7 @@ namespace lab6_7
         public EditBasket()
         {
             InitializeComponent();
+            ComboBoxThemes.SelectionChanged += ThemeChange;
             items = XmlSerializeWrapper.Deserialize<List<Item>>("basket.xml");
             ListViewTable.ItemsSource = items;
             //Привязка command
@@ -36,6 +37,18 @@ namespace lab6_7
             commandHome.Command = NavigationCommands.BrowseHome;
             commandHome.Executed += ButtonBrowseHome_Click;
             ButtonBrowseHome.CommandBindings.Add(commandHome);
+        }
+
+        private void ThemeChange(object sender, SelectionChangedEventArgs e)
+        {
+            string theme = null;
+            if (ComboBoxThemes.SelectedIndex == 0)
+                theme = "Resources/LightTheme";
+            if (ComboBoxThemes.SelectedIndex == 1)
+                theme = "Resources/DarkTheme";
+            var uri = new Uri(theme + ".xaml", UriKind.Relative);
+            ResourceDictionary resourceDictionary = (ResourceDictionary)Application.LoadComponent(uri);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
         }
 
         private void ButtonOutputBasket_Click(object sender, RoutedEventArgs e)

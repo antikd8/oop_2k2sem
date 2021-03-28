@@ -27,6 +27,7 @@ namespace lab6_7
         public OutputGoods()
         {
             InitializeComponent();
+            ComboBoxThemes.SelectionChanged += ThemeChange;
             items = XmlSerializeWrapper.Deserialize<ObservableCollection<Item>>("basket.xml");
             ListViewTable.ItemsSource = items;
 
@@ -44,6 +45,18 @@ namespace lab6_7
             commandAdd.Command = ApplicationCommands.New;
             commandAdd.Executed += ButtonAddGood_Click;
             ButtonAddGood.CommandBindings.Add(commandAdd);
+        }
+
+        private void ThemeChange(object sender, SelectionChangedEventArgs e)
+        {
+            string theme = null;
+            if (ComboBoxThemes.SelectedIndex == 0)
+                theme = "Resources/LightTheme";
+            if (ComboBoxThemes.SelectedIndex == 1)
+                theme = "Resources/DarkTheme";
+            var uri = new Uri(theme + ".xaml", UriKind.Relative);
+            ResourceDictionary resourceDictionary = (ResourceDictionary)Application.LoadComponent(uri);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
         }
 
         private void ButtonBrowseHome_Click(object sender, ExecutedRoutedEventArgs e)

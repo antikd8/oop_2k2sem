@@ -27,4 +27,19 @@
     <Style x:Key="ListViewBackground" TargetType="ListView">
         <Setter Property="Background" Value="#ffffff"></Setter>
     </Style>
+    <Style x:Key="BorderColor" TargetType="Border">
+        <Setter Property="BorderBrush" Value="#4f5660"></Setter>
+    </Style>
+    <Style x:Key="GridBackground" TargetType="Grid">
+        <Setter Property="Background" Value="#ffffff"></Setter>
+    </Style>
+    <Style x:Key="addingParams" TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Left"></Setter>
+        <Setter Property="Foreground" Value="#4f5660"></Setter>
+        <Setter Property="FontFamily" Value="ArialBlack"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+        <Setter Property="Height" Value="20"></Setter>
+        <Setter Property="Margin" Value="20,20,200,0"></Setter>
+        <Setter Property="Width" Value="150"></Setter>
+    </Style>
 </ResourceDictionary>

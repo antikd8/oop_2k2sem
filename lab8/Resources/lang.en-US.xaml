@@ -47,7 +47,7 @@
     <v:String x:Key="SetFilters">Set filters</v:String>
     <v:String x:Key="ResetFilters">Reset filters</v:String>
     <v:String x:Key="ButtonExit">EXIT</v:String>
-    <v:String x:Key="CHangeTheme">Application theme:</v:String>
+    <v:String x:Key="ChangeTheme">Application theme:</v:String>
     <v:String x:Key="LightTheme">Light theme</v:String>
     <v:String x:Key="DarkTheme">Dark theme</v:String>
 

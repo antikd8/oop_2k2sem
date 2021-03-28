@@ -27,6 +27,7 @@ namespace lab6_7
         public AddGood()
         {
             InitializeComponent();
+            ComboBoxThemes.SelectionChanged += ThemeChange;
             itemsCollection = XmlSerializeWrapper.Deserialize<List<Item>>("basket.xml");
             CommandBinding commandHome = new CommandBinding();
             commandHome.Command = NavigationCommands.BrowseHome;
@@ -36,6 +37,18 @@ namespace lab6_7
             commandEdit.Command = ApplicationCommands.CorrectionList;
             commandEdit.Executed += ButtonEditBasket_Click;
             ButtonEditBasket.CommandBindings.Add(commandEdit);
+        }
+
+        private void ThemeChange(object sender, SelectionChangedEventArgs e)
+        {
+            string theme = null;
+            if (ComboBoxThemes.SelectedIndex == 0)
+                theme = "Resources/LightTheme";
+            if (ComboBoxThemes.SelectedIndex == 1)
+                theme = "Resources/DarkTheme";
+            var uri = new Uri(theme + ".xaml", UriKind.Relative);
+            ResourceDictionary resourceDictionary = (ResourceDictionary)Application.LoadComponent(uri);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
         }
 
         private void ButtonBrowseHome_Click(object sender, ExecutedRoutedEventArgs e)

@@ -29,22 +29,22 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="-400,0,0,0" Grid.Row="1" Width="220" Grid.RowSpan="10">
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="-400,0,0,0" Style="{DynamicResource BackgroundStyle}" Grid.Row="1" Width="220" Grid.RowSpan="10">
             <Image x:Name="ItemPicture" Height="220" Width="180" Margin="0,80,0,0" Source="empty-cart.png"></Image>
-            <Button x:Name="ButtonAddPicture" Margin="20,26,0,0" Width="190" Height="44" Style="{StaticResource purpleButton}" Click="ButtonAddPicture_Click">
+            <Button x:Name="ButtonAddPicture"   Margin="20,26,0,0" Width="190" Height="44" Style="{StaticResource purpleButton}" Click="ButtonAddPicture_Click">
                 <TextBlock Style="{StaticResource centeredText}"  TextWrapping="Wrap" Foreground="#2c2f33" Text="{DynamicResource EditPicture}"></TextBlock>
             </Button>
-            <Button x:Name="ButtonSaveEditings" Width="190" Height="44" Margin="20,25,0,0" Style="{StaticResource purpleButton}" Click="ButtonSaveEditings_Click">
+            <Button x:Name="ButtonSaveEditings"   Width="190" Height="44" Margin="20,25,0,0" Style="{StaticResource purpleButton}" Click="ButtonSaveEditings_Click">
                 <TextBlock Style="{StaticResource centeredText}" Foreground="#2c2f33"  Text="{DynamicResource SaveEditings}"></TextBlock>
             </Button>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Margin="200,0,0,0">
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Margin="200,0,0,0" Style="{DynamicResource BackgroundStyle}">
             <StackPanel Grid.Row="1" Grid.Column="2" Height="54">
-                <TextBlock x:Name="TextBlockNameGood" Style="{StaticResource paramsText}" Text="{DynamicResource ItemName}"></TextBlock>
+                <TextBlock x:Name="TextBlockNameGood" Style="{DynamicResource addingParams}" Text="{DynamicResource ItemName}"></TextBlock>
                 <TextBox x:Name="TextBoxNameGood" Width="150" Margin="160,-24,0,0" Height="20"></TextBox>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="2" Height="54">
-                <TextBlock x:Name="TextBlockCategory" Style="{StaticResource paramsText}" Text="{DynamicResource Category}"></TextBlock>
+                <TextBlock x:Name="TextBlockCategory" Style="{DynamicResource addingParams}" Text="{DynamicResource Category}"></TextBlock>
                 <ComboBox x:Name="ComboBoxCategory" Width="150" Height="20" Margin="160,-22,0,0">
                     <ComboBoxItem Content="{DynamicResource Berrys}"/>
                     <ComboBoxItem Content="{DynamicResource Dairy}"/>
@@ -53,22 +53,22 @@
                 </ComboBox>
             </StackPanel>
             <StackPanel Grid.Row="3" Grid.Column="2" Height="53">
-                <TextBlock x:Name="TextBlockPrice" Style="{StaticResource paramsText}" Text="{DynamicResource Price}"></TextBlock>
+                <TextBlock x:Name="TextBlockPrice" Style="{DynamicResource addingParams}" Text="{DynamicResource Price}"></TextBlock>
                 <TextBox x:Name="TextBoxPrice" Width="100" Margin="160,-24,50,0" Height="20" KeyDown="TextBoxPrice_KeyDown"></TextBox>
-                <TextBlock x:Name="TextBlockCurrency" Style="{StaticResource leftText}" Width="50" Height="20" Margin="300,-20,0,0" Text="{DynamicResource Currency}"></TextBlock>
+                <TextBlock x:Name="TextBlockCurrency" Style="{DynamicResource addingParams}" Width="50" Height="20" Margin="300,-20,0,0" Text="{DynamicResource Currency}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="4" Grid.Column="2" Height="53">
-                <TextBlock x:Name="TextBlockCountry" Style="{StaticResource paramsText}" Text="{DynamicResource Country}"></TextBlock>
+                <TextBlock x:Name="TextBlockCountry" Style="{DynamicResource addingParams}" Text="{DynamicResource Country}"></TextBlock>
                 <TextBox x:Name="TextBoxCountry" Width="150" Margin="160,-24,0,0" Height="20"></TextBox>
             </StackPanel>
             <StackPanel Grid.Row="5" Grid.Column="2" Height="53">
-                <TextBlock x:Name="TextBlockAvailable" Style="{StaticResource paramsText}" Text="{DynamicResource Available}"></TextBlock>
+                <TextBlock x:Name="TextBlockAvailable" Style="{DynamicResource addingParams}" Text="{DynamicResource Available}"></TextBlock>
                 <RadioButton x:Name="RadioButtonAvailable" Margin="-134,-18.5,0,0" Width="15"></RadioButton>
-                <TextBlock x:Name="TextBlockNotAvailable" Style="{StaticResource paramsText}" Margin="150,-22,0,0" Text="{DynamicResource NotAvailable}"></TextBlock>
+                <TextBlock x:Name="TextBlockNotAvailable" Style="{DynamicResource addingParams}" Margin="150,-22,0,0" Text="{DynamicResource NotAvailable}"></TextBlock>
                 <RadioButton x:Name="RadioButtonNotAvailable" Margin="230,-19,0,0" Width="15"></RadioButton>
             </StackPanel>
             <StackPanel Grid.Row="6" Grid.Column="2" Height="180">
-                <TextBlock x:Name="TextBlockDescription" Style="{StaticResource paramsText}" Text="{DynamicResource Description}"></TextBlock>
+                <TextBlock x:Name="TextBlockDescription" Style="{DynamicResource addingParams}" Text="{DynamicResource Description}"></TextBlock>
                 <TextBox x:Name="TextBoxDescription" Width="320" Height="100" Margin="-10,20,0,0"></TextBox>
             </StackPanel>
         </StackPanel>
