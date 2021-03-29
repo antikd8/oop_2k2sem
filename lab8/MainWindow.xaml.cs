@@ -31,7 +31,8 @@ namespace lab6_7
             App.LanguageChanged += LanguageChanged;
             CultureInfo currLang = App.Language;
             ObservableCollection<Item> items = new ObservableCollection<Item>();
-            XmlSerializeWrapper.Serialize(items, "foreignBasket.xml");
+            // if u run this app first time delete commentary below;
+           // XmlSerializeWrapper.Serialize(items, "basket.xml"); 
         }
 
 
@@ -87,12 +88,20 @@ namespace lab6_7
 
         private void ButtonExitApplication_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            StackPanelExitConfirmation.Visibility = Visibility.Visible;
+            StackPanelMainFrame.Visibility = Visibility.Hidden;
         }
 
-        private void ButtonChangeTheme_Click(object sender, RoutedEventArgs e)
+        private void CustomControlTextBoxExit_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (CustomControlTextBoxExit.Text == "EXIT")
+                Close();
+        }
 
+        private void ButtonCancelExit_Click(object sender, RoutedEventArgs e)
+        {
+            StackPanelExitConfirmation.Visibility = Visibility.Hidden;
+            StackPanelMainFrame.Visibility = Visibility.Visible;
         }
     }
 }

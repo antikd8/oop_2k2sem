@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="OutputGoods" Height="650" Width="1300" Background="#23272a" MinHeight="620" MinWidth="1250">
     <Window.Resources>
+        <Cursor x:Key="UserCursor">D:\banana.cur</Cursor>
+        <Cursor x:Key="ButtonCursor">D:\bananaOpened.cur</Cursor>
         <Style TargetType="Button" x:Key="menuButtons">
             <Setter Property="FontFamily" Value="Arial Black"></Setter>
             <Setter Property="Foreground" Value="#99aab5"></Setter>
@@ -26,7 +28,7 @@
             <Setter Property="FontSize" Value="15"></Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Cursor="{StaticResource UserCursor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
             <RowDefinition Height="26*"/>
@@ -50,26 +52,27 @@
                         Background="Transparent" 
                         BorderThickness="0" 
                         Command="BrowseHome"
+                        Cursor="{StaticResource ButtonCursor}"
                          >
                     <TextBlock x:Name="LabelMenu" FontSize="15pt" Margin="0,10,0,0" Height="36" Width="80" Style="{DynamicResource Texts}" FontWeight="Bold" Text="{DynamicResource menu}"></TextBlock>
                 </Button>
-                <Button x:Name="ButtonOutputBasket"   Style="{StaticResource purpleButton}"  Height="30" Background="#7289da" Margin="0,10,0,20">
+                <Button x:Name="ButtonOutputBasket" Cursor="{StaticResource ButtonCursor}"  Style="{StaticResource purpleButton}"  Height="30" Background="#7289da" Margin="0,10,0,20">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource OutputBasket}"></TextBlock>
                 </Button>
-                <Button x:Name="ButtonEditBasket" Style="{DynamicResource ButtonsStyle}"   Margin="0,0,0,20" Command="CorrectionList">
+                <Button x:Name="ButtonEditBasket" Cursor="{StaticResource ButtonCursor}" Style="{DynamicResource ButtonsStyle}"   Margin="0,0,0,20" Command="CorrectionList">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource EditBasket}" Style="{DynamicResource Texts}"></TextBlock>
                 </Button>
-                <Button x:Name="ButtonAddGood"  Style="{DynamicResource ButtonsStyle}"   Command="New" >
+                <Button x:Name="ButtonAddGood" Cursor="{StaticResource ButtonCursor}" Style="{DynamicResource ButtonsStyle}"   Command="New" >
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource AddGood}" Style="{DynamicResource Texts}"></TextBlock>
                 </Button>
-                <Button x:Name="ButtonEN"   Height="50" Width="50" Margin="-80,20,0,0" Background="Transparent" BorderThickness="0" Click="ButtonEN_Click" Tag="ru-RU">
+                <Button x:Name="ButtonEN" Cursor="{StaticResource ButtonCursor}"  Height="50" Width="50" Margin="-80,20,0,0" Background="Transparent" BorderThickness="0" Click="ButtonEN_Click" Tag="ru-RU">
                     <Image Source="united-states-of-america.png"/>
                 </Button>
-                <Button x:Name="ButtonRU"   Height="50" Width="50" Margin="80,-50,0 0" Background="Transparent" BorderThickness="0" Click="ButtonRU_Click">
+                <Button x:Name="ButtonRU" Cursor="{StaticResource ButtonCursor}"  Height="50" Width="50" Margin="80,-50,0 0" Background="Transparent" BorderThickness="0" Click="ButtonRU_Click">
                     <Image Source="russia.png" Tag="en-US"/>
                 </Button>
                 <TextBlock Text="{DynamicResource ChangeTheme}" Style="{DynamicResource Texts}" FontWeight="Bold" FontSize="14" Margin="20,20,0,0"></TextBlock>
-                <ComboBox x:Name="ComboBoxThemes" Background="#2c2f33" Width="150" Margin="-10,10,0,0">
+                <ComboBox x:Name="ComboBoxThemes" Background="#2c2f33" Width="150" Cursor="{StaticResource ButtonCursor}" Margin="-10,10,0,0">
                     <ComboBoxItem Content="{DynamicResource LightTheme}"/>
                     <ComboBoxItem Content="{DynamicResource DarkTheme}"/>
                 </ComboBox>
@@ -97,8 +100,8 @@
                 <TextBox x:Name="TextBoxMaxPrice" Width="40" Height="20" Margin="110,-22,0,0" KeyDown="TextBoxMaxPrice_KeyDown"></TextBox>
                 <TextBlock Text="{DynamicResource IsAvailableLC}" Style="{DynamicResource Texts}" FontSize="14" Margin="10,10,0,0" FontWeight="DemiBold"></TextBlock>
                 <StackPanel>
-                    <RadioButton x:Name="RadioButtonAvailable" Content="{DynamicResource AvailableLC}" Style="{DynamicResource RadioTexts}" Margin="20,10,0,0" Checked="RadioButtonAvailable_Checked"></RadioButton>
-                    <RadioButton x:Name="RadioButtonNotAvailable" Content="{DynamicResource NotAvailableLC}" Style="{DynamicResource RadioTexts}" Margin="20,5,0,0" Checked="RadioButtonNotAvailable_Checked"></RadioButton>
+                    <RadioButton x:Name="RadioButtonAvailable" Cursor="{StaticResource ButtonCursor}" Content="{DynamicResource AvailableLC}" Style="{DynamicResource RadioTexts}" Margin="20,10,0,0" Checked="RadioButtonAvailable_Checked"></RadioButton>
+                    <RadioButton x:Name="RadioButtonNotAvailable" Cursor="{StaticResource ButtonCursor}" Content="{DynamicResource NotAvailableLC}" Style="{DynamicResource RadioTexts}" Margin="20,5,0,0" Checked="RadioButtonNotAvailable_Checked"></RadioButton>
                 </StackPanel>
                 <StackPanel Grid.Row="3" Grid.Column="1" Height="50" Margin="0,20,0,0">
                     <Button x:Name="ButtonSetFilters" 
@@ -107,6 +110,7 @@
                             Content="{DynamicResource SetFilters}" 
                             FontSize="16" Click="ButtonSetFilters_Click"
                             Style="{StaticResource purpleButton}"
+                            Cursor="{StaticResource ButtonCursor}"
                              ></Button>
                 </StackPanel>
                 <StackPanel Grid.Row="3" Grid.Column="1" Grid.RowSpan="3">
@@ -118,6 +122,7 @@
                             Margin="0,30,0,0"
                             FontSize="16"
                             Style="{StaticResource purpleButton}"
+                            Cursor="{StaticResource ButtonCursor}"
                              ></Button>
                 </StackPanel>
             </StackPanel>
@@ -131,7 +136,8 @@
             Grid.Column="2"
             Grid.ColumnSpan="5"
             BorderThickness="0" Margin="0,0,-0.4,0"
-            Style="{DynamicResource ListViewBackground}">
+            Style="{DynamicResource ListViewBackground}"
+            Cursor="{StaticResource ButtonCursor}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="140" Header="{DynamicResource ItemPicture}">

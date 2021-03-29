@@ -82,6 +82,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CustomControlExitConfirmation.cs" />
     <Compile Include="EditBasket.xaml.cs">
       <DependentUpon>EditBasket.xaml</DependentUpon>
     </Compile>
@@ -115,6 +116,10 @@
     <Page Include="Resources\LightTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +174,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="redo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

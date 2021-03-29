@@ -50,5 +50,8 @@
     <v:String x:Key="ChangeTheme">Тема приложения:</v:String>
     <v:String x:Key="LightTheme">Светлая тема</v:String>
     <v:String x:Key="DarkTheme">Темная тема</v:String>
+    <v:String x:Key="TypeExit">Введите EXIT для выхода из программы</v:String>
+    <v:String x:Key="CacnelExit">ОТМЕНА</v:String>
+    <v:String x:Key="LastAction">Последнее действие</v:String>
 
 </ResourceDictionary>

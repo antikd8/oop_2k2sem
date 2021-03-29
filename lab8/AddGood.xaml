@@ -8,6 +8,10 @@
         mc:Ignorable="d"
         Title="Добавление товара в корзину" Height="600" Width="880.4" Icon="iconfinder_Harvest_2998126.ico" Background="#2c2f33" MinWidth="800" MinHeight="600">
     <Window.Resources>
+        <Cursor x:Key="UserCursor">
+            D:\banana.cur
+        </Cursor>
+        <Cursor x:Key="ButtonCursor">D:\bananaOpened.cur</Cursor>
         <Style TargetType="{x:Type Button}" x:Key="menuButtons">
             <Setter Property="FontFamily" Value="Arial Black"/>
             <Setter Property="Foreground" Value="#99aab5"/>
@@ -36,44 +40,46 @@
             <Setter Property="Width" Value="150"/>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Cursor="{StaticResource UserCursor}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="396*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="264*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="161*"/>
             <ColumnDefinition Width="261*"/>
             <ColumnDefinition Width="372*"/>
         </Grid.ColumnDefinitions>
-        <Border BorderThickness="0,0,3,0" Style="{DynamicResource BorderColor}" Margin="0,0,248.6,0.417" Grid.RowSpan="7" Grid.Column="0" Grid.ColumnSpan="2">
+        <Border BorderThickness="0,0,3,0" Style="{DynamicResource BorderColor}" Margin="0,0,249,0.417" Grid.RowSpan="8" Grid.Column="0" Grid.ColumnSpan="2">
             <StackPanel Grid.Column="0"  Margin="0,0,32,-0.6" Style="{DynamicResource MenuStyle}" >
                 <Button x:Name="ButtonBrowseHome"
                         Background="Transparent" 
                         BorderThickness="0" 
                         Command="BrowseHome"
                         Width="auto"
+                        Cursor="{StaticResource ButtonCursor}"
                          >
                     <TextBlock x:Name="LabelMenu" FontSize="15pt" Padding="0,8" Height="36" Style="{DynamicResource MainText}" FontWeight="Bold" Text="{DynamicResource menu}"/>
                 </Button>
-                <Button x:Name="ButtonOutputBasket" Style="{DynamicResource ButtonsStyle}" Margin="0,10,0,20" Click="ButtonOutputBacket_Click"  >
+                <Button x:Name="ButtonOutputBasket" Cursor="{StaticResource ButtonCursor}" Style="{DynamicResource ButtonsStyle}" Margin="0,10,0,20" Click="ButtonOutputBacket_Click"  >
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource OutputBasket}" Style="{DynamicResource Texts}"/>
                 </Button>
-                <Button x:Name="ButtonEditBasket" Command="CorrectionList" Style="{DynamicResource ButtonsStyle}"   Margin="0,0,0,20">
+                <Button x:Name="ButtonEditBasket" Cursor="{StaticResource ButtonCursor}" Command="CorrectionList" Style="{DynamicResource ButtonsStyle}"   Margin="0,0,0,20">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource EditBasket}" Style="{DynamicResource Texts}"/>
                 </Button>
-                <Button x:Name="ButtonAddGood" Style="{StaticResource purpleButton}"   Height="30">
+                <Button x:Name="ButtonAddGood" Cursor="{StaticResource ButtonCursor}" Style="{StaticResource purpleButton}"   Height="30">
                     <TextBlock TextWrapping="Wrap" Text="{DynamicResource AddGood}"/>
                 </Button>
-                <Button x:Name="ButtonEN" Height="50" Width="50" Margin="-80,20,0,0"   Background="Transparent" BorderThickness="0" Click="ButtonEN_Click" Tag="ru-RU">
+                <Button x:Name="ButtonEN" Cursor="{StaticResource ButtonCursor}" Height="50" Width="50" Margin="-80,20,0,0"   Background="Transparent" BorderThickness="0" Click="ButtonEN_Click" Tag="ru-RU">
                     <Image Source="united-states-of-america.png"/>
                 </Button>
-                <Button x:Name="ButtonRU" Height="50" Width="50" Margin="80,-50,0 0"   Background="Transparent" BorderThickness="0" Click="ButtonRU_Click">
+                <Button x:Name="ButtonRU" Cursor="{StaticResource ButtonCursor}" Height="50" Width="50" Margin="80,-50,0 0"   Background="Transparent" BorderThickness="0" Click="ButtonRU_Click">
                     <Image Source="russia.png" Tag="en-US"/>
                 </Button>
                 <TextBlock Text="{DynamicResource ChangeTheme}" Style="{DynamicResource Texts}" FontWeight="Bold" FontSize="14" Margin="20,20,0,0"></TextBlock>
@@ -81,31 +87,38 @@
                     <ComboBoxItem Content="{DynamicResource LightTheme}"/>
                     <ComboBoxItem Content="{DynamicResource DarkTheme}"/>
                 </ComboBox>
+                <TextBlock Style="{DynamicResource Texts}" Text="{DynamicResource LastAction}" FontSize="14" FontWeight="Bold" Margin="20,20,0,10"></TextBlock>
+                <Button  x:Name="ButtonUndo" IsEnabled="False" Cursor="{StaticResource ButtonCursor}" Background="Transparent" BorderThickness="0" Margin="-80,0,0,0" Width="40" Click="ButtonUndo_Click">
+                    <Image Source="undo.png"></Image>
+                </Button>
+                <Button x:Name="ButtonRedo" Background="Transparent" Cursor="{StaticResource ButtonCursor}" IsEnabled="False" BorderThickness="0" Width="40" Margin="70,-40,0,0" Click="ButtonRedo_Click">
+                    <Image Source="redo.png"></Image>
+                </Button>
             </StackPanel>
         </Border>
-        <StackPanel Grid.ColumnSpan="2" Grid.Column="1" Margin="1.2,0,-0.4,0" Style="{DynamicResource BackgroundStyle}">
+        <StackPanel Grid.ColumnSpan="2" Grid.Column="1" Margin="1.2,0,-0.4,0" Style="{DynamicResource BackgroundStyle}" Grid.RowSpan="2">
             <TextBlock FontSize="18" Style="{DynamicResource MainText}" Padding="0,14,0,0" Height="40" Margin="0,0,-0.2,0" Text="{DynamicResource AddingGood}"/>
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,371.6,0.417" Grid.Row="1" Grid.RowSpan="6" Style="{DynamicResource BackgroundStyle}">
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="0.2,0,371.6,0.417" Grid.Row="2" Grid.RowSpan="6" Style="{DynamicResource BackgroundStyle}">
             <Image x:Name="ItemPicture" Height="280" Width="230" Margin="0,20,0,0" Source="empty-cart.png"/>
-            <Button x:Name="ButtonAddPicture"   Margin="10,26,0,0" Width="230" Height="44" Background="#7289da" FontWeight="Bold" Click="ButtonAddPicture_Click">
+            <Button x:Name="ButtonAddPicture"  Cursor="{StaticResource ButtonCursor}" Margin="10,26,0,0" Width="230" Height="44" Background="#7289da" FontWeight="Bold" Click="ButtonAddPicture_Click">
                 <TextBlock Style="{StaticResource centeredText}" FontSize="12" TextWrapping="Wrap" Foreground="#2c2f33" Text="{DynamicResource ButtonAddPic}"/>
             </Button>
-            <Button x:Name="ButtonAddItem"   Width="230" Height="44" Margin="10,25,0,0" Background="#7289da" Click="ButtonAddItem_Click">
+            <Button x:Name="ButtonAddItem"  Cursor="{StaticResource ButtonCursor}" Width="230" Height="44" Margin="10,25,0,0" Background="#7289da" Click="ButtonAddItem_Click">
                 <TextBlock Style="{StaticResource centeredText}" Foreground="#2c2f33" FontWeight="Bold" Text="{DynamicResource ButtonAddItem}"/>
             </Button>
-            <Button x:Name="ButtonClearInfo"   Width="230" Style="{StaticResource purpleButton}" Margin="10,25,0,0" Height="43" Click="ButtonClearInfo_Click">
+            <Button x:Name="ButtonClearInfo" Cursor="{StaticResource ButtonCursor}"  Width="230" Style="{StaticResource purpleButton}" Margin="10,25,0,0" Height="43" Click="ButtonClearInfo_Click">
                 <TextBlock Text="{DynamicResource ButtonClearInfo}" FontWeight="Bold" Foreground="#2c2f33"/>
             </Button>
         </StackPanel>
-        <StackPanel Grid.Column="2" Grid.Row="1" Grid.RowSpan="6" Margin="0.4,0,-0.4,0.417" Style="{DynamicResource BackgroundStyle}">
+        <StackPanel Grid.Column="2" Grid.Row="2" Grid.RowSpan="6" Margin="0,0,-0.4,0.417" Style="{DynamicResource BackgroundStyle}">
             <StackPanel Grid.Row="1" Grid.Column="2" Height="54" Style="{DynamicResource BackgroundStyle}">
                 <TextBlock x:Name="TextBlockNameGood" Style="{DynamicResource addingParams}" Text="{DynamicResource ItemName}"/>
                 <TextBox x:Name="TextBoxNameGood" Width="150" Margin="160,-24,0,0" Height="20"  />
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="2" Height="54">
                 <TextBlock x:Name="TextBlockCategory" Style="{DynamicResource addingParams}" Text="{DynamicResource Category}"/>
-                <ComboBox x:Name="ComboBoxCategory" Width="150" Height="20" Margin="160,-22,0,0">
+                <ComboBox x:Name="ComboBoxCategory" Width="150" Height="20" Margin="160,-22,0,0" Cursor="{StaticResource ButtonCursor}">
                     <ComboBoxItem Content="{DynamicResource Berrys}"/>
                     <ComboBoxItem Content="{DynamicResource Dairy}"/>
                     <ComboBoxItem Content="{DynamicResource Fruits}"/>
@@ -123,14 +136,15 @@
             </StackPanel>
             <StackPanel Grid.Row="5" Grid.Column="2" Height="53">
                 <TextBlock x:Name="TextBlockAvailable" Style="{DynamicResource addingParams}" Text="{DynamicResource Available}"/>
-                <RadioButton x:Name="RadioButtonAvailable" Margin="-134,-18.5,0,0" Width="15"/>
+                <RadioButton x:Name="RadioButtonAvailable" Cursor="{StaticResource ButtonCursor}" Margin="-134,-18.5,0,0" Width="15"/>
                 <TextBlock x:Name="TextBlockNotAvailable" Style="{DynamicResource addingParams}" Margin="150,-22,0,0" Text="{DynamicResource NotAvailable}"/>
-                <RadioButton x:Name="RadioButtonNotAvailable" Margin="230,-19,0,0" Width="15"/>
+                <RadioButton x:Name="RadioButtonNotAvailable" Cursor="{StaticResource ButtonCursor}" Margin="230,-19,0,0" Width="15"/>
             </StackPanel>
             <StackPanel Grid.Row="6" Grid.Column="2" Height="264">
                 <TextBlock x:Name="TextBlockDescription" Style="{DynamicResource addingParams}" Text="{DynamicResource Description}"/>
                 <TextBox x:Name="TextBoxDescription" Width="320" Height="180" Margin="-10,20,0,0"  />
             </StackPanel>
         </StackPanel>
+
     </Grid>
 </Window>

@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="EditItem" Height="500" Width="600" Background="#23272a" MinWidth="600" MinHeight="500">
     <Window.Resources>
+        <Cursor x:Key="UserCursor">D:\banana.cur</Cursor>
+        <Cursor x:Key="ButtonCursor">D:\bananaOpened.cur</Cursor>
         <Style TargetType="TextBlock" x:Key="centeredText">
             <Setter Property="TextAlignment" Value="Center"></Setter>
             <Setter Property="Foreground" Value="#99aab5"></Setter>
@@ -28,13 +30,13 @@
             <Setter Property="Width" Value="150"></Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Cursor="{StaticResource UserCursor}">
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="-400,0,0,0" Style="{DynamicResource BackgroundStyle}" Grid.Row="1" Width="220" Grid.RowSpan="10">
             <Image x:Name="ItemPicture" Height="220" Width="180" Margin="0,80,0,0" Source="empty-cart.png"></Image>
-            <Button x:Name="ButtonAddPicture"   Margin="20,26,0,0" Width="190" Height="44" Style="{StaticResource purpleButton}" Click="ButtonAddPicture_Click">
+            <Button x:Name="ButtonAddPicture"  Cursor="{StaticResource ButtonCursor}" Margin="20,26,0,0" Width="190" Height="44" Style="{StaticResource purpleButton}" Click="ButtonAddPicture_Click">
                 <TextBlock Style="{StaticResource centeredText}"  TextWrapping="Wrap" Foreground="#2c2f33" Text="{DynamicResource EditPicture}"></TextBlock>
             </Button>
-            <Button x:Name="ButtonSaveEditings"   Width="190" Height="44" Margin="20,25,0,0" Style="{StaticResource purpleButton}" Click="ButtonSaveEditings_Click">
+            <Button x:Name="ButtonSaveEditings" Cursor="{StaticResource ButtonCursor}"  Width="190" Height="44" Margin="20,25,0,0" Style="{StaticResource purpleButton}" Click="ButtonSaveEditings_Click">
                 <TextBlock Style="{StaticResource centeredText}" Foreground="#2c2f33"  Text="{DynamicResource SaveEditings}"></TextBlock>
             </Button>
         </StackPanel>
@@ -63,9 +65,9 @@
             </StackPanel>
             <StackPanel Grid.Row="5" Grid.Column="2" Height="53">
                 <TextBlock x:Name="TextBlockAvailable" Style="{DynamicResource addingParams}" Text="{DynamicResource Available}"></TextBlock>
-                <RadioButton x:Name="RadioButtonAvailable" Margin="-134,-18.5,0,0" Width="15"></RadioButton>
+                <RadioButton x:Name="RadioButtonAvailable" Margin="-134,-18.5,0,0" Width="15" Cursor="{StaticResource ButtonCursor}"></RadioButton>
                 <TextBlock x:Name="TextBlockNotAvailable" Style="{DynamicResource addingParams}" Margin="150,-22,0,0" Text="{DynamicResource NotAvailable}"></TextBlock>
-                <RadioButton x:Name="RadioButtonNotAvailable" Margin="230,-19,0,0" Width="15"></RadioButton>
+                <RadioButton x:Name="RadioButtonNotAvailable" Margin="230,-19,0,0" Width="15" Cursor="{StaticResource ButtonCursor}"></RadioButton>
             </StackPanel>
             <StackPanel Grid.Row="6" Grid.Column="2" Height="180">
                 <TextBlock x:Name="TextBlockDescription" Style="{DynamicResource addingParams}" Text="{DynamicResource Description}"></TextBlock>

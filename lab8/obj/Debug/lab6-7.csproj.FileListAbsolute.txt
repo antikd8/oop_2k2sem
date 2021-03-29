@@ -53,3 +53,5 @@ C:\Users\antik\source\repos\lab8\obj\Debug\lab6-7.exe
 C:\Users\antik\source\repos\lab8\obj\Debug\lab6-7.pdb
 C:\Users\antik\source\repos\lab8\obj\Debug\Resources\LightTheme.baml
 C:\Users\antik\source\repos\lab8\obj\Debug\Resources\DarkTheme.baml
+C:\Users\antik\source\repos\lab8\obj\Debug\Themes\Generic.baml
+C:\Users\antik\source\repos\lab8\obj\Debug\GeneratedInternalTypeHelper.g.cs

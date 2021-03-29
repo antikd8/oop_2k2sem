@@ -50,5 +50,7 @@
     <v:String x:Key="ChangeTheme">Application theme:</v:String>
     <v:String x:Key="LightTheme">Light theme</v:String>
     <v:String x:Key="DarkTheme">Dark theme</v:String>
-
+    <v:String x:Key="TypeExit">Type EXIT to close application</v:String>
+    <v:String x:Key="CacnelExit">CANCEL</v:String>
+    <v:String x:Key="LastAction">Last action</v:String>
 </ResourceDictionary>

@@ -24,6 +24,8 @@ namespace lab6_7
     public partial class AddGood : Window
     {
         List<Item> itemsCollection = new List<Item>();
+        List<Item> lastItems = new List<Item>();
+        Item lastItem = new Item();
         public AddGood()
         {
             InitializeComponent();
@@ -73,7 +75,7 @@ namespace lab6_7
             public string IsAvailable { get; set; }
             [XmlIgnore]
             public string Description { get; set; }
-            [XmlElement(ElementName ="path_of_picture")]
+            [XmlElement(ElementName = "path_of_picture")]
             public string PicturePath { get; set; }
         }
 
@@ -137,7 +139,11 @@ namespace lab6_7
                     tempItem.IsAvailable = TextBlockNotAvailable.Text;
                 tempItem.Description = TextBoxDescription.Text;
                 tempItem.PicturePath = ItemPicture.Source.ToString();
+                lastItem = tempItem;
                 itemsCollection.Add(tempItem);
+                lastItems.Add(tempItem);
+                ButtonUndo.IsEnabled = true;
+                ButtonRedo.IsEnabled = true;
                 XmlSerializeWrapper.Serialize(itemsCollection, "basket.xml");
             }
             catch (Exception)
@@ -204,6 +210,30 @@ namespace lab6_7
             OutputGoods window = new OutputGoods();
             window.Show();
             this.Hide();
+        }
+
+        private void ButtonUndo_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lastItems.RemoveAt(lastItems.Count - 1);
+                itemsCollection.RemoveAt(itemsCollection.Count - 1);
+                MessageBox.Show($"Последний добавленный элемент ({lastItem.NameItem}) удален!");
+                XmlSerializeWrapper.Serialize(itemsCollection, "basket.xml");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Вы удалили все только что добавленные товары!");
+                ButtonUndo.IsEnabled = false;
+            }
+        }
+
+        private void ButtonRedo_Click(object sender, RoutedEventArgs e)
+        {
+            itemsCollection.Add(lastItem);
+            lastItems.Add(lastItem);
+            XmlSerializeWrapper.Serialize(itemsCollection, "basket.xml");
+            MessageBox.Show($"Последний добавленный элемент ({lastItem.NameItem}) добавлен!");
         }
     }
 }

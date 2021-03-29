@@ -42,7 +42,7 @@ namespace lab6_7
                     TextBoxPrice.Text = item.Price.ToString();
                     TextBoxCountry.Text = item.Country;
                     ComboBoxCategory.Text = item.Category;
-                    if (item.IsAvailable == "Есть в наличии")
+                    if (item.IsAvailable == "В НАЛИЧИИ")
                         RadioButtonAvailable.IsChecked = true;
                     else
                         RadioButtonNotAvailable.IsChecked = true;
@@ -73,9 +73,9 @@ namespace lab6_7
                             item.Price = result;
                         item.PicturePath = ItemPicture.Source.ToString();
                         if (RadioButtonAvailable.IsChecked == true)
-                            item.IsAvailable = "В наличии";
+                            item.IsAvailable = "В НАЛИЧИИ";
                         if (RadioButtonNotAvailable.IsChecked == true)
-                            item.IsAvailable = "Отсутствует";
+                            item.IsAvailable = "ОТСУТСТВУЕТ";
                         break;
                     }
                     counter++;
