@@ -62,8 +62,7 @@
             <Button x:Name="ButtonExitApplication" 
                     Width="auto" 
                     Height="50" 
-                    Margin="4,4,0,0" 
-                    Foreground="#23272a" 
+                    Margin="4,4,0,0"
                     Content="{DynamicResource ButtonExit}" 
                     FontWeight="Bold" 
                     BorderThickness="0"
@@ -71,6 +70,26 @@
                     Cursor="{StaticResource ButtonCursor}">
                 <Button.Style>
                     <Style TargetType="Button">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.150" Storyboard.TargetProperty="FontSize" To="20"></DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.150" Storyboard.TargetProperty="FontSize" To="16"></DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                        </Style.Triggers>
                         <Setter Property="Background" Value="#EF5B51"></Setter>
                     </Style>
                 </Button.Style>

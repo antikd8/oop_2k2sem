@@ -1,22 +1,6 @@
 <?xml version="1.0"?>
 <ArrayOfItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Item>
-    <name_of_item>Молоко</name_of_item>
-    <category_of_item>Молочные продукты</category_of_item>
-    <price_for_one_kg>2</price_for_one_kg>
-    <origin_country>Беларусь</origin_country>
-    <is_alailable>В НАЛИЧИИ</is_alailable>
-    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/молочка/photo-1529258283598-8d6fe60b27f4.jfif</path_of_picture>
-  </Item>
-  <Item>
-    <name_of_item>Сыр</name_of_item>
-    <category_of_item>Молочные продукты</category_of_item>
-    <price_for_one_kg>4</price_for_one_kg>
-    <origin_country>Беларусь</origin_country>
-    <is_alailable>В НАЛИЧИИ</is_alailable>
-    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/молочка/cheese-isolated-on-white-background_88281-289.jpg</path_of_picture>
-  </Item>
-  <Item>
     <name_of_item>Яйца</name_of_item>
     <category_of_item>Молочные продукты</category_of_item>
     <price_for_one_kg>2.5</price_for_one_kg>
@@ -41,11 +25,32 @@
     <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/фрукты/photo-1519162808019-7de1683fa2ad.jfif</path_of_picture>
   </Item>
   <Item>
-    <name_of_item>Малина</name_of_item>
-    <category_of_item>Ягоды</category_of_item>
-    <price_for_one_kg>15</price_for_one_kg>
-    <origin_country>Беларусь</origin_country>
+    <name_of_item>Cum</name_of_item>
+    <category_of_item>Молочные продукты</category_of_item>
+    <price_for_one_kg>300</price_for_one_kg>
+    <origin_country>Казахстан</origin_country>
     <is_alailable>В НАЛИЧИИ</is_alailable>
-    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/ягоды/photo-1583513364301-f9339bc184dc.jfif</path_of_picture>
+    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/молочка/photo-1529258283598-8d6fe60b27f4.jfif</path_of_picture>
+  </Item>
+  <Item>
+    <name_of_item />
+    <category_of_item />
+    <price_for_one_kg>565656</price_for_one_kg>
+    <origin_country />
+    <path_of_picture>pack://application:,,,/lab6-7;component/empty-cart.png</path_of_picture>
+  </Item>
+  <Item>
+    <name_of_item />
+    <category_of_item />
+    <price_for_one_kg>76</price_for_one_kg>
+    <origin_country />
+    <path_of_picture>pack://application:,,,/lab6-7;component/empty-cart.png</path_of_picture>
+  </Item>
+  <Item>
+    <name_of_item />
+    <category_of_item />
+    <price_for_one_kg>56</price_for_one_kg>
+    <origin_country />
+    <path_of_picture>pack://application:,,,/lab6-7;component/empty-cart.png</path_of_picture>
   </Item>
 </ArrayOfItem>

@@ -53,5 +53,7 @@
     <v:String x:Key="TypeExit">Введите EXIT для выхода из программы</v:String>
     <v:String x:Key="CacnelExit">ОТМЕНА</v:String>
     <v:String x:Key="LastAction">Последнее действие</v:String>
+    <v:String x:Key="SelectedLanguage">Выбранный язык:</v:String>
+    <v:String x:Key="SelectedLanguagelang">Русский</v:String>
 
 </ResourceDictionary>

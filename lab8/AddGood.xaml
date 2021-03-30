@@ -100,7 +100,7 @@
             <TextBlock FontSize="18" Style="{DynamicResource MainText}" Padding="0,14,0,0" Height="40" Margin="0,0,-0.2,0" Text="{DynamicResource AddingGood}"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="0.2,0,371.6,0.417" Grid.Row="2" Grid.RowSpan="6" Style="{DynamicResource BackgroundStyle}">
-            <Image x:Name="ItemPicture" Height="280" Width="230" Margin="0,20,0,0" Source="empty-cart.png"/>
+            <Image x:Name="ItemPicture" Height="280" Width="230" Margin="0,20,0,0" Source="empty-cart.png" />
             <Button x:Name="ButtonAddPicture"  Cursor="{StaticResource ButtonCursor}" Margin="10,26,0,0" Width="230" Height="44" Background="#7289da" FontWeight="Bold" Click="ButtonAddPicture_Click">
                 <TextBlock Style="{StaticResource centeredText}" FontSize="12" TextWrapping="Wrap" Foreground="#2c2f33" Text="{DynamicResource ButtonAddPic}"/>
             </Button>
@@ -135,14 +135,42 @@
                 <TextBox x:Name="TextBoxCountry" Width="150" Margin="160,-24,0,0" Height="20"  />
             </StackPanel>
             <StackPanel Grid.Row="5" Grid.Column="2" Height="53">
-                <TextBlock x:Name="TextBlockAvailable" Style="{DynamicResource addingParams}" Text="{DynamicResource Available}"/>
-                <RadioButton x:Name="RadioButtonAvailable" Cursor="{StaticResource ButtonCursor}" Margin="-134,-18.5,0,0" Width="15"/>
-                <TextBlock x:Name="TextBlockNotAvailable" Style="{DynamicResource addingParams}" Margin="150,-22,0,0" Text="{DynamicResource NotAvailable}"/>
+                <TextBlock x:Name="TextBlockAvailable" Width="150" Margin="-180,10,0,0" FontSize="16" Text="{DynamicResource Available}">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="#99aab5"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=RadioButtonAvailable, Path=IsChecked}" Value="True">
+                                    <Setter Property="Foreground" Value="DarkGreen"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <RadioButton x:Name="RadioButtonAvailable" Cursor="{StaticResource ButtonCursor}" Margin="-104,-16,0,0" Width="15"/>
+                <TextBlock x:Name="TextBlockNotAvailable" Style="{DynamicResource addingParams}" Margin="150,-16,0,0" Text="{DynamicResource NotAvailable}"/>
                 <RadioButton x:Name="RadioButtonNotAvailable" Cursor="{StaticResource ButtonCursor}" Margin="230,-19,0,0" Width="15"/>
             </StackPanel>
             <StackPanel Grid.Row="6" Grid.Column="2" Height="264">
                 <TextBlock x:Name="TextBlockDescription" Style="{DynamicResource addingParams}" Text="{DynamicResource Description}"/>
-                <TextBox x:Name="TextBoxDescription" Width="320" Height="180" Margin="-10,20,0,0"  />
+                <TextBox x:Name="TextBoxDescription" Width="320" Height="180" Margin="-10,20,0,0">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Style.Triggers>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsKeyboardFocused" Value="True"></Condition>
+                                        <Condition Property="IsMouseOver" Value="True"></Condition>
+                                    </MultiTrigger.Conditions>
+                                    <MultiTrigger.Setters>
+                                        <Setter Property="Background" Value="#96cc96"></Setter>
+                                    </MultiTrigger.Setters>
+                                </MultiTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
             </StackPanel>
         </StackPanel>
 
