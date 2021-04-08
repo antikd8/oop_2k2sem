@@ -15,14 +15,12 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <Label Content="{Binding Title}" />
         <Label Grid.Column="1">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding ElementName=txtLimitedInput, Path=Text.Length}" Style="{DynamicResource Texts}" />
-                <TextBlock Text="/" Style="{StaticResource Texts}"/>
-                <TextBlock Text="{Binding MaxLength}" Style="{StaticResource Texts}" />
+                <TextBlock Text="{Binding ElementName=TBoxDescription, Path=Text.Length}" Style="{DynamicResource Texts}" />
+                <TextBlock Text="/200" Style="{StaticResource Texts}"/>
             </StackPanel>
         </Label>
-        <TextBox MaxLength="{Binding MaxLength}" Grid.Row="1" Grid.ColumnSpan="2" Name="txtLimitedInput" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" />
+        <TextBox MaxLength="200" Padding="10" Grid.Row="1" Grid.ColumnSpan="2" Name="TBoxDescription" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" />
     </Grid>
 </UserControl>

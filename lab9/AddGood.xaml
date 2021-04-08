@@ -1,9 +1,7 @@
-﻿<Window
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:lab6_7"
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
         x:Class="lab6_7.AddGood"
         xmlns:uc ="clr-namespace:lab6_7"
@@ -156,24 +154,10 @@
             </StackPanel>
             <StackPanel Grid.Row="6" Grid.Column="2" Height="264">
                 <TextBlock x:Name="TextBlockDescription" Style="{DynamicResource addingParams}" Text="{DynamicResource Description}"/>
-                <uc:UserTBox Title="text" MaxLength="140"></uc:UserTBox>
-                <TextBox x:Name="TextBoxDescription" Width="320" Height="180" Margin="-10,20,0,0">
-                    <TextBox.Style>
-                        <Style TargetType="TextBox">
-                            <Style.Triggers>
-                                <MultiTrigger>
-                                    <MultiTrigger.Conditions>
-                                        <Condition Property="IsKeyboardFocused" Value="True"></Condition>
-                                        <Condition Property="IsMouseOver" Value="True"></Condition>
-                                    </MultiTrigger.Conditions>
-                                    <MultiTrigger.Setters>
-                                        <Setter Property="Background" Value="#96cc96"></Setter>
-                                    </MultiTrigger.Setters>
-                                </MultiTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </TextBox.Style>
-                </TextBox>
+                <uc:UserTBox x:Name="TBoxDescription" 
+                             Width="326" 
+                             Height="200"
+                             FontSize="20"></uc:UserTBox>
             </StackPanel>
         </StackPanel>
 

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:MyNamespace="clr-namespace:lab6_7"
         xmlns:control ="clr-namespace:lab6_7"
+        xmlns:uc ="clr-namespace:lab6_7"
         mc:Ignorable="d"
         Title="Grocery Store" Height="610" Width="900" MinWidth="900" MinHeight="600" Icon="iconfinder_Harvest_2998126.ico"  Topmost="True">
     <Window.Resources>
@@ -59,7 +60,9 @@
             </StackPanel>
         </Border>
         <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,0,3.2,62" Grid.RowSpan="2">
-            <Button x:Name="ButtonExitApplication" 
+            <uc:UserButton x:Name="ButtonExitApplication" Width="auto" Margin="4" Height="50" MouseDoubleClick="double_click"></uc:UserButton>
+
+        <!--    <Button x:Name="ButtonExitApplication" 
                     Width="auto" 
                     Height="50" 
                     Margin="4,4,0,0"
@@ -94,7 +97,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-
+-->
         </StackPanel>
         <StackPanel x:Name="StackPanelExitConfirmation" Grid.Row="0" Grid.RowSpan="4" Grid.Column="1" Style="{DynamicResource BackgroundStyle}" Visibility="Hidden">
             <TextBlock Text="{DynamicResource TypeExit}" Style="{DynamicResource Texts}" TextAlignment="Center" Margin="0,150,0,0" FontSize="20"></TextBlock>

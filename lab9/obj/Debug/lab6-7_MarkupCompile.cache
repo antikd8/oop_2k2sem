@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\antik\source\repos\lab9\App.xaml
-11-299844084
+13537149492
 
-111242986400
+12-977755384
 14-1004149723
-AddGood.xaml;EditBasket.xaml;EditItem.xaml;MainWindow.xaml;OutputGoods.xaml;Resources\buttonDescription.xaml;Resources\DarkTheme.xaml;Resources\lang.en-US.xaml;Resources\lang.xaml;Resources\LightTheme.xaml;Themes\Generic.xaml;
+AddGood.xaml;EditBasket.xaml;EditItem.xaml;MainWindow.xaml;OutputGoods.xaml;Resources\buttonDescription.xaml;Resources\DarkTheme.xaml;Resources\lang.en-US.xaml;Resources\lang.xaml;Resources\LightTheme.xaml;Themes\Generic.xaml;UserButton.xaml;UserTBox.xaml;
 
-True
+False
 

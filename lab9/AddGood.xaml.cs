@@ -137,7 +137,7 @@ namespace lab6_7
                     tempItem.IsAvailable = TextBlockAvailable.Text;
                 if (RadioButtonNotAvailable.IsChecked == true)
                     tempItem.IsAvailable = TextBlockNotAvailable.Text;
-                tempItem.Description = TextBoxDescription.Text;
+                tempItem.Description = TBoxDescription.Content.ToString();
                 tempItem.PicturePath = ItemPicture.Source.ToString();
                 lastItem = tempItem;
                 itemsCollection.Add(tempItem);
@@ -197,7 +197,7 @@ namespace lab6_7
         {
             TextBoxPrice.Text = string.Empty;
             TextBoxNameGood.Text = string.Empty;
-            TextBoxDescription.Text = string.Empty;
+            TBoxDescription.Content = string.Empty;
             TextBoxCountry.Text = string.Empty;
             ComboBoxCategory.SelectedIndex = -1;
             RadioButtonAvailable.IsChecked = false;

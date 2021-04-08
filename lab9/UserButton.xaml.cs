@@ -16,13 +16,20 @@ using System.Windows.Shapes;
 namespace lab6_7
 {
     /// <summary>
-    /// Логика взаимодействия для UserTBox.xaml
+    /// Логика взаимодействия для UserButton.xaml
     /// </summary>
-    public partial class UserTBox : UserControl
+    public partial class UserButton : UserControl
     {
-        public UserTBox()
+        public UserButton()
         {
             InitializeComponent();
+        }
+
+        public void double_click(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            window.StackPanelMainFrame.Visibility = Visibility.Hidden;
+            window.StackPanelExitConfirmation.Visibility = Visibility.Visible;
         }
     }
 }

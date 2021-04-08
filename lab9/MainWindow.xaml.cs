@@ -29,7 +29,6 @@ namespace lab6_7
             InitializeComponent();
             ComboBoxThemes.SelectionChanged += ThemeChange;
             App.LanguageChanged += LanguageChanged;
-            ComboBoxThemes.SelectedIndex = 0;
             CultureInfo currLang = App.Language;
             ObservableCollection<Item> items = new ObservableCollection<Item>();
             // if u run this app first time delete commentary below;
@@ -103,6 +102,12 @@ namespace lab6_7
         {
             StackPanelExitConfirmation.Visibility = Visibility.Hidden;
             StackPanelMainFrame.Visibility = Visibility.Visible;
+        }
+
+        private void double_click(object sender, MouseButtonEventArgs e)
+        {
+            UserButton userButton = new UserButton();
+            userButton.double_click(sender, e);
         }
     }
 }
