@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ArrayOfItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Item>
+    <name_of_item>Малина</name_of_item>
+    <category_of_item>Ягоды</category_of_item>
+    <price_for_one_kg>12.03</price_for_one_kg>
+    <origin_country>Беларусь</origin_country>
+    <is_alailable>В НАЛИЧИИ</is_alailable>
+    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/ягоды/photo-1583513364301-f9339bc184dc.jfif</path_of_picture>
+  </Item>
+  <Item>
+    <name_of_item>Бананы</name_of_item>
+    <category_of_item>Фрукты</category_of_item>
+    <price_for_one_kg>6</price_for_one_kg>
+    <origin_country />
+    <is_alailable>В НАЛИЧИИ</is_alailable>
+    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/фрукты/photo-1587334206596-c0f9f7dccbe6.jfif</path_of_picture>
+  </Item>
+  <Item>
+    <name_of_item>Бананы</name_of_item>
+    <category_of_item>Фрукты</category_of_item>
+    <price_for_one_kg>6</price_for_one_kg>
+    <origin_country />
+    <is_alailable>В НАЛИЧИИ</is_alailable>
+    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/фрукты/photo-1587334206596-c0f9f7dccbe6.jfif</path_of_picture>
+  </Item>
+  <Item>
+    <name_of_item>Бананы</name_of_item>
+    <category_of_item>Фрукты</category_of_item>
+    <price_for_one_kg>6</price_for_one_kg>
+    <origin_country />
+    <is_alailable>В НАЛИЧИИ</is_alailable>
+    <path_of_picture>file:///C:/Users/antik/OneDrive/Рабочий стол/6-7 лаба/фрукты/photo-1587334206596-c0f9f7dccbe6.jfif</path_of_picture>
+  </Item>
+</ArrayOfItem>
