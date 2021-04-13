@@ -103,11 +103,5 @@ namespace lab6_7
             StackPanelExitConfirmation.Visibility = Visibility.Hidden;
             StackPanelMainFrame.Visibility = Visibility.Visible;
         }
-
-        private void double_click(object sender, MouseButtonEventArgs e)
-        {
-            UserButton userButton = new UserButton();
-            userButton.double_click(sender, e);
-        }
     }
 }

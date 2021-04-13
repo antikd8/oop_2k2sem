@@ -2,18 +2,11 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Xml.Serialization;
 
 namespace lab6_7
@@ -61,8 +54,9 @@ namespace lab6_7
         }
 
         [Serializable]
-        public class Item
+        public class Item 
         {
+
             [XmlElement(ElementName = "name_of_item")]
             public string NameItem { get; set; }
             [XmlElement(ElementName = "category_of_item")]
@@ -126,7 +120,7 @@ namespace lab6_7
             try
             {
                 Item tempItem = new Item();
-                tempItem.NameItem = TextBoxNameGood.Text;
+                tempItem.NameItem = TextBoxNameItem.Content.ToString();
                 tempItem.Category = ComboBoxCategory.Text;
                 if (Double.TryParse(TextBoxPrice.Text, out double price))
                     tempItem.Price = price;
@@ -196,7 +190,7 @@ namespace lab6_7
         private void ButtonClearInfo_Click(object sender, RoutedEventArgs e)
         {
             TextBoxPrice.Text = string.Empty;
-            TextBoxNameGood.Text = string.Empty;
+            TextBoxNameItem.Content = string.Empty;
             TBoxDescription.Content = string.Empty;
             TextBoxCountry.Text = string.Empty;
             ComboBoxCategory.SelectedIndex = -1;

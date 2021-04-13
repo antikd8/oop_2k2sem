@@ -5,6 +5,7 @@
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
         x:Class="lab6_7.AddGood"
         xmlns:uc ="clr-namespace:lab6_7"
+        xmlns:local="clr-namespace:lab6_7"
         mc:Ignorable="d"
         Title="Добавление товара в корзину" Height="600" Width="880.4" Icon="iconfinder_Harvest_2998126.ico" Background="#2c2f33" MinWidth="800" MinHeight="600">
     <Window.Resources>
@@ -112,9 +113,10 @@
             </Button>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="2" Grid.RowSpan="6" Margin="0,0,-0.4,0.417" Style="{DynamicResource BackgroundStyle}">
-            <StackPanel Grid.Row="1" Grid.Column="2" Height="54" Style="{DynamicResource BackgroundStyle}">
+            <StackPanel  Grid.Row="1" Grid.Column="2" Height="54" Style="{DynamicResource BackgroundStyle}">
                 <TextBlock x:Name="TextBlockNameGood" Style="{DynamicResource addingParams}" Text="{DynamicResource ItemName}"/>
-                <TextBox x:Name="TextBoxNameGood" Width="150" Margin="160,-24,0,0" Height="20"  />
+                <uc:UserTBox_clear Padding="5" x:Name="TextBoxNameItem" Width="150" Height="40" Margin="160,-30,0,0" VerticalAlignment="Top"></uc:UserTBox_clear>
+                <!-- <TextBox x:Name="TextBoxNameGood" Width="150" Margin="160,-24,0,0" Height="20"  />-->
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="2" Height="54">
                 <TextBlock x:Name="TextBlockCategory" Style="{DynamicResource addingParams}" Text="{DynamicResource Category}"/>
