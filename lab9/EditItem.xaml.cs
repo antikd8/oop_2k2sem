@@ -49,7 +49,6 @@ namespace lab6_7
                     BitmapImage image = new BitmapImage();
                     image.BeginInit();
                     image.UriSource = new Uri(item.PicturePath);
-                    MessageBox.Show(image.UriSource.ToString());
                     image.EndInit();
                     ItemPicture.Source = image;
                     break;
@@ -112,7 +111,6 @@ namespace lab6_7
                 image.UriSource = new Uri(dlg.FileName);
                 image.EndInit();
                 ItemPicture.Source = image;
-                MessageBox.Show(dlg.FileName);
             }
         }
 

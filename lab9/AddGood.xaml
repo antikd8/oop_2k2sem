@@ -7,7 +7,10 @@
         xmlns:uc ="clr-namespace:lab6_7"
         xmlns:local="clr-namespace:lab6_7"
         mc:Ignorable="d"
-        Title="Добавление товара в корзину" Height="600" Width="880.4" Icon="iconfinder_Harvest_2998126.ico" Background="#2c2f33" MinWidth="800" MinHeight="600">
+        Title="Добавление товара в корзину" Height="600" Width="880.4" Icon="iconfinder_Harvest_2998126.ico" Background="#2c2f33" MinWidth="800" MinHeight="600" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Window.CommandBindings>
+        <CommandBinding Command="local:CustomCommand.Command" Executed="CommandBinding_Executed"></CommandBinding>
+    </Window.CommandBindings>
     <Window.Resources>
         <Cursor x:Key="UserCursor">
             D:\banana.cur
@@ -102,14 +105,31 @@
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="0.2,0,371.6,0.417" Grid.Row="2" Grid.RowSpan="6" Style="{DynamicResource BackgroundStyle}">
             <Image x:Name="ItemPicture" Height="280" Width="230" Margin="0,20,0,0" Source="empty-cart.png" />
-            <Button x:Name="ButtonAddPicture"  Cursor="{StaticResource ButtonCursor}" Margin="10,26,0,0" Width="230" Height="44" Background="#7289da" FontWeight="Bold" Click="ButtonAddPicture_Click">
+            <Button x:Name="ButtonAddPicture"
+                    Cursor="{StaticResource ButtonCursor}"
+                    Margin="10,26,0,0" 
+                    Width="230" Height="44"
+                    Background="#7289da"
+                    FontWeight="Bold"
+                    Click="ButtonAddPicture_Click">
                 <TextBlock Style="{StaticResource centeredText}" FontSize="12" TextWrapping="Wrap" Foreground="#2c2f33" Text="{DynamicResource ButtonAddPic}"/>
             </Button>
-            <Button x:Name="ButtonAddItem"  Cursor="{StaticResource ButtonCursor}" Width="230" Height="44" Margin="10,25,0,0" Background="#7289da" Click="ButtonAddItem_Click">
+            <Button x:Name="ButtonAddItem"  
+                    Cursor="{StaticResource ButtonCursor}" 
+                    Width="230" Height="44" 
+                    Margin="10,25,0,0" 
+                    Background="#7289da" 
+                    Click="ButtonAddItem_Click">
                 <TextBlock Style="{StaticResource centeredText}" Foreground="#2c2f33" FontWeight="Bold" Text="{DynamicResource ButtonAddItem}"/>
             </Button>
-            <Button x:Name="ButtonClearInfo" Cursor="{StaticResource ButtonCursor}"  Width="230" Style="{StaticResource purpleButton}" Margin="10,25,0,0" Height="43" Click="ButtonClearInfo_Click">
-                <TextBlock Text="{DynamicResource ButtonClearInfo}" FontWeight="Bold" Foreground="#2c2f33"/>
+            <Button x:Name="ButtonClearInfo" 
+                    Cursor="{StaticResource ButtonCursor}"
+                    Width="230" 
+                    Style="{StaticResource purpleButton}"
+                    Margin="10,25,0,0"
+                    Height="43" 
+                    PreviewMouseDown="LeftButton" >
+                <TextBlock Text="{DynamicResource ButtonClearInfo}" PreviewMouseDown="LeftButton" FontWeight="Bold" Foreground="#2c2f33"/>
             </Button>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="2" Grid.RowSpan="6" Margin="0,0,-0.4,0.417" Style="{DynamicResource BackgroundStyle}">
@@ -128,13 +148,18 @@
                 </ComboBox>
             </StackPanel>
             <StackPanel Grid.Row="3" Grid.Column="2" Height="53">
-                <TextBlock x:Name="TextBlockPrice" Style="{DynamicResource addingParams}" Text="{DynamicResource Price}"/>
+                <TextBlock x:Name="TextBlockPrice" 
+                           Style="{DynamicResource addingParams}" 
+                           Text="{DynamicResource Price}"/>
                 <TextBox x:Name="TextBoxPrice" Width="100" Margin="160,-24,50,0" Height="20"   KeyDown="TextBoxPrice_KeyDown"/>
                 <TextBlock x:Name="TextBlockCurrency" Style="{DynamicResource addingParams}" Width="50" Height="20" Margin="300,-20,0,0" Text="{DynamicResource Currency}"/>
             </StackPanel>
             <StackPanel Grid.Row="4" Grid.Column="2" Height="53">
                 <TextBlock x:Name="TextBlockCountry" Style="{DynamicResource addingParams}" Text="{DynamicResource Country}"/>
-                <TextBox x:Name="TextBoxCountry" Width="150" Margin="160,-24,0,0" Height="20"  />
+                <TextBox x:Name="TextBoxCountry" 
+                         Width="150" 
+                         Margin="160,-24,0,0" 
+                         Height="20"/>
             </StackPanel>
             <StackPanel Grid.Row="5" Grid.Column="2" Height="53">
                 <TextBlock x:Name="TextBlockAvailable" Width="150" Margin="-180,10,0,0" FontSize="16" Text="{DynamicResource Available}">
@@ -160,6 +185,16 @@
                              Width="326" 
                              Height="200"
                              FontSize="20"></uc:UserTBox>
+                <Button Margin="120,-420,0,0"
+                        Width="100" Height="50"
+                        Background="DarkBlue" MouseDown="BubblingEvent">
+                    <Grid Width="60" Height="30"
+                          MouseDown="BubblingEvent">
+                        <Ellipse Fill="Red"
+                                 MouseDown="BubblingEvent">
+                        </Ellipse>
+                    </Grid>
+                </Button>
             </StackPanel>
         </StackPanel>
 

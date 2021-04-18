@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab6_7"
         mc:Ignorable="d"
-        Title="EditBasket" Height="600" Width="1050" Background="#23272a" MinWidth="1000" MinHeight="600">
+        Title="EditBasket" Height="600" Width="1050" Background="#23272a" MinWidth="1000" MinHeight="600" HorizontalAlignment="Center" VerticalAlignment="Center">
     <Window.Resources>
         <Cursor x:Key="UserCursor"> D:\banana.cur</Cursor>
         <Cursor x:Key="ButtonCursor">D:\bananaOpened.cur</Cursor>

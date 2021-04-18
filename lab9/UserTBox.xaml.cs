@@ -23,6 +23,42 @@ namespace lab6_7
         public UserTBox()
         {
             InitializeComponent();
+            this.DataContext = this;
+        }
+
+        public string Text
+        {
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
+
+
+        public static readonly DependencyProperty TextProperty;
+
+        static UserTBox()
+        {
+            TextProperty = DependencyProperty.Register("placeholder", typeof(string), typeof(UserTBox), new PropertyMetadata(default(string)));
+            FrameworkPropertyMetadata metadata = new FrameworkPropertyMetadata();
+            metadata.CoerceValueCallback = new CoerceValueCallback(Correct);
+      //      TextProperty = DependencyProperty.Register("placeholder", typeof(string), typeof(UserTBox), metadata, new ValidateValueCallback(Validate));
+        }
+
+        private static bool Validate(object value)
+        {
+            if (value == null)
+                return false;
+            string currentValue = value.ToString();
+            if (currentValue.Length >= 0)
+                return true;
+            return false;
+        }
+
+        private static object Correct(DependencyObject d, object baseV)
+        {
+            string line = baseV.ToString();
+            if (line.Length > 200)
+                return line.Substring(0,200);
+            return false;
         }
     }
 }

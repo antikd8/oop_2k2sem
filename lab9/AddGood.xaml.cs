@@ -19,6 +19,8 @@ namespace lab6_7
         List<Item> itemsCollection = new List<Item>();
         List<Item> lastItems = new List<Item>();
         Item lastItem = new Item();
+        string imgPathDefault = null;
+
         public AddGood()
         {
             InitializeComponent();
@@ -32,6 +34,14 @@ namespace lab6_7
             commandEdit.Command = ApplicationCommands.CorrectionList;
             commandEdit.Executed += ButtonEditBasket_Click;
             ButtonEditBasket.CommandBindings.Add(commandEdit);
+        }
+
+        static AddGood()
+        {
+            List<Item> itemsCollection = new List<Item>();
+            List<Item> lastItems = new List<Item>();
+            Item lastItem = new Item();
+
         }
 
         private void ThemeChange(object sender, SelectionChangedEventArgs e)
@@ -54,7 +64,7 @@ namespace lab6_7
         }
 
         [Serializable]
-        public class Item 
+        public class Item
         {
 
             [XmlElement(ElementName = "name_of_item")]
@@ -98,10 +108,6 @@ namespace lab6_7
                 return default(T);
             }
         }
-        private void ButtonAddGood_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void ButtonRU_Click(object sender, RoutedEventArgs e)
         {
@@ -115,12 +121,17 @@ namespace lab6_7
             App.Language = lang;
         }
 
+        public void CommandBinding_Executed(object sender,ExecutedRoutedEventArgs e)
+        {
+            ButtonBrowseHome_Click(sender, e);
+        }
+
         private void ButtonAddItem_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 Item tempItem = new Item();
-                tempItem.NameItem = TextBoxNameItem.Content.ToString();
+                tempItem.NameItem = TextBoxNameItem.userTBox.Text;
                 tempItem.Category = ComboBoxCategory.Text;
                 if (Double.TryParse(TextBoxPrice.Text, out double price))
                     tempItem.Price = price;
@@ -140,12 +151,12 @@ namespace lab6_7
                 ButtonRedo.IsEnabled = true;
                 XmlSerializeWrapper.Serialize(itemsCollection, "basket.xml");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Ошибка записи в файл!");
+                MessageBox.Show($"Ошибка записи в файл! \n {ex.Message}");
                 return;
             }
-            MessageBox.Show($"Товар добавлен в корзину!\nКоличество товаров в корзине : {itemsCollection.Count}");
+            MessageBox.Show($"Товар добавлен в корзину!\nКоличество товаров в корзине : {itemsCollection.Count}\nОтправитель:{sender}\nИсточник:{e.Source}\nПрямое событие Click");
 
         }
 
@@ -158,27 +169,6 @@ namespace lab6_7
             }
         }
 
-        private void ButtonAddPicture_Click(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.FileName = ""; // Default file name
-            dlg.DefaultExt = ".png"; // Default file extension
-                                     //    dlg.Filter = "Pictures (.png,jpg)|*.png,*.jpg"; // Filter files by extension
-
-            // Show open file dialog box
-            Nullable<bool> result = dlg.ShowDialog();
-
-            // Process open file dialog box results
-            if (result == true)
-            {
-                // Open document
-                BitmapImage image = new BitmapImage();
-                image.BeginInit();
-                image.UriSource = new Uri(dlg.FileName);
-                image.EndInit();
-                ItemPicture.Source = image;
-            }
-        }
 
         private void ButtonEditBasket_Click(object sender, RoutedEventArgs e)
         {
@@ -187,17 +177,6 @@ namespace lab6_7
             this.Hide();
         }
 
-        private void ButtonClearInfo_Click(object sender, RoutedEventArgs e)
-        {
-            TextBoxPrice.Text = string.Empty;
-            TextBoxNameItem.Content = string.Empty;
-            TBoxDescription.Content = string.Empty;
-            TextBoxCountry.Text = string.Empty;
-            ComboBoxCategory.SelectedIndex = -1;
-            RadioButtonAvailable.IsChecked = false;
-            RadioButtonNotAvailable.IsChecked = false;
-            ItemPicture.Source = null;
-        }
 
         private void ButtonOutputBacket_Click(object sender, RoutedEventArgs e)
         {
@@ -229,5 +208,46 @@ namespace lab6_7
             XmlSerializeWrapper.Serialize(itemsCollection, "basket.xml");
             MessageBox.Show($"Последний добавленный элемент ({lastItem.NameItem}) добавлен!");
         }
+
+        private void LeftButton(object sender, MouseButtonEventArgs e)
+        {
+            TextBoxPrice.Text = string.Empty;
+            TextBoxNameItem.userTBox.Text="";
+            TBoxDescription.TBoxDescription.Text = "";
+            TextBoxCountry.Text = string.Empty;
+            ComboBoxCategory.SelectedIndex = -1;
+            RadioButtonAvailable.IsChecked = false;
+            RadioButtonNotAvailable.IsChecked = false;
+            MessageBox.Show($"Отправитель:{sender}\nИсточник:{e.Source}\nТуннельное событие MouseDown");
+        }
+
+        private void ButtonAddPicture_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.FileName = ""; // Default file name
+            dlg.DefaultExt = ".png"; // Default file extension
+                                     //    dlg.Filter = "Pictures (.png,jpg)|*.png,*.jpg"; // Filter files by extension
+
+            // Show open file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+            // Process open file dialog box results
+            if (result == true)
+            {
+                // Open document
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(dlg.FileName);
+                image.EndInit();
+                imgPathDefault = ItemPicture.Source.ToString();
+                ItemPicture.Source = image;
+            }
+            MessageBox.Show($"Отправитель:{sender}\nИсточник:{e.Source}\nПоднимающееся событие");
+        }
+
+        private void BubblingEvent(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show($"Отправитель:{sender}\nИсточник:{e.Source}\nПоднимающееся событие");
+        }
+
     }
 }
