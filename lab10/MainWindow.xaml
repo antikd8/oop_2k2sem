@@ -1,0 +1,57 @@
+﻿<Window x:Name="MainWindow1" x:Class="lab10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab10"
+        mc:Ignorable="d"
+        Title="Квартиры" Height="450" Width="800" Loaded="win_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <DataGrid 
+            AutoGenerateColumns="False"
+            x:Name="flatGrid" 
+            Margin="0,0,-0.4,0"
+            Background="#C5878A">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding country}" FontSize="20" Header="Страна" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding city}" FontSize="20" Header="Город" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding address}" FontSize="20" Header="Адрес" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding material}" FontSize="20" Header="Материал" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding footage}" FontSize="20" Header="Метраж" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding amount_rooms}" FontSize="20" Header="Кол-во комнат" Width="auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="1" Background="#663961">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Button x:Name="Refresh"
+                        Width="220"
+                        Height="50" 
+                        Content="ОБНОВИТЬ"
+                        FontSize="20"
+                        Background="#ADE5CE"
+                        FontWeight="Bold" Click="Update">
+                </Button>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button x:Name="УДАЛИТЬ"
+                        Width="220"
+                        Height="50"
+                        Content="УДАЛИТЬ"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Background="Tomato" Click="Delete">
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
