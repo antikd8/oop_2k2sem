@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab10"
         mc:Ignorable="d"
-        Title="Квартиры" Height="450" Width="800" Loaded="win_Loaded">
+        Title="Квартиры" Height="450" Width="800" Loaded="win_Loaded" MinWidth="800" MinHeight="450">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="17*"/>
@@ -18,17 +18,18 @@
             Margin="0,0,-0.4,0"
             Background="#C5878A">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding country}" FontSize="20" Header="Страна" Width="auto"/>
-                    <DataGridTextColumn Binding="{Binding city}" FontSize="20" Header="Город" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding id}" FontSize="20" Header="Номер квартиры" Width="auto"/>
                     <DataGridTextColumn Binding="{Binding address}" FontSize="20" Header="Адрес" Width="auto"/>
                     <DataGridTextColumn Binding="{Binding material}" FontSize="20" Header="Материал" Width="auto"/>
                     <DataGridTextColumn Binding="{Binding footage}" FontSize="20" Header="Метраж" Width="auto"/>
                     <DataGridTextColumn Binding="{Binding amount_rooms}" FontSize="20" Header="Кол-во комнат" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding year}" FontSize="20" Header="Год постройки" Width="auto"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
         <Grid Grid.Row="1" Background="#663961">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -43,6 +44,25 @@
                 </Button>
             </Grid>
             <Grid Grid.Column="1">
+                <Button x:Name="PrevElement" Width="100"
+                        Height="70"
+                        HorizontalAlignment="Left"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Margin="20,0,0,0" Click="MoveToPrev">
+                    <Image Source="undo.png"></Image>
+                </Button>
+                <Button x:Name="NextElem" 
+                    Width="100" 
+                    Height="70"
+                    HorizontalAlignment="Right"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Margin="0,0,20,0" Click="MoveToNext">
+                    <Image Source="redo.png"></Image>
+                </Button>
+            </Grid>
+            <Grid Grid.Column="2">
                 <Button x:Name="УДАЛИТЬ"
                         Width="220"
                         Height="50"

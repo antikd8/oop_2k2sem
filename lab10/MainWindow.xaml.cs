@@ -37,7 +37,7 @@ namespace lab10
 
         private void win_Loaded(object sender, RoutedEventArgs e)
         {
-            string sql = "select * from flat f inner join address a on f.address = a.address";
+            string sql = "select * from flat";
             dataTable = new DataTable();
             SqlConnection connection = null;
             try
@@ -82,6 +82,26 @@ namespace lab10
                 }
             }
             Update(sender,e);
+        }
+
+        private void MoveToPrev(object sender, RoutedEventArgs e)
+        {
+            if (flatGrid.SelectedItem != null)
+            {
+                if (flatGrid.SelectedIndex == 0)
+                    return;
+                flatGrid.SelectedIndex = flatGrid.SelectedIndex - 1;
+            }
+        }
+
+        private void MoveToNext(object sender, RoutedEventArgs e)
+        {
+            if (flatGrid.SelectedItem != null)
+            {
+                if (flatGrid.SelectedIndex == flatGrid.Items.Count)
+                    return;
+                flatGrid.SelectedIndex = flatGrid.SelectedIndex + 1;
+            }
         }
     }
 }
