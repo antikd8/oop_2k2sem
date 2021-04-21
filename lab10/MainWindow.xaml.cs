@@ -103,5 +103,36 @@ namespace lab10
                 flatGrid.SelectedIndex = flatGrid.SelectedIndex + 1;
             }
         }
+
+        private void Click_Transact(object sender, RoutedEventArgs e)
+        {
+            connectionString = ConfigurationManager.ConnectionStrings["connectionDB"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlTransaction transaction = connection.BeginTransaction();
+
+                SqlCommand command = connection.CreateCommand();
+                command.Transaction = transaction;
+
+                try
+                {
+                    command.CommandText = "update flat set footage += 5";
+                    command.ExecuteNonQuery();
+                    command.CommandText = "insert into flat values (10,10,1,'1990-04-05','Плиты','Бирули,8а',null)";
+                    command.ExecuteNonQuery();
+
+                    // подтверждаем транзакцию
+                    transaction.Commit();
+                    MessageBox.Show("Данные добавлены в базу данных");
+                    win_Loaded(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    transaction.Rollback();
+                }
+            }
+        }
     }
 }

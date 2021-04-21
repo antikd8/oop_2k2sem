@@ -32,6 +32,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Button x:Name="Refresh"
@@ -48,8 +49,7 @@
                         Height="70"
                         HorizontalAlignment="Left"
                         Background="Transparent"
-                        BorderThickness="0"
-                        Margin="20,0,0,0" Click="MoveToPrev">
+                        BorderThickness="0" Click="MoveToPrev">
                     <Image Source="undo.png"></Image>
                 </Button>
                 <Button x:Name="NextElem" 
@@ -58,7 +58,7 @@
                     HorizontalAlignment="Right"
                     Background="Transparent"
                     BorderThickness="0"
-                    Margin="0,0,20,0" Click="MoveToNext">
+                    Click="MoveToNext">
                     <Image Source="redo.png"></Image>
                 </Button>
             </Grid>
@@ -70,6 +70,17 @@
                         FontSize="20"
                         FontWeight="Bold"
                         Background="Tomato" Click="Delete">
+                </Button>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Button x:Name="ButtonTransaction"
+                        Width="180"
+                        Height="50"
+                        Content="ТРАНЗАКЦИЯ"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Background="LightPink" 
+                        Click="Click_Transact">
                 </Button>
             </Grid>
         </Grid>
