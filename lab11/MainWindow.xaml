@@ -18,12 +18,12 @@
             Margin="0,0,-0.4,0"
             Background="#C6AFC2">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding id}" FontSize="20" Header="Номер квартиры" Width="auto"/>
-                    <DataGridTextColumn Binding="{Binding address}" FontSize="20" Header="Адрес" Width="auto"/>
-                    <DataGridTextColumn Binding="{Binding material}" FontSize="20" Header="Материал" Width="auto"/>
-                    <DataGridTextColumn Binding="{Binding footage}" FontSize="20" Header="Метраж" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding Id}" FontSize="20" Header="id" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding Name}" FontSize="20" Header="Название песни" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding Author}" FontSize="20" Header="Автор" Width="auto"/>
+                    <!--<DataGridTextColumn Binding="{Binding footage}" FontSize="20" Header="Метраж" Width="auto"/>
                     <DataGridTextColumn Binding="{Binding amount_rooms}" FontSize="20" Header="Кол-во комнат" Width="auto"/>
-                    <DataGridTextColumn Binding="{Binding year}" FontSize="20" Header="Год постройки" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding year}" FontSize="20" Header="Год постройки" Width="auto"/>-->
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
