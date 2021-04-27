@@ -15,15 +15,25 @@
             <DataGrid 
             AutoGenerateColumns="False"
             x:Name="flatGrid" 
-            Margin="0,0,-0.4,0"
-            Background="#C6AFC2">
+            Background="#C6AFC2"
+                Width="250"
+                HorizontalAlignment="Left">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Id}" FontSize="20" Header="id" Width="auto"/>
                     <DataGridTextColumn Binding="{Binding Name}" FontSize="20" Header="Название песни" Width="auto"/>
                     <DataGridTextColumn Binding="{Binding Author}" FontSize="20" Header="Автор" Width="auto"/>
-                    <!--<DataGridTextColumn Binding="{Binding footage}" FontSize="20" Header="Метраж" Width="auto"/>
-                    <DataGridTextColumn Binding="{Binding amount_rooms}" FontSize="20" Header="Кол-во комнат" Width="auto"/>
-                    <DataGridTextColumn Binding="{Binding year}" FontSize="20" Header="Год постройки" Width="auto"/>-->
+                 </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid
+                HorizontalAlignment="Right"
+                Width="180"
+                Background="#C6AFC2"
+                AutoGenerateColumns="False"
+                x:Name="AuthorGrid">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Author_Name}" FontSize="20" Header="Имя" Width="auto"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Age}" FontSize="20" Header="Возраст" Width="auto"/>
+                    <DataGridTextColumn/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
@@ -38,11 +48,11 @@
                 <Button x:Name="Refresh"
                         Width="190"
                         Height="50" 
-                        Content="ОБНОВИТЬ"
+                        Content="ДОБАВИТЬ"
                         FontSize="20"
                         Background="#ADE5CE"
                         FontWeight="Bold"
-                        HorizontalAlignment="Center">
+                        HorizontalAlignment="Center" Click="Create">
                 </Button>
             </Grid>
             <Grid Grid.Column="1">
@@ -65,12 +75,12 @@
             </Grid>
             <Grid Grid.Column="2">
                 <Button x:Name="УДАЛИТЬ"
-                        Width="220"
+                        Width="190"
                         Height="50"
                         Content="УДАЛИТЬ"
                         FontSize="20"
                         FontWeight="Bold"
-                        Background="Tomato">
+                        Background="Tomato" Click="delete">
                 </Button>
             </Grid>
             <Grid Grid.Column="3">
@@ -80,7 +90,7 @@
                         Content="ТРАНЗАКЦИЯ"
                         FontSize="20"
                         FontWeight="Bold"
-                        Background="#DBDE95" >
+                        Background="#DBDE95" Click="Transaction" >
                 </Button>
             </Grid>
         </Grid>

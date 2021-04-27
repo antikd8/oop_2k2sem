@@ -31,24 +31,26 @@ namespace lab11
             {
 
                 // создаем объекты Song
-            //    Author temp1 = new Author { Author_Name = "t1st", Age = 34 };
+                //    Author temp1 = new Author { Author_Name = "t1st", Age = 34 };
 
 
                 // добавляем объекты Song в контекст данных
 
-       //         db.Authors.Add(temp1);
+                //         db.Authors.Add(temp1);
 
-         //       db.SaveChanges();
+                //       db.SaveChanges();
 
-         //       Song temp = new Song { Id = 1, Name = "nice song", Author = temp1.Author_Name };
+                //       Song temp = new Song { Id = 1, Name = "nice song", Author = temp1.Author_Name };
 
-         //       db.Songs.Add(temp);
+                //       db.Songs.Add(temp);
 
                 // сохраняем контекст данных в базу данных
-        //        db.SaveChanges();
+                //        db.SaveChanges();
             }
             flatGrid.ItemsSource = (from item in context.Songs
                                     select new { item.Id, item.Author, item.Name }).ToList();
+            AuthorGrid.ItemsSource = (from item in context.Authors
+                                      select new { item.Author_Name, item.Age }).ToList();
         }
 
 
@@ -60,6 +62,12 @@ namespace lab11
                     return;
                 flatGrid.SelectedIndex = flatGrid.SelectedIndex - 1;
             }
+            if(AuthorGrid.SelectedItem!= null)
+            {
+                if (AuthorGrid.SelectedIndex == 0)
+                    return;
+                AuthorGrid.SelectedIndex = AuthorGrid.SelectedIndex - 1;
+            }
         }
 
         private void MoveToNext(object sender, RoutedEventArgs e)
@@ -70,9 +78,62 @@ namespace lab11
                     return;
                 flatGrid.SelectedIndex = flatGrid.SelectedIndex + 1;
             }
+            if (AuthorGrid.SelectedItem != null)
+            {
+                if (AuthorGrid.SelectedIndex == AuthorGrid.Items.Count)
+                    return;
+                AuthorGrid.SelectedIndex = AuthorGrid.SelectedIndex + 1;
+            }
         }
 
+        private void Transaction(object sender, RoutedEventArgs e)
+        {
+            using (Context db = new Context())
+            {
+                using (var transaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        db.Database.ExecuteSqlCommand(@"update Authors set Age = 777 where Author_Name = 'ABC'");
+
+                        db.Authors.Add(new Author { Author_Name = "AcccBC", Age = 55 });
+
+                        db.SaveChanges();
+
+                        transaction.Commit();
+                        MessageBox.Show("Транзация выполнена успешно!");
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+            }
+        }
+
+        private void delete(object sender, RoutedEventArgs e)
+        {
+            using (Context db = new Context())
+            {
+                if (flatGrid.SelectedItems.Count > 0)
+                {
+                    Song item = flatGrid.SelectedItem as Song;
+                    db.Songs.Remove(item);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        private void Create(object sender, RoutedEventArgs e)
+        {
+            WindowAdd window = new WindowAdd();
+            window.Show();
+            Hide();
+        }
     }
+
     [Table("Songs")]
     public class Song
     {
@@ -89,7 +150,7 @@ namespace lab11
         public int Age { get; set; }
     }
 
-    class Context : DbContext
+    public class Context : DbContext
     {
         public Context() : base("connectionDB") { }
 
